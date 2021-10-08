@@ -79,6 +79,12 @@ void Game::Update()
 		}
 		
 	}		
+
+	// Application end
+	else {
+		this->endApplication();
+		this->window->close();
+	}
 	
 }
 
@@ -103,6 +109,11 @@ void Game::run()
 		this->render();
 	}
 
+}
+
+void Game::endApplication()
+{
+	std::cout << "Ending Appplication" << "\n";
 }
 
 void Game::updateDt()

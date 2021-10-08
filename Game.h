@@ -32,10 +32,19 @@ private:
 		virtual ~Game();
 
 		// Funtions
+
+		// Regular
+		void endApplication();
+
+		// Update
 		void updateDt();
-		void Update();
 		void UpdateSFMLEvents();
+		void Update();
+		
+		// Render
 		void render();
+
+		//Core
 		void run();
 };
 

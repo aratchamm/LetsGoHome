@@ -6,20 +6,23 @@
 
 void Game::initWindow()
 {
-	std::ifstream ifs("Config/window.ini");
+	//std::ifstream ifs("Config/window.ini");
 
 	std::string title = "None";
-	sf::VideoMode window_bounds(800, 600);
+	sf::VideoMode window_bounds(1920, 1080);
 	unsigned framerate_limit = 120;
 	bool vertical_sunc_ebabled = false;
+	/*
 	if (ifs.is_open()) {
 		std::getline(ifs, title);
 		ifs >> window_bounds.width >> window_bounds.height;
 		ifs >> framerate_limit;
 		ifs >> vertical_sunc_ebabled;
 	}
+	
+	*/
 
-	ifs.close();
+	//ifs.close();
 
 	
 	
@@ -28,15 +31,28 @@ void Game::initWindow()
 	this->window->setVerticalSyncEnabled(vertical_sunc_ebabled);
 }
 
+void Game::initKeys()
+{
+	this->supportedKeys.emplace("Escape", sf::Keyboard::Key::Escape);
+	this->supportedKeys.emplace("A", sf::Keyboard::Key::A);
+	this->supportedKeys.emplace("D", sf::Keyboard::Key::D);
+	this->supportedKeys.emplace("W", sf::Keyboard::Key::W);
+	this->supportedKeys.emplace("S", sf::Keyboard::Key::S);
+
+	std::cout << this->supportedKeys.at("A") << "\n";
+}
+
 void Game::initStates()
 {
-	this->states.push(new GameStates(this->window));
+	this->states.push(new MainMenuState(this->window, &this->supportedKeys, &this->states));
 }
+
 
 
 Game::Game() {
 
 	this->initWindow();
+	this->initKeys();
 	this->initStates();
 }
 
@@ -113,7 +129,7 @@ void Game::run()
 
 void Game::endApplication()
 {
-	std::cout << "Ending Appplication" << "\n";
+	//std::cout << "Ending Appplication" << "\n";
 }
 
 void Game::updateDt()

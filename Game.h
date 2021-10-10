@@ -1,9 +1,7 @@
 #pragma once
 #ifndef GAME.H
 
-
-
-#include"GameStates.h"
+#include"MainMenuState.h"
 
 class Game
 {
@@ -20,10 +18,14 @@ private:
 	std::stack<State*>states;
 
 
+	std::map<std::string, int> supportedKeys;
+
 	//Initialization
 
 	void initWindow();
+	void initKeys();
 	void initStates();
+	
 
 
 

@@ -12,18 +12,6 @@ void Game::initWindow()
 	sf::VideoMode window_bounds(1920, 1080);
 	unsigned framerate_limit = 120;
 	bool vertical_sunc_ebabled = false;
-	/*
-	if (ifs.is_open()) {
-		std::getline(ifs, title);
-		ifs >> window_bounds.width >> window_bounds.height;
-		ifs >> framerate_limit;
-		ifs >> vertical_sunc_ebabled;
-	}
-	
-	*/
-
-	//ifs.close();
-
 	
 	
 	this->window = new sf::RenderWindow(window_bounds, title);

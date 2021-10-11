@@ -20,10 +20,6 @@ const bool& State::getQuit() const
 
 void State::checkForQuit()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-
-		this->quit = true;
-	}
 }
 
 void State::updateMousePositions()

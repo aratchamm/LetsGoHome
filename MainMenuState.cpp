@@ -41,20 +41,28 @@ void MainMenuState::initKeybinds()
 
 void MainMenuState::initButtons()
 {
-	this->buttons["GAME_STATE"] = new Button(578,553, 150, 50,
-		&this->font, "START", 
+	this->buttons["GAME_STATE"] = new Button(
+		578.f,553.f, 150.f, 50.f,
+		&this->font, "START", sf::Color::White, sf::Color(79, 109, 179, 255),
+		sf::Color(79, 109, 179, 255), sf::Color::White, sf::Color::White,
 		sf::Color(79, 109, 179, 255), sf::Color(79, 109, 179, 255), sf::Color(79, 109, 179, 255));
 
-	this->buttons["SCORE"] = new Button(798, 553, 150, 50,
-		&this->font, "Score",
+	this->buttons["SCORE"] = new Button(
+		798.f, 553.f, 150.f, 50.f,
+		&this->font, "Score", sf::Color::White, sf::Color(79, 109, 179, 255),
+		sf::Color(79, 109, 179, 255), sf::Color::White, sf::Color::White,
 		sf::Color(79, 109, 179, 255), sf::Color(79, 109, 179, 255), sf::Color(79, 109, 179, 255));
 
-	this->buttons["CREDIT"] = new Button(1008, 553, 200, 50,
-		&this->font, "Credit",
+	this->buttons["CREDIT"] = new Button(
+		1008.f, 553.f, 200.f, 50.f,
+		&this->font, "Credit", sf::Color::White, sf::Color(79, 109, 179, 255),
+		sf::Color(79, 109, 179, 255), sf::Color::White, sf::Color::White,
 		sf::Color(79, 109, 179, 255), sf::Color(79, 109, 179, 255), sf::Color(79, 109, 179, 255));
 
-	this->buttons["EXIT_STATE"] = new Button(1258, 553, 150, 50,
-		&this->font, "EXIT",
+	this->buttons["EXIT_STATE"] = new Button(
+		1258.f, 553.f, 150.f, 50.f,
+		&this->font, "EXIT", sf::Color::White, sf::Color(79, 109, 179, 255),
+		sf::Color(79, 109, 179, 255), sf::Color::White, sf::Color::White,
 		sf::Color(79, 109, 179, 255), sf::Color(79, 109, 179, 255), sf::Color(79, 109, 179, 255));
 }
 

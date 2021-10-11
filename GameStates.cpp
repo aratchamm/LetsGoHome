@@ -7,19 +7,20 @@ void GameStates::initKeybinds()
 	this->keybinds.emplace("MOVE_RIGHT", this->supportedKeys->at("D"));
 	this->keybinds.emplace("MOVE_UP", this->supportedKeys->at("W"));
 	this->keybinds.emplace("MOVE_DOWN", this->supportedKeys->at("S"));
+	this->keybinds.emplace("CLOSE", this->supportedKeys->at("Escape"));
 }
 
 void GameStates::initTextures()
 {
-	if (!this->textures["PLAYER_IDLE"].loadFromFile("img/animal/Dog 01-3.png")) {
-		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_PLAYER_IDLE_TEXTURE";
+	if (!this->textures["PLAYER_SHEET"].loadFromFile("img/character/playersheet_1.png")) {
+		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_PLAYER_TEXTURE";
 	}
 
 }
 
 void GameStates::initPlayers()
 {
-	this->player = new Player(0, 0, &this->textures["PLAYER_IDLE"]);
+	this->player = new Player(0, 0, this->textures["PLAYER_SHEET"]);
 }
 
 // Constructors / Destructors
@@ -50,16 +51,19 @@ void GameStates::updateInput(const float& dt)
 
 	// Update Player Input
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_LEFT"))))
-		this->player->move(dt, -1.f, 0.f);
+		this->player->move(-1.f, 0.f, dt);
 
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_RIGHT"))))
-		this->player->move(dt, 1.f, 0.f);
+		this->player->move(1.f, 0.f, dt);
 
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_UP"))))
-		this->player->move(dt, 0.f, -1.f);
+		this->player->move(0.f, -1.f, dt);
 
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_DOWN"))))
-		this->player->move(dt, 0.f, 1.f);
+		this->player->move(0.f, 1.f, dt);
+
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("CLOSE"))))
+		this->endState();
 }
 
 void GameStates::update(const float& dt)

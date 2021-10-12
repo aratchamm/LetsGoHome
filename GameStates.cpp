@@ -50,20 +50,29 @@ void GameStates::updateInput(const float& dt)
 
 
 	// Update Player Input
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_LEFT"))))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_LEFT")))) {
 		this->player->move(-1.f, 0.f, dt);
+	}
+		
 
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_RIGHT"))))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_RIGHT")))) {
 		this->player->move(1.f, 0.f, dt);
+	}
+		
 
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_UP"))))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_UP")))) {
 		this->player->move(0.f, -1.f, dt);
+	}
+		
 
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_DOWN"))))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_DOWN")))) {
 		this->player->move(0.f, 1.f, dt);
+	}
+		
 
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("CLOSE"))))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("CLOSE"))))
 		this->endState();
+
 }
 
 void GameStates::update(const float& dt)
@@ -75,8 +84,6 @@ void GameStates::update(const float& dt)
 
 void GameStates::render(sf::RenderTarget* target)
 {
-
-	
 
 	if (!target)
 		target = this->window;

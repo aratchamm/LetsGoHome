@@ -1,12 +1,2 @@
-﻿  AnimationComponent.cpp
-  Entity.cpp
-  Game.cpp
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Game.h(2,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  GameStates.cpp
-  MainMenuState.cpp
-  Player.cpp
-  State.cpp
-  main.cpp
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Game.h(2,1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Generating Code...
+﻿  Player.cpp
   let's go home.vcxproj -> C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\x64\Debug\let's go home.exe

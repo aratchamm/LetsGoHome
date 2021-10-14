@@ -18,7 +18,7 @@ Player::Player(float x, float y, sf::Texture& texture_sheet)
 	
 	this->setPosition(x, y);
 
-	this->createMovementComponent(100.0f, 15.f, 5.f);
+	this->createMovementComponent(80.0f, 15.f, 5.f);
 	this->createAnimationComponent(texture_sheet);
 
 	this->animationComponent->addAnimation("IDLE_DOWN", 10.f, 0, 4, 2, 4, 32, 32);
@@ -31,7 +31,7 @@ Player::Player(float x, float y, sf::Texture& texture_sheet)
 	this->animationComponent->addAnimation("WALK_DOWN", 10.f, 0, 0, 2, 0, 32, 32);
 }
 
-int player_idle = 0;
+int player_idle = 'D';
 
 Player::~Player()
 {

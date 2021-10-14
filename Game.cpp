@@ -6,7 +6,6 @@
 
 void Game::initWindow()
 {
-	//std::ifstream ifs("Config/window.ini");
 
 	std::string title = "None";
 	sf::VideoMode window_bounds(1920, 1080);
@@ -27,15 +26,12 @@ void Game::initKeys()
 	this->supportedKeys.emplace("W", sf::Keyboard::Key::W);
 	this->supportedKeys.emplace("S", sf::Keyboard::Key::S);
 
-	std::cout << this->supportedKeys.at("A") << "\n";
 }
 
 void Game::initStates()
 {
 	this->states.push(new MainMenuState(this->window, &this->supportedKeys, &this->states));
 }
-
-
 
 Game::Game() {
 
@@ -117,7 +113,6 @@ void Game::run()
 
 void Game::endApplication()
 {
-	//std::cout << "Ending Appplication" << "\n";
 }
 
 void Game::updateDt()

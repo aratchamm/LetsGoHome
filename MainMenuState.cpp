@@ -1,5 +1,6 @@
 #include "MainMenuState.h"
 
+
 // Initializer funtions
 void MainMenuState::initVariables()
 {
@@ -11,23 +12,15 @@ void MainMenuState::initVariables()
 		)
 	);
 
-	if (!this->bgTexture.loadFromFile("img/bg/menu.png")) {
-		throw"ERROR::MAIN_MENU_STATE::FAILED_TO_LOAD_BACKGROUND_TEXTURE";
-	}
-	
-	this->background.setTexture(&this->bgTexture);
 }
 
 void MainMenuState::initBackground()
 {
-	//if (!this->textures["PLAYER_SHEET"].loadFromFile("img/bg/water_animation.png")) {
-		//throw "ERROR::MAINMENU_STATE::COULD_NOT_LOAD_BGLOGO_TEXTURE";
-	//}
-
-	/*if (!this->textures["WATER_ANIMATION"].loadFromFile("img/bg/water_animation.png")) {
-		throw "ERROR::MAINMENU_STATE::COULD_NOT_LOAD_BGWATER_TEXTURE";
+	if (!this->bgTexture.loadFromFile("img/bg/menu.png")) {
+		throw"ERROR::MAIN_MENU_STATE::FAILED_TO_LOAD_BACKGROUND_TEXTURE";
 	}
-	this->background.setTexture(&this->bgTexture);*/
+
+	this->background.setTexture(&this->bgTexture);
 }
 
 

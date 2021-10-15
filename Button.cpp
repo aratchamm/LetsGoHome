@@ -98,14 +98,14 @@ void Button::update(const sf::Vector2f mousePos)
 		break;
 
 	default:
-		this->shape.setFillColor(sf::Color(79, 109, 179, 255));
+		this->shape.setFillColor(sf::Color::Transparent);
 		break;
 	}
 }
 
-void Button::render(sf::RenderTarget* target)
+void Button::render(sf::RenderTarget& target)
 {
-	target->draw(this->shape);
-	target->draw(this->text);
+	target.draw(this->shape);
+	target.draw(this->text);
 }
 

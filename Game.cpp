@@ -7,7 +7,7 @@
 void Game::initWindow()
 {
 
-	std::string title = "None";
+	std::string title = "Let's go hone";
 	sf::VideoMode window_bounds(1920, 1080);
 	unsigned framerate_limit = 120;
 	bool vertical_sunc_ebabled = false;

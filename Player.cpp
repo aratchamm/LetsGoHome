@@ -18,6 +18,7 @@ Player::Player(float x, float y, sf::Texture& texture_sheet)
 	
 	this->setPosition(x, y);
 
+	this->createHitboxComponent(this->sprite, 3.f, 3.f, 28.f, 32.f);
 	this->createMovementComponent(80.0f, 15.f, 5.f);
 	this->createAnimationComponent(texture_sheet);
 
@@ -66,5 +67,7 @@ void Player::update(const float& dt)
 		this->animationComponent->play("WALK_DOWN", dt);
 		player_idle = 'D';
 	}
+
+	this->hitboxComponent->update();
 
 }

@@ -8,6 +8,12 @@
 int main()
 {
 
+	int frame = 0;
+	int frameLogo = 0;
+	int row = 0;
+	int frameCounter = 0;
+	int frameLogoCounter = 0;
+
 	// Create the main window
 
 	sf::Vector2i screenDimensions(1920, 1080);
@@ -18,18 +24,33 @@ int main()
 	MENU.setKeyRepeatEnabled(false);
 	MENU.setFramerateLimit(60);
 
-	// set BG
-	sf::RectangleShape background(sf::Vector2f(1920.f, 1080.f));
-	Texture MainTexture;
-	MainTexture.loadFromFile("img/bg/menu.png");
-	background.setTexture(&MainTexture);
-
 	/*************************** สร้างภาพ background game *****************************/
 
 	sf::RectangleShape Pbackground(sf::Vector2f(2405.f, 2405.f));
 	Texture PlayerTexture;
 	PlayerTexture.loadFromFile("img/bg/bg.png");
 	Pbackground.setTexture(&PlayerTexture);
+
+
+	// water animation //
+
+	sf::Texture waterTexture;
+	sf::Sprite water;
+
+	if (!waterTexture.loadFromFile("img/bg/water_animation.png"))
+		std::cout << "Error could not load water" << std::endl;
+	water.setTexture(waterTexture);
+
+	// logo animation //
+
+	sf::Texture logoTexture;
+	sf::Sprite logo;
+
+	if (!logoTexture.loadFromFile("img/bg/logo_animation.png"))
+		std::cout << "Error could not load logo" << std::endl;
+	logo.setTexture(logoTexture);
+	logo.setScale(2.f, 2.f);
+	logo.setPosition(450, 140);
 
 	
 
@@ -47,12 +68,9 @@ int main()
 	ScoreTexture.loadFromFile("img/bg/menu.png");
 	Sbackground.setTexture(&ScoreTexture);
 
-
 	/***************************************************** game zone ***************************************************************/
 
-	int frame = 0;
-	int row = 0;
-	int frameCounter = 0;
+	
 
 	/*************************** สร้าง player *****************************/
 	sf::Texture pTexture;
@@ -68,6 +86,7 @@ int main()
 	sf::View view;
 	view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y)); //กำหนดมุมมองเป็นรูปสี่เหลี่ยมผืนผ้าเริ่มที่ตำแหน่ง (0,0) และมีขนาดเท่ากับขนาดของจอภาพ
 	sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);  //สร้างตัวแปร position เพื่อเก็บค่าตำแหน่ง
+
 
 
 	//Main Menu Open
@@ -181,7 +200,6 @@ int main()
 
 						}
 					}
-
 					if (x == 2) {
 
 						while (Score.isOpen()) {
@@ -240,9 +258,31 @@ int main()
 			}
 		}
 
+		//Update water
+		water.setTextureRect(sf::IntRect(1920 * frame, 1080 * 0, 1920, 1080));
+
+
+		if (frameCounter == 20) {
+			frame = (frame + 1) % 5;
+			frameCounter = 0;
+		}
+		frameCounter++;
+
+		//Update logo
+		logo.setTextureRect(sf::IntRect(482 * frameLogo, 175 * 0, 482, 175));
+
+		if (frameLogoCounter == 5000) {
+			frameLogo = (frameLogo + 1) % 21;
+			frameLogoCounter = 0;
+		}
+		frameLogoCounter++;
+		
+		
+
 
 		MENU.clear();
-		MENU.draw(background);
+		MENU.draw(water);
+		MENU.draw(logo);
 		mainMenu.draw(MENU);
 		MENU.display();
 

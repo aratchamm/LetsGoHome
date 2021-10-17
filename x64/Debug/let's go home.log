@@ -1,2 +1,50 @@
-﻿  MainMenu.cpp
+﻿  Main.cpp
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(22,52): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(22,34): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(87,69): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(87,49): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(88,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(88,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(183,41): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(188,41): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   let's go home.vcxproj -> C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\x64\Debug\let's go home.exe

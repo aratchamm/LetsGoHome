@@ -13,8 +13,14 @@ public:
 	MainMenu(float width, float height);
 	
 	void draw(RenderWindow& window);
-	void MoveLeft();
-	void MoveRight();
+	void HoverMouse_start();
+	void HoverMouse_score();
+	void HoverMouse_about();
+	void HoverMouse_exit();
+	void UnHoverMouse_start();
+	void UnHoverMouse_score();
+	void UnHoverMouse_about();
+	void UnHoverMouse_exit();
 
 	int MainMenuPressed() {
 		return MainMenuSelected;

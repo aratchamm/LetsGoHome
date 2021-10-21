@@ -16,8 +16,6 @@ void my_pause() {
 }
 
 
-
-
 int main()
 {
 
@@ -52,17 +50,18 @@ int main()
 	int frameAbout = 0;
 	int frameMenu = 0;
 	int frameScore = 0;
+	int frameMC = 0;
 	int row = 0;
 	int frameCounter = 0;
 	int frameAboutCounter = 0;
 	int frameMenuCounter = 0;
 	int frameScoreCounter = 0;
-
+	int frameMCCounter = 0;
 
 
 	// Create the main window //
 
-	sf::Vector2i screenDimensions(1920, 1080);
+	sf::Vector2i screenDimensions(1280, 720);
 
 	sf::RenderWindow MENU(sf::VideoMode(screenDimensions.x, screenDimensions.y), "LET'S GO HOME");
 	MainMenu mainMenu(MENU.getSize().x, MENU.getSize().y);
@@ -109,41 +108,59 @@ int main()
 	// Create Sprite button //
 
 	sf::RectangleShape StartButton(sf::Vector2f(165.0f, 60.0f));
-	StartButton.setPosition({ 530.f, 570.f });
+	StartButton.setPosition({ 290.f, 380.f });
 	StartButton.setFillColor(sf::Color::Transparent);
 
 	sf::RectangleShape ScoreButton(sf::Vector2f(165.0f, 60.0f));
-	ScoreButton.setPosition({ 780.f, 570.f });
+	ScoreButton.setPosition({ 490.f, 380.f });
 	ScoreButton.setFillColor(sf::Color::Transparent);
 
 	sf::RectangleShape AboutButton(sf::Vector2f(165.0f, 60.0f));
-	AboutButton.setPosition({ 1030.f, 570.f });
+	AboutButton.setPosition({ 690.f, 380.f });
 	AboutButton.setFillColor(sf::Color::Transparent);
 
 	sf::RectangleShape ExitButton(sf::Vector2f(145.0f, 60.0f));
-	ExitButton.setPosition({ 1270.f, 570.f });
+	ExitButton.setPosition({ 900.f, 380.f });
 	ExitButton.setFillColor(sf::Color::Transparent);
 
 
 	/***************************************************** game zone ***************************************************************/
 
+	// create mc //
+
+	sf::Texture GrandmaTexture;
+	sf::Sprite Grandma;
+
+	if (!GrandmaTexture.loadFromFile("img/character/others/grandma.png"))
+		std::cout << "Error could not load MC image" << std::endl;
+	Grandma.setTexture(GrandmaTexture);
+	Grandma.setScale(3.f, 3.f);
+
+
+	sf::Texture AuntTexture;
+	sf::Sprite Aunt;
+
+	if (!AuntTexture.loadFromFile("img/character/others/aunt.png"))
+		std::cout << "Error could not load MC image" << std::endl;
+	Aunt.setTexture(AuntTexture);
+	Aunt.setScale(3.f, 3.f);
 	
-	// create tileset //
+	sf::Texture Dog_mcTexture;
+	sf::Sprite Dog_mc;
 
-	sf::RectangleShape Tileset(sf::Vector2f(145.0f, 60.0f));
-	Tileset.setPosition({ 1270.f, 570.f });
-	Tileset.setFillColor(sf::Color::Red);
+	if (!Dog_mcTexture.loadFromFile("img/character/others/dog.png"))
+		std::cout << "Error could not load MC image" << std::endl;
+	Dog_mc.setTexture(Dog_mcTexture);
+	Dog_mc.setScale(2.f, 2.f);
 
-	// create player //
+	sf::Texture maleTexture;
+	sf::Sprite male;
 
-	sf::Texture pTexture;
-	sf::Sprite player;
-	sf::Clock clock;
+	if (!maleTexture.loadFromFile("img/character/others/male.png"))
+		std::cout << "Error could not load MC image" << std::endl;
+	male.setTexture(maleTexture);
+	male.setScale(3.f, 3.f);
 
-	if (!pTexture.loadFromFile("img/character/playersheet_1.png"))
-		std::cout << "Error could not load player image" << std::endl;
-	player.setTexture(pTexture);
-	player.setScale(3.f, 3.f);
 
 	// create view //
 
@@ -243,7 +260,7 @@ int main()
 		std::cout << "Error could not load menu button" << std::endl;
 	MenuButton.setTexture(MenuTexture);
 
-	movieLogo.fit(0, 0, width, height);
+	movieLogo.fit(0, -210, 1280, 720);
 	movieLogo.play();
 
 	float dt;
@@ -279,24 +296,24 @@ int main()
 			if (StartButton.getGlobalBounds().contains(MENU.mapPixelToCoords(sf::Mouse::getPosition(MENU))))
 			{
 				mainMenu.HoverMouse_start();	
-				Hover_startSprite.setPosition(485, 590);
+				Hover_startSprite.setPosition(250, 395);
 
 			}
 			if (ScoreButton.getGlobalBounds().contains(MENU.mapPixelToCoords(sf::Mouse::getPosition(MENU))))
 			{
 				mainMenu.HoverMouse_score();
-				Hover_scoreSprite.setPosition(735, 590);
+				Hover_scoreSprite.setPosition(450, 395);
 
 			}
 			if (AboutButton.getGlobalBounds().contains(MENU.mapPixelToCoords(sf::Mouse::getPosition(MENU))))
 			{
 				mainMenu.HoverMouse_about();
-				Hover_aboutSprite.setPosition(985, 590);
+				Hover_aboutSprite.setPosition(650, 395);
 			}
 			if (ExitButton.getGlobalBounds().contains(MENU.mapPixelToCoords(sf::Mouse::getPosition(MENU))))
 			{
 				mainMenu.HoverMouse_exit();
-				Hover_exitSprite.setPosition(1235, 590);
+				Hover_exitSprite.setPosition(860, 395);
 			}
 
 			if (!StartButton.getGlobalBounds().contains(MENU.mapPixelToCoords(sf::Mouse::getPosition(MENU))))
@@ -350,44 +367,359 @@ int main()
 			if (x == 1)
 			{
 
-				RenderWindow SHORTSCRENE(VideoMode(screenDimensions.x, screenDimensions.y), "LET'S GO HOME");
+				RenderWindow choose_character(VideoMode(screenDimensions.x, screenDimensions.y), "LET'S GO HOME");
 
-				movie.fit(0, 0, 1920, 1080);
-				movie.play();
-				BlackSprite.setPosition(-100000, -100000);
-				PauseButton.setPosition(-100000, -100000);
-				PlayButton.setPosition(-100000, -100000);
-				QuitButton.setPosition(-100000, -100000);
-				MenuButton.setPosition(-100000, -100000);
+				sf::Texture chooseBGtexture;
+				sf::Sprite chooseBG;
+
+				sf::String yourname;
+				sf::Text playerName;
+				sf::Font font;
+				font.loadFromFile("Fonts/Pixeboy-z8XGD.ttf");
+
+				sf::String yourPetname;
+				sf::Text playerPetName;
 
 
-				while (SHORTSCRENE.isOpen()) {
+				int player_choose = 0;
+				int player_choose_pet = 0;
+				int player_namecheck = 0;
+				int player_Petnamecheck = 0;
+				int player_Petcheck = 0;
+				int player_check = 0;
+
+				if (!chooseBGtexture.loadFromFile("img/bg/choose_character.png"))
+					std::cout << "Error could not load player image" << std::endl;
+
+				chooseBG.setTexture(chooseBGtexture);
+
+				// Create Sprite button //
+
+				sf::Texture character1Texture;
+				sf::Sprite character1;
+
+				if (!character1Texture.loadFromFile("img/bg/choose_character_inside.png"))
+					std::cout << "Error could not load player image" << std::endl;
+
+				character1.setTexture(character1Texture);
+				character1.setPosition({ 115.f, 61.f });
+				character1.setScale(5.f, 5.f);
+
+				sf::Texture character2Texture;
+				sf::Sprite character2;
+
+				if (!character2Texture.loadFromFile("img/bg/choose_character_inside2.png"))
+					std::cout << "Error could not load player image" << std::endl;
+
+				character2.setTexture(character2Texture);
+				character2.setPosition({ 363.f, 61.f });
+				character2.setScale(5.f, 5.f);
+
+
+				sf::Texture character3Texture;
+				sf::Sprite character3;
+
+				if (!character3Texture.loadFromFile("img/bg/choose_character_inside3.png"))
+					std::cout << "Error could not load player image" << std::endl;
+				character3.setTexture(character3Texture);
+				character3.setPosition({ 115.f, 313.f });
+				character3.setScale(5.f, 5.f);
+
+				sf::Texture character4Texture;
+				sf::Sprite character4;
+
+				if (!character4Texture.loadFromFile("img/bg/choose_character_inside4.png"))
+					std::cout << "Error could not load player image" << std::endl;
+				character4.setTexture(character4Texture);
+				character4.setPosition({ 364.f, 313.f });
+				character4.setScale(5.f, 5.f);
+
+				// create choose pet //
+
+				sf::Texture characterPet1Texture;
+				sf::Sprite characterPet1;
+
+				if (!characterPet1Texture.loadFromFile("img/bg/choose_character_inside5.png"))
+					std::cout << "Error could not load player image" << std::endl;
+				characterPet1.setTexture(characterPet1Texture);
+				characterPet1.setPosition({ 720.f, 248.f });
+				characterPet1.setScale(5.f, 5.f);
+
+				sf::Texture characterPet2Texture;
+				sf::Sprite characterPet2;
+
+				if (!characterPet2Texture.loadFromFile("img/bg/choose_character_inside6.png"))
+					std::cout << "Error could not load player image" << std::endl;
+				characterPet2.setTexture(characterPet2Texture);
+				characterPet2.setPosition({ 967.f, 248.f });
+				characterPet2.setScale(5.f, 5.f);
+
+				sf::Texture textboxYournameTexture;
+				sf::Sprite textboxYourname;
+
+				if (!textboxYournameTexture.loadFromFile("img/button/textbox_yourname.png"))
+					std::cout << "Error could not load player image" << std::endl;
+				textboxYourname.setTexture(textboxYournameTexture);
+				textboxYourname.setPosition({ 178.f, 600.f });
+
+				sf::Texture textboxYourPetnameTexture;
+				sf::Sprite textboxYourPetname;
+
+				if (!textboxYourPetnameTexture.loadFromFile("img/button/textbox_yourname.png"))
+					std::cout << "Error could not load player image" << std::endl;
+				textboxYourPetname.setTexture(textboxYourPetnameTexture);
+				textboxYourPetname.setPosition({ 798.f, 550.f });
+
+				// create next //
+
+				sf::Texture NextTexture;
+				sf::Sprite Next;
+
+				if (!NextTexture.loadFromFile("img/bg/next.png"))
+					std::cout << "Error could not load player image" << std::endl;
+				Next.setTexture(NextTexture);
+				
+				Next.setPosition({ 10000.f, 10000.f });
+
+
+				while (choose_character.isOpen()) {
 					sf::Event ev;
-					while (SHORTSCRENE.pollEvent(ev)) {
+					while (choose_character.pollEvent(ev)) {
 
+						if (player_namecheck != 0)
+						{
+							if (ev.type == sf::Event::TextEntered) {
+								if (ev.text.unicode == '\b') {//ถ้ากด Backspace เป็นการลบตัวอักษร
+									yourname.erase(yourname.getSize() - 1, 1);
+									playerName.setFont(font);
+									playerName.setString(yourname);
+								}
+								else {
+									string name;
+									yourname += static_cast<char>(ev.text.unicode);
+									name += static_cast<char>(ev.text.unicode);
+									if ((ev.text.unicode < 128) && (yourname.getSize() < 8)) {
+										playerName.setFont(font);
+										playerName.setString(yourname);
+										
+										
+									}
+								}
+								playerName.setCharacterSize(60);   //เซ็ตขนาดของข้อความ
+								playerName.setPosition(255.0f, 590.0f);  //เซ็ตขนาดของข้อความ
+								player_Petcheck = 1;
+								
+							}
+							else if (ev.type == sf::Event::KeyPressed) {
+								if (ev.key.code == sf::Keyboard::Return) {
+									playerName.setString(yourname);
+									
+								}
+							}
+
+						}
+
+						if (player_Petnamecheck != 0)
+						{
+							if (ev.type == sf::Event::TextEntered) {
+								if (ev.text.unicode == '\b') {//ถ้ากด Backspace เป็นการลบตัวอักษร
+									yourPetname.erase(yourPetname.getSize() - 1, 1);
+									playerPetName.setFont(font);
+									playerPetName.setString(yourPetname);
+								}
+								else {
+									string name;
+									yourPetname += static_cast<char>(ev.text.unicode);
+									name += static_cast<char>(ev.text.unicode);
+									if ((ev.text.unicode < 128) && (yourPetname.getSize() < 8)) {
+										playerPetName.setFont(font);
+										playerPetName.setString(yourPetname);
+										
+									    
+									}
+								}
+								playerPetName.setCharacterSize(60);   //เซ็ตขนาดของข้อความ
+								playerPetName.setPosition(865.0f, 541.0f);  //เซ็ตขนาดของข้อความ
+								player_check = 1;
+								
+							}
+							else if (ev.type == sf::Event::KeyPressed) {
+								if (ev.key.code == sf::Keyboard::Return) {
+									playerPetName.setString(yourPetname);
+									
+								}
+							}
+							
+						}
+							
+						
 						if (ev.type == sf::Event::KeyPressed) {
 							switch (ev.key.code) {
-							case sf::Keyboard::Space: {
+							case sf::Keyboard::Enter: {
 
-								x = 'P';
-								movie.stop();
-								SHORTSCRENE.close();
+								if (player_choose != 0 && player_choose_pet != 0 && player_Petcheck == 1 && player_check == 1) {
+									x = 'S';
+									choose_character.close();
+								}
+								
 								break;
 							}
+
+							case sf::Keyboard::Escape: {
+
+								choose_character.close();
+
+								break;
+							}
+
 							default:
 								break;
 							}
 						}
 					}
 
-					SHORTSCRENE.clear();
-					movie.update();
-					SHORTSCRENE.draw(movie);
+					if (player_choose != 0 && player_choose_pet != 0 && player_Petcheck == 1 && player_check == 1) {
+						Next.setPosition({ 1080.f, 620.f });
+					}
 
-					SHORTSCRENE.display();
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+					{
+						if (character1.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							character1.setPosition({ 115.f, 41.f });
+							character2.setPosition({ 363.f, 61.f });
+							character3.setPosition({ 115.f, 313.f });
+							character4.setPosition({ 364.f, 313.f });
+							player_choose = 1;
+						}
+						if (character2.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							character1.setPosition({ 115.f, 61.f });
+							character2.setPosition({ 363.f, 51.f });
+							character3.setPosition({ 115.f, 313.f });
+							character4.setPosition({ 364.f, 313.f });
+							player_choose = 2;
+						}
+						if (character3.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							character1.setPosition({ 115.f, 61.f });
+							character2.setPosition({ 363.f, 61.f });
+							character3.setPosition({ 115.f, 293.f });
+							character4.setPosition({ 364.f, 313.f });
+							player_choose = 3;
+						}
+						if (character4.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							character1.setPosition({ 115.f, 61.f });
+							character2.setPosition({ 363.f, 61.f });
+							character3.setPosition({ 115.f, 313.f });
+							character4.setPosition({ 364.f, 293.f });
+							player_choose = 4;
+						}
+
+						if (characterPet1.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							characterPet1.setPosition({ 720.f, 228.f });
+							characterPet2.setPosition({ 967.f, 248.f });
+							player_choose_pet = 1;
+						}
+						if (characterPet2.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							characterPet1.setPosition({ 720.f, 248.f });
+							characterPet2.setPosition({ 967.f, 228.f });
+							player_choose_pet = 2;
+						}
+						if (Next.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							x = 'S';
+							choose_character.close();
+						}
+
+						if (textboxYourname.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							player_namecheck = 1;
+						}
+
+						if (!textboxYourname.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							player_namecheck = 0;
+						}
+
+						if (textboxYourPetname.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							player_Petnamecheck = 1;
+						}
+
+						if (!textboxYourPetname.getGlobalBounds().contains(choose_character.mapPixelToCoords(sf::Mouse::getPosition(choose_character))))
+						{
+							player_Petnamecheck = 0;
+						}
+
+					}
+
+					
+					choose_character.clear();
+					choose_character.draw(chooseBG);
+					choose_character.draw(textboxYourname);
+					choose_character.draw(textboxYourPetname);
+					choose_character.draw(character1);
+					choose_character.draw(character2);
+					choose_character.draw(character3);
+					choose_character.draw(character4);
+					choose_character.draw(characterPet1);
+					choose_character.draw(characterPet2);
+				    choose_character.draw(playerName);
+					choose_character.draw(playerPetName);
+					choose_character.draw(Next);
+					
+					choose_character.display();
+
+				}
 
 
 
+				if (x == 'S') {
+
+					RenderWindow SHORTSCRENE(VideoMode(screenDimensions.x, screenDimensions.y), "LET'S GO HOME");
+
+					movie.fit(0, 0, 1280, 720);
+					movie.play();
+					BlackSprite.setPosition(-100000, -100000);
+					PauseButton.setPosition(-100000, -100000);
+					PlayButton.setPosition(-100000, -100000);
+					QuitButton.setPosition(-100000, -100000);
+					MenuButton.setPosition(-100000, -100000);
+
+
+					while (SHORTSCRENE.isOpen()) {
+						sf::Event ev;
+						while (SHORTSCRENE.pollEvent(ev)) {
+
+							if (ev.type == sf::Event::KeyPressed) {
+								switch (ev.key.code) {
+								case sf::Keyboard::Space: {
+
+									x = 'P';
+									movie.stop();
+									SHORTSCRENE.close();
+									break;
+								}
+								default:
+									break;
+								}
+							}
+						}
+
+						SHORTSCRENE.clear();
+						movie.update();
+						SHORTSCRENE.draw(movie);
+
+						SHORTSCRENE.display();
+
+
+
+
+					}
 
 				}
 
@@ -397,51 +729,47 @@ int main()
 
 					const float gridSize = 64.f;
 
+					// create player //
+
+					sf::Texture pTexture;
+					sf::Sprite player;
+					sf::Clock clock;
+
+					if (player_choose == 1) {
+
+						if (!pTexture.loadFromFile("img/character/playersheet_1.png"))
+							std::cout << "Error could not load player image" << std::endl;
+					}
+
+					if (player_choose == 2) {
+
+						if (!pTexture.loadFromFile("img/character/playersheet_2.png"))
+							std::cout << "Error could not load player image" << std::endl;
+					}
+
+					if (player_choose == 3) {
+
+						if (!pTexture.loadFromFile("img/character/playersheet_3.png"))
+							std::cout << "Error could not load player image" << std::endl;
+					}
+
+					if (player_choose == 4) {
+
+						if (!pTexture.loadFromFile("img/character/playersheet_4.png"))
+							std::cout << "Error could not load player image" << std::endl;
+					}
+
+					player.setTexture(pTexture);
+					player.setScale(3.f, 3.f);
+					
+
+
 					//Walls
 					std::vector<RectangleShape> walls;
 
 					RectangleShape wall;
-					wall.setFillColor(Color::Red);
+					wall.setFillColor(Color::Transparent);
 					wall.setSize(Vector2f(gridSize, gridSize));
-					/*wall.setPosition(gridSize * 10, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 11, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 12, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 13, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 14, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 15, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 16, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 17, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 18, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 19, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 17, gridSize * 40);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 18, gridSize * 40);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 19, gridSize * 40);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 20, gridSize * 40);
-					walls.push_back(wall);
-
-					wall.setPosition(gridSize * 20, gridSize * 39);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 10, gridSize * 40);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 11, gridSize * 40);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 12, gridSize * 40);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 13, gridSize * 40);
-					walls.push_back(wall);*/
 
 					wall.setPosition(gridSize * 9, gridSize * 40);
 					walls.push_back(wall);
@@ -597,8 +925,6 @@ int main()
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 33, gridSize * 33);
 					walls.push_back(wall);
-					wall.setPosition(gridSize * 34, gridSize * 33);
-					walls.push_back(wall);
 					wall.setPosition(gridSize * 33, gridSize * 32);
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 34, gridSize * 32);
@@ -636,8 +962,6 @@ int main()
 					wall.setPosition(gridSize * 31, gridSize * 23);
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 32, gridSize * 24);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 33, gridSize * 25);
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 33, gridSize * 24);
 					walls.push_back(wall);
@@ -682,8 +1006,6 @@ int main()
 					wall.setPosition(gridSize * 37, gridSize * 27);
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 37, gridSize * 24);
-					walls.push_back(wall);
-					wall.setPosition(gridSize * 36, gridSize * 25);
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 25, gridSize * 39);
 					walls.push_back(wall);
@@ -753,8 +1075,11 @@ int main()
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 37, gridSize * 32);
 					walls.push_back(wall);
-					wall.setPosition(gridSize * 37, gridSize * 33);
+					wall.setPosition(gridSize * 45, gridSize * 30);
 					walls.push_back(wall);
+					wall.setPosition(gridSize * 48, gridSize * 30);
+					walls.push_back(wall);
+
 					wall.setPosition(gridSize * 34, gridSize * 43);
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 40, gridSize * 40);
@@ -843,8 +1168,6 @@ int main()
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 44, gridSize * 29);
 					walls.push_back(wall);
-					wall.setPosition(gridSize * 45, gridSize * 30);
-					walls.push_back(wall);
 					wall.setPosition(gridSize * 40, gridSize * 24);
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 42, gridSize * 24);
@@ -883,10 +1206,92 @@ int main()
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 53, gridSize * 13);
 					walls.push_back(wall);
-					
+					wall.setPosition(gridSize * 55, gridSize * 14);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 57, gridSize * 14);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 59, gridSize * 14);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 61, gridSize * 14);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 63, gridSize * 14);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 65, gridSize * 14);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 66, gridSize * 15);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 66, gridSize * 17);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 66, gridSize * 19);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 66, gridSize * 21);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 66, gridSize * 23);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 66, gridSize * 24);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 68, gridSize * 24);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 69, gridSize * 25);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 69, gridSize * 27);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 68, gridSize * 28);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 66, gridSize * 28);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 66, gridSize * 30);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 72, gridSize * 30);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 73, gridSize * 31);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 74, gridSize * 31);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 50, gridSize * 25);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 51, gridSize * 24);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 53, gridSize * 23);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 53, gridSize * 21);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 53, gridSize * 19);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 55, gridSize * 19);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 57, gridSize * 19);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 59, gridSize * 19);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 61, gridSize * 19);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 61, gridSize * 21);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 62, gridSize * 23);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 62, gridSize * 25);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 62, gridSize * 27);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 62, gridSize * 29);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 71, gridSize * 31);
+					walls.push_back(wall);
+
+					wall.setPosition(gridSize * 34, gridSize * 19);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 54, gridSize * 14);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 32, gridSize * 40);
+					walls.push_back(wall);
 
 
 					player.setPosition(850.f, 3000.f);
+					Grandma.setPosition(3424.f,878.f);
+					Dog_mc.setPosition(3443.f, 939.f);
+					Aunt.setPosition(2163.f, 1224.f);
+					male.setPosition(2037.f, 2576.f);
 
 					//Collision
 					FloatRect nextPos;
@@ -970,6 +1375,7 @@ int main()
 						else if (row == 1 && !sf::Keyboard::isKeyPressed(sf::Keyboard::A) && ExitButtonCheck == 0)row = 5;
 
 						//Collision
+
 						for (auto& wall : walls)
 						{
 							FloatRect playerBounds = player.getGlobalBounds();
@@ -1026,29 +1432,7 @@ int main()
 								}
 							}
 						}
-
-						if (position.x == player.getPosition().x + 25) {
-
-							if (ExitButtonCheck == 1) {
-								PauseButton.setPosition(player.getPosition().x - 170, player.getPosition().y - 200);
-								PlayButton.setPosition(player.getPosition().x - 105, player.getPosition().y - 50);
-								MenuButton.setPosition(player.getPosition().x -105, player.getPosition().y + 30);
-								QuitButton.setPosition(player.getPosition().x - 105, player.getPosition().y + 110);
-							}
-							ScoreSprite.setPosition(player.getPosition().x - 935, player.getPosition().y - 500);
-
-						}
-
-						if (position.x == screenDimensions.x / 2) {
-							if (ExitButtonCheck == 1) {
-								PauseButton.setPosition(750, player.getPosition().y - 200);
-								PlayButton.setPosition(815, player.getPosition().y - 50);
-								MenuButton.setPosition(815, player.getPosition().y + 30);
-								QuitButton.setPosition(815, player.getPosition().y + 110);
-							}
-							ScoreSprite.setPosition(0, player.getPosition().y - 500);
-						}
-
+						
 
 						if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 						{
@@ -1080,7 +1464,7 @@ int main()
 
 							player.setTextureRect(sf::IntRect(32 * frame, 32 * row, 32, 32));
 
-							if (frameCounter == 100) {
+							if (frameCounter == 200) {
 								frame = (frame + 1) % 3;
 								frameCounter = 0;
 							}
@@ -1099,6 +1483,31 @@ int main()
 						else
 							position.y = screenDimensions.y / 2;
 
+
+						if (position.x == player.getPosition().x + 25) {
+
+							if (ExitButtonCheck == 1) {
+								PauseButton.setPosition(player.getPosition().x - 170, player.getPosition().y - 200);
+								PlayButton.setPosition(player.getPosition().x - 105, player.getPosition().y - 50);
+								MenuButton.setPosition(player.getPosition().x - 105, player.getPosition().y + 30);
+								QuitButton.setPosition(player.getPosition().x - 105, player.getPosition().y + 110);
+							}
+							ScoreSprite.setPosition(player.getPosition().x - 625, player.getPosition().y - 320);
+
+						}
+
+						//Update MC
+						Dog_mc.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
+						Aunt.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
+						male.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
+						Grandma.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
+
+						if (frameMCCounter == 500) {
+							frameMC = (frameMC + 1) % 3;
+							frameMCCounter = 0;
+						}
+						frameMCCounter++;
+
 						
 						player.move(velocity);
 
@@ -1106,7 +1515,14 @@ int main()
 						view.setCenter(position); //ตั้งศูนย์กลางของมุมมองตามตำแหน่งของ position
 						Play.setView(view); //ใช้งานมุมมอง
 						Play.draw(Pbackground); //วาด background
-						Play.draw(player); //วาด player
+						
+
+						Play.draw(Grandma);
+						Play.draw(Dog_mc);
+						Play.draw(Aunt);
+						Play.draw(male);
+
+						Play.draw(player);
 
 						for (auto& i : walls)
 						{
@@ -1155,10 +1571,10 @@ int main()
 					}
 
 					//Update score bg
-					score.setTextureRect(sf::IntRect(1920 * frameScore, 1080 * 0, 1920, 1080));
+					score.setTextureRect(sf::IntRect(1280 * frameScore, 720 * 0, 1280, 720));
 
 
-					if (frameScoreCounter == 80) {
+					if (frameScoreCounter == 150) {
 						frameScore = (frameScore + 1) % 8;
 						frameScoreCounter = 0;
 					}
@@ -1202,10 +1618,10 @@ int main()
 
 
 					//Update bg
-					about.setTextureRect(sf::IntRect(1920 * frameAbout, 1080 * 0, 1920, 1080));
+					about.setTextureRect(sf::IntRect(1280 * frameAbout, 720 * 0, 1280, 720));
 
 
-					if (frameAboutCounter == 200) {
+					if (frameAboutCounter == 300) {
 						frameAbout = (frameAbout + 1) % 4;
 						frameAboutCounter = 0;
 					}
@@ -1224,7 +1640,7 @@ int main()
 		}
 
 		//Update water
-		water.setTextureRect(sf::IntRect(1920 * frameMenu, 1080 * 0, 1920, 1080));
+		water.setTextureRect(sf::IntRect(1280 * frameMenu, 720 * 0, 1280, 720));
 
 
 		if (frameMenuCounter == 20) {

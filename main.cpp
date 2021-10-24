@@ -55,12 +55,14 @@ int main()
 	int frameMenu = 0;
 	int frameScore = 0;
 	int frameMC = 0;
+	int frameGO = 0;
 	int row = 0;
 	int frameCounter = 0;
 	int frameAboutCounter = 0;
 	int frameMenuCounter = 0;
 	int frameScoreCounter = 0;
 	int frameMCCounter = 0;
+	int frameGOCounter = 0;
 
 
 	// Create the main window //
@@ -108,6 +110,39 @@ int main()
 	if (!scoreTexture.loadFromFile("img/bg/score_animation.png"))
 		std::cout << "Error could not load about bg" << std::endl;
 	score.setTexture(scoreTexture);
+
+	// bg gameover //
+
+	sf::Texture gameoverTexture;
+	sf::Sprite gameover;
+
+	if (!gameoverTexture.loadFromFile("img/bg/game_over.png"))
+		std::cout << "Error could not load about bg" << std::endl;
+	gameover.setTexture(gameoverTexture);
+	gameover.setScale(2.f, 2.f);
+	gameover.setPosition(30.f, 0.f);
+
+	sf::RectangleShape bgGO(sf::Vector2f(1920.0f, 1080.0f));
+	bgGO.setFillColor(Color(31, 30, 36, 255));
+
+	sf::Texture gameoverMENUTexture;
+	sf::Sprite gameoverMENU;
+
+	if (!gameoverMENUTexture.loadFromFile("img/button/menu GO.png"))
+		std::cout << "Error could not load about bg" << std::endl;
+	gameoverMENU.setTexture(gameoverMENUTexture);
+	gameoverMENU.setPosition(445.f, 500.f);
+
+	sf::Texture gameoverQUITTexture;
+	sf::Sprite gameoverQUIT;
+
+	if (!gameoverQUITTexture.loadFromFile("img/button/quit GO.png"))
+		std::cout << "Error could not load about bg" << std::endl;
+	gameoverQUIT.setTexture(gameoverQUITTexture);
+	gameoverQUIT.setPosition(707.f, 500.f);
+
+
+
 
 	// Create Sprite button //
 
@@ -210,6 +245,24 @@ int main()
 	Hover_exitSprite.setTexture(Hover_exitTexture);
 	Hover_exitSprite.setScale(0.3f, 0.3f);
 	Hover_exitSprite.setPosition(-100, -100);
+
+	sf::Texture Hover_exitGOTexture;
+	sf::Sprite Hover_exitGOSprite;
+
+	if (!Hover_exitGOTexture.loadFromFile("img/bg/choose.png"))
+		std::cout << "Error could not load choose image" << std::endl;
+	Hover_exitGOSprite.setTexture(Hover_exitGOTexture);
+	Hover_exitGOSprite.setScale(0.3f, 0.3f);
+	Hover_exitGOSprite.setPosition(-100, -100);
+
+	sf::Texture Hover_menuGOTexture;
+	sf::Sprite Hover_menuSprite;
+
+	if (!Hover_menuGOTexture.loadFromFile("img/bg/choose.png"))
+		std::cout << "Error could not load choose image" << std::endl;
+	Hover_menuSprite.setTexture(Hover_menuGOTexture);
+	Hover_menuSprite.setScale(0.3f, 0.3f);
+	Hover_menuSprite.setPosition(-100, -100);
 
 	sf::Texture ExitSpriteTexture;
 	sf::Sprite ExitSprite;
@@ -422,6 +475,14 @@ int main()
 	sf::RectangleShape Home6(sf::Vector2f(33.0f, 38.0f));
 	Home6.setPosition({ 4302.f, 1563.f });
 	Home6.setFillColor(sf::Color::Transparent);
+
+	sf::RectangleShape Text1(sf::Vector2f(54.0f, 21.0f));
+	Text1.setPosition({ 3046.f , 1015.f });
+	Text1.setFillColor(sf::Color::Transparent);
+
+	sf::RectangleShape Text2(sf::Vector2f(54.0f, 21.0f));
+	Text2.setPosition({ 2154.f, 2163.f });
+	Text2.setFillColor(sf::Color::Transparent);
 
 
 
@@ -1515,7 +1576,7 @@ PLAY:
 
 					else if (aevent.key.code == Keyboard::Space) {
 
-						if (player.getGlobalBounds().intersects(Home1.getGlobalBounds()) || player.getGlobalBounds().intersects(Home2.getGlobalBounds()) || player.getGlobalBounds().intersects(Home3.getGlobalBounds()) || player.getGlobalBounds().intersects(Home4.getGlobalBounds()) || player.getGlobalBounds().intersects(Home5.getGlobalBounds()) || player.getGlobalBounds().intersects(Home6.getGlobalBounds()) || player.getGlobalBounds().intersects(Grandma.getGlobalBounds()) || player.getGlobalBounds().intersects(Aunt.getGlobalBounds()) || player.getGlobalBounds().intersects(Dog_mc.getGlobalBounds()) || player.getGlobalBounds().intersects(male.getGlobalBounds())) {
+						if (player.getGlobalBounds().intersects(Home1.getGlobalBounds()) || player.getGlobalBounds().intersects(Home2.getGlobalBounds()) || player.getGlobalBounds().intersects(Home3.getGlobalBounds()) || player.getGlobalBounds().intersects(Home4.getGlobalBounds()) || player.getGlobalBounds().intersects(Home5.getGlobalBounds()) || player.getGlobalBounds().intersects(Home6.getGlobalBounds()) || player.getGlobalBounds().intersects(Grandma.getGlobalBounds()) || player.getGlobalBounds().intersects(Aunt.getGlobalBounds()) || player.getGlobalBounds().intersects(Dog_mc.getGlobalBounds()) || player.getGlobalBounds().intersects(male.getGlobalBounds()) || player.getGlobalBounds().intersects(Text1.getGlobalBounds()) || player.getGlobalBounds().intersects(Text2.getGlobalBounds())) {
 							if (Dialog_check == 0) {
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
 								Dialog_check = 1;
@@ -1550,8 +1611,31 @@ PLAY:
 				ss << " : " << s;
 			}
 
-			if (m >= 5) {
-				window.close();
+			if (m == 4 && s >= 50) {
+				time_show.setFillColor(Color::Red);
+			}
+
+			if (m == 5) {
+				view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
+				sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
+				view.setCenter(position);
+				window.setView(view);
+				ExitButtonCheck = 0;
+				yourname.clear();
+				playerName.setString(yourname);
+				player_check = 0;
+				yourPetname.clear();
+				playerPetName.setString(yourPetname);
+				player_Petcheck = 0;
+				character1.setPosition({ 115.f, 61.f });
+				character2.setPosition({ 363.f, 61.f });
+				character3.setPosition({ 115.f, 313.f });
+				character4.setPosition({ 364.f, 313.f });
+				characterPet1.setPosition({ 720.f, 288.f });
+				characterPet2.setPosition({ 967.f, 288.f });
+				player_choose = 0;
+				player_choose_pet = 0;
+				goto GAMEOVER;
 			}
 
 
@@ -1768,6 +1852,8 @@ PLAY:
 			window.draw(Home4);
 			window.draw(Home5);
 			window.draw(Home6);
+			window.draw(Text1);
+			window.draw(Text2);
 			window.draw(Grandma);
 			window.draw(Dog_mc);
 			window.draw(Aunt);
@@ -1788,6 +1874,74 @@ PLAY:
 			window.display();
 
 		}
+
+	GAMEOVER:
+
+		while (window.isOpen()) {
+
+			Event aevent;
+			while (window.pollEvent(aevent)) {
+				if (aevent.type == Event::Closed) {
+					window.close();
+				}
+			}
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				if (gameoverMENU.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
+				{
+					goto MENU;
+				}
+				if (gameoverQUIT.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
+				{
+					window.close();
+				}
+
+			}
+
+			if (gameoverQUIT.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
+			{
+				Hover_exitGOSprite.setPosition(687.f, 505.f);
+			}
+
+			if (gameoverMENU.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
+			{
+				Hover_menuSprite.setPosition(425.f, 505.f);
+			}
+
+			if (!gameoverMENU.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
+			{
+				Hover_menuSprite.setPosition(10000.f, 10000.f);
+			}
+			if (!gameoverQUIT.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
+			{
+				Hover_exitGOSprite.setPosition(10000.f, 10000.f);
+			}
+
+
+
+			//Update bg
+			gameover.setTextureRect(sf::IntRect(600 * frameGO, 300 * 0, 600, 300));
+
+
+			if (frameGOCounter == 10) {
+				frameGO = (frameGO + 1) % 23;
+				frameGOCounter = 0;
+			}
+			frameGOCounter++;
+
+			window.clear();
+			window.draw(bgGO);
+			window.draw(gameover);
+			window.draw(gameoverMENU);
+			window.draw(gameoverQUIT);
+			window.draw(Hover_menuSprite);
+			window.draw(Hover_exitGOSprite);
+			window.display();
+
+		}
+
+
 
 		return 0;
 

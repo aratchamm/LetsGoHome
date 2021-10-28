@@ -37,8 +37,8 @@ C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1623,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1645,72): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5326,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5348,72): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -47,7 +47,7 @@ C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1645,52): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5348,52): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -56,26 +56,17 @@ C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1646,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5349,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1646,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5349,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1782,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1782,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5485,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -84,22 +75,31 @@ C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1783,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5485,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5486,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1783,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5486,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1836,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5539,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1841,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5544,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float

@@ -556,6 +556,56 @@ int main()
 	Text2.setFillColor(sf::Color::Transparent);
 
 
+	// stairs //
+
+	sf::RectangleShape stairsHome11(sf::Vector2f(54.0f, 21.0f));
+	stairsHome11.setPosition(-10000.f, -10000.f);
+	stairsHome11.setFillColor(sf::Color::Transparent);
+
+	sf::RectangleShape stairsHome12(sf::Vector2f(54.0f, 21.0f));
+	stairsHome12.setPosition(-10000.f, -10000.f);
+	stairsHome12.setFillColor(sf::Color::Transparent);
+
+	sf::RectangleShape stairsHome2(sf::Vector2f(54.0f, 21.0f));
+	stairsHome2.setPosition(-10000.f, -10000.f);
+	stairsHome2.setFillColor(sf::Color::Transparent);
+
+	sf::RectangleShape stairsHome3(sf::Vector2f(54.0f, 21.0f));
+	stairsHome3.setPosition(-10000.f, -10000.f);
+	stairsHome3.setFillColor(sf::Color::Transparent);
+
+	sf::RectangleShape stairsHome6(sf::Vector2f(54.0f, 21.0f));
+	stairsHome6.setPosition(-10000.f, -10000.f);
+	stairsHome6.setFillColor(sf::Color::Transparent);
+
+	// DOOR //
+
+	sf::Texture door1Texture;
+	sf::Sprite door1;
+
+	if (!door1Texture.loadFromFile("img/bg/door.png"))
+		std::cout << "Error could not load about bg" << std::endl;
+	door1.setTexture(door1Texture);
+	door1.setScale(4.f, 4.f);
+	door1.setPosition({ 10000.f, 10000.f });
+
+	sf::Texture door2Texture;
+	sf::Sprite door2;
+
+	if (!door2Texture.loadFromFile("img/bg/door.png"))
+		std::cout << "Error could not load about bg" << std::endl;
+	door2.setTexture(door2Texture);
+	door2.setScale(4.f, 4.f);
+	door2.setPosition({ 10000.f, 10000.f });
+
+	// TEXT_STATUS //
+
+	sf::Text textStatus;
+
+	textStatus.setFont(font);
+	textStatus.setCharacterSize(50);
+	textStatus.setPosition(-10000.f, -10000.f);
+	textStatus.setFillColor(Color::Black);
 
 
 	const float gridSize = 64.f;
@@ -734,9 +784,10 @@ CHOOSE_CHARACTER:
 								player_check = 0;
 							}
 						}
-						playerName.setCharacterSize(60);   //à«çµ¢¹Ò´¢Í§¢éÍ¤ÇÒÁ
-						playerName.setPosition(325.0f, 560.0f);  //à«çµ¢¹Ò´¢Í§¢éÍ¤ÇÒÁ
+						playerName.setCharacterSize(60);
+						playerName.setPosition(325.0f, 560.0f); 
 						
+
 					}
 					else if (ev.type == sf::Event::KeyPressed) {
 						if (ev.key.code == sf::Keyboard::Return) {
@@ -1639,18 +1690,51 @@ PLAY:
 
 					else if (aevent.key.code == Keyboard::Space) {
 
-						/*if (player.getGlobalBounds().intersects(Home2.getGlobalBounds()) || player.getGlobalBounds().intersects(Home3.getGlobalBounds()) || player.getGlobalBounds().intersects(Home4.getGlobalBounds()) || player.getGlobalBounds().intersects(Home5.getGlobalBounds()) || player.getGlobalBounds().intersects(Home6.getGlobalBounds()) || player.getGlobalBounds().intersects(Grandma.getGlobalBounds()) || player.getGlobalBounds().intersects(Aunt.getGlobalBounds()) || player.getGlobalBounds().intersects(Dog_mc.getGlobalBounds()) || player.getGlobalBounds().intersects(male.getGlobalBounds()) || player.getGlobalBounds().intersects(Text1.getGlobalBounds()) || player.getGlobalBounds().intersects(Text2.getGlobalBounds())) {
+						if (player.getGlobalBounds().intersects(stairsHome11.getGlobalBounds()) || player.getGlobalBounds().intersects(stairsHome2.getGlobalBounds()) 
+							|| player.getGlobalBounds().intersects(stairsHome3.getGlobalBounds()) || player.getGlobalBounds().intersects(stairsHome6.getGlobalBounds())) {
 							if (Dialog_check == 0) {
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+								textStatus.setString("you can't go upstairs");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
 								Dialog_check = 1;
 							}
 							else if (Dialog_check == 1) {
-								Textbox_dialog.setPosition(10000.f,10000.f);
+								Textbox_dialog.setPosition(10000.f, 10000.f);
+								textStatus.setPosition(-10000.f, -10000.f);
 								Dialog_check = 0;
 							}
-						}*/
+						}
+						if (player.getGlobalBounds().intersects(stairsHome12.getGlobalBounds())) {
+							if (Dialog_check == 0) {
+								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+								textStatus.setString("you can't go downstairs");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+								Dialog_check = 1;
+							}
+							else if (Dialog_check == 1) {
+								Textbox_dialog.setPosition(10000.f, 10000.f);
+								textStatus.setPosition(-10000.f, -10000.f);
+								Dialog_check = 0;
+							}
+						}
+						if (player.getGlobalBounds().intersects(door1.getGlobalBounds()) || player.getGlobalBounds().intersects(door2.getGlobalBounds())) {
+							if (Dialog_check == 0) {
+								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+								textStatus.setString("you can not enter this room");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+								Dialog_check = 1;
+							}
+							else if (Dialog_check == 1) {
+								Textbox_dialog.setPosition(10000.f, 10000.f);
+								textStatus.setPosition(-10000.f, -10000.f);
+								Dialog_check = 0;
+							}
+						}
 						if (player.getGlobalBounds().intersects(Home1.getGlobalBounds())) {
 							if (house_check == 0) {
+
+								stairsHome12.setPosition({ 1001.f, 3266.f });
+								stairsHome11.setPosition({ 1455.f, 2768.f });
 								myhouse.setPosition(-14.f, 2191.f);
 								player.setPosition(1553.f, 2883.f);
 								row = 1;
@@ -1658,6 +1742,7 @@ PLAY:
 								Home1.setPosition(1553.f, 2883.f);
 								male.setPosition(-10000.f, -10000.f);
 								house_check = 1;
+
 								wall.setPosition(gridSize * 11, gridSize * 43);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 11, gridSize * 44);
@@ -1741,6 +1826,9 @@ PLAY:
 								myhouse.setPosition(-10000.f, -10000.f);
 								player.setPosition(805.f, 2995.f);
 								male.setPosition(2037.f, 2576.f);
+								stairsHome12.setPosition(-10000.f, -10000.f);
+								stairsHome11.setPosition(-10000.f, -10000.f);
+
 								row = 0;
 								walls.clear();
 								wall.setPosition(gridSize * 9, gridSize * 40);
@@ -2264,6 +2352,7 @@ PLAY:
 								row = 3;
 								walls.clear();
 								Home2.setPosition(1295.f, 2189.f);
+								stairsHome2.setPosition(1045.f, 1870.f);
 								house_check = 1;
 								wall.setPosition(gridSize * 14, gridSize * 31);
 								walls.push_back(wall);
@@ -2314,6 +2403,7 @@ PLAY:
 								Home2.setPosition({ 1188.f, 2083.f });
 								myhouse5.setPosition(-10000.f, -10000.f);
 								player.setPosition(1132.f, 2108.f);
+								stairsHome2.setPosition(-10000.f, -10000.f);
 								row = 0;
 								walls.clear();
 								wall.setPosition(gridSize * 9, gridSize * 40);
@@ -2834,6 +2924,7 @@ PLAY:
 						if (house_check == 0) {
 							myhouse1.setPosition({ 1247.f, 260.f });
 							player.setPosition(2097.f, 1074.f);
+							stairsHome3.setPosition(2032.f, 882.f);
 							row = 3;
 							walls.clear();
 							Home3.setPosition(2097.f, 1074.f);
@@ -2886,8 +2977,10 @@ PLAY:
 							house_check = 0;
 							Home3.setPosition(2291.f, 1026.f);
 							myhouse1.setPosition(-10000.f, -10000.f);
+							stairsHome3.setPosition(-10000.f, -10000.f);
 							player.setPosition(2291.f, 1030.f);
 							Aunt.setPosition(2163.f, 1224.f);
+
 							row = 0;
 							walls.clear();
 							wall.setPosition(gridSize * 9, gridSize * 40);
@@ -4096,6 +4189,8 @@ PLAY:
 						if (house_check == 0) {
 							myhouse2.setPosition({ 2207.f, 1268.f });
 							player.setPosition(2950.f, 2260.f);
+							door1.setPosition(3352.f, 1882.f);
+							door2.setPosition(3672.f, 1882.f);
 							row = 3;
 							walls.clear();
 							Home5.setPosition(2950.f, 2260.f);
@@ -4174,6 +4269,8 @@ PLAY:
 							Grandma.setPosition(3424.f, 878.f);
 							Dog_mc.setPosition(3443.f, 939.f);
 							Aunt.setPosition(2163.f, 1224.f);
+							door1.setPosition(-10000.f, -10000.f);
+							door2.setPosition(-10000.f, -10000.f);
 							row = 0;
 							walls.clear();
 							wall.setPosition(gridSize * 9, gridSize * 40);
@@ -4694,6 +4791,7 @@ PLAY:
 							if (house_check == 0) {
 								myhouse3.setPosition({ 3088.f, 606.f });
 								player.setPosition(4271.f, 1889.f);
+								stairsHome6.setPosition(4704.0f, 1359.0f);
 								row = 3;
 								walls.clear();
 								Home6.setPosition(4271.f, 1889.f);
@@ -4796,6 +4894,7 @@ PLAY:
 								player.setPosition(4274.f, 1606.f);
 								Grandma.setPosition(3424.f, 878.f);
 								Dog_mc.setPosition(3443.f, 939.f);
+								stairsHome6.setPosition(-10000.f, -10000.f);
 								row = 0;
 								walls.clear();
 								wall.setPosition(gridSize * 9, gridSize * 40);
@@ -5312,6 +5411,90 @@ PLAY:
 								walls.push_back(wall);
 							}
 						}
+						else if (player.getGlobalBounds().intersects(Grandma.getGlobalBounds())) {
+						if (Dialog_check == 0) {
+							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+							textStatus.setString("Hello");
+							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+							Dialog_check = 1;
+						}
+						else if (Dialog_check == 1) {
+							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textStatus.setPosition(-10000.f, -10000.f);
+							Dialog_check = 0;
+						}
+						}
+
+						else if (player.getGlobalBounds().intersects(Aunt.getGlobalBounds())) {
+						if (Dialog_check == 0) {
+							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+							textStatus.setString("How is going?");
+							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+							Dialog_check = 1;
+						}
+						else if (Dialog_check == 1) {
+							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textStatus.setPosition(-10000.f, -10000.f);
+							Dialog_check = 0;
+						}
+						}
+
+						else if (player.getGlobalBounds().intersects(Dog_mc.getGlobalBounds())) {
+						if (Dialog_check == 0) {
+							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+							textStatus.setString("Bark Bark Bark Bark Bark");
+							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+							Dialog_check = 1;
+						}
+						else if (Dialog_check == 1) {
+							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textStatus.setPosition(-10000.f, -10000.f);
+							Dialog_check = 0;
+						}
+						}
+
+						else if (player.getGlobalBounds().intersects(male.getGlobalBounds())) {
+						if (Dialog_check == 0) {
+							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+							textStatus.setString("How is going?");
+							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+							Dialog_check = 1;
+						}
+						else if (Dialog_check == 1) {
+							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textStatus.setPosition(-10000.f, -10000.f);
+							Dialog_check = 0;
+						}
+						}
+
+						else if (player.getGlobalBounds().intersects(Text1.getGlobalBounds())) {
+						if (Dialog_check == 0) {
+							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+							textStatus.setString("Grandma's house");
+							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+							Dialog_check = 1;
+						}
+						else if (Dialog_check == 1) {
+							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textStatus.setPosition(-10000.f, -10000.f);
+							Dialog_check = 0;
+						}
+						}
+
+						else if (player.getGlobalBounds().intersects(Text2.getGlobalBounds())) {
+						if (Dialog_check == 0) {
+							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+							textStatus.setString("welcome to village");
+							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+							Dialog_check = 1;
+						}
+						else if (Dialog_check == 1) {
+							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textStatus.setPosition(-10000.f, -10000.f);
+							Dialog_check = 0;
+						}
+						}
+
 					}
 				}
 
@@ -5589,13 +5772,20 @@ PLAY:
 			window.draw(Home6);
 			window.draw(Text1);
 			window.draw(Text2);
+			window.draw(door1);
+			window.draw(door2);
 			window.draw(Grandma);
 			window.draw(Dog_mc);
 			window.draw(Aunt);
 			window.draw(male);
 			window.draw(player);
-			
+			window.draw(stairsHome11);
+			window.draw(stairsHome12);
+			window.draw(stairsHome2);
+			window.draw(stairsHome3);
+			window.draw(stairsHome6);
 			window.draw(Textbox_dialog);
+			window.draw(textStatus);
 			for (auto& i : walls)
 			{
 				window.draw(i);

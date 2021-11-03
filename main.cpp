@@ -192,6 +192,14 @@ int main()
 	Dog_mc.setTexture(Dog_mcTexture);
 	Dog_mc.setScale(2.f, 2.f);
 
+	sf::Texture catTexture;
+	sf::Sprite cat_mc;
+
+	if (!catTexture.loadFromFile("img/character/others/cat.png"))
+		std::cout << "Error could not load MC image" << std::endl;
+	cat_mc.setTexture(catTexture);
+	cat_mc.setScale(4.f, 4.f);
+
 	sf::Texture maleTexture;
 	sf::Sprite male;
 
@@ -528,7 +536,7 @@ int main()
 	Home1.setFillColor(sf::Color::Transparent);
 
 	sf::RectangleShape Home2(sf::Vector2f(33.0f, 38.0f));
-	Home2.setPosition({ 1188.f, 2083.f });
+	Home2.setPosition({ 1168.f, 2083.f });
 	Home2.setFillColor(sf::Color::Transparent);
 
 	sf::RectangleShape Home3(sf::Vector2f(33.0f, 38.0f));
@@ -631,6 +639,10 @@ int main()
 	int ExitButtonCheck = 0;
 	int collision_check = 0;
 	int Dialog_check = 0;
+
+	int AppleExist = 0;
+	int FishExist = 0;
+	int FlowerExist = 0;
 
 	goto MENU;
 
@@ -759,7 +771,7 @@ MENU:
 
 CHOOSE_CHARACTER:
 
-		while (window.isOpen()) {
+	while (window.isOpen()) {
 			sf::Event ev;
 			while (window.pollEvent(ev)) {
 
@@ -850,7 +862,7 @@ CHOOSE_CHARACTER:
 
 				if (ev.type == sf::Event::KeyPressed) {
 					switch (ev.key.code) {
-					case sf::Keyboard::Enter: {
+					case sf::Keyboard::Space: {
 
 						if (player_choose != 0 && player_choose_pet != 0 && player_Petcheck == 1 && player_check == 1) {
 							goto SHORT_SCRENE;
@@ -1018,7 +1030,6 @@ SHORT_SCRENE:
 
 		}
 
-
 ABOUT:
 		ExitSprite.setPosition(0, 0);
 		while (window.isOpen()) {
@@ -1062,7 +1073,6 @@ ABOUT:
 
 		}
 
-
 SCORE:
 		ExitSprite.setPosition(0, 0);
 		while (window.isOpen()) {
@@ -1104,10 +1114,6 @@ SCORE:
 				window.draw(ExitSprite);
 				window.display();
 			}
-
-
-
-
 
 PLAY:
 
@@ -1183,7 +1189,7 @@ PLAY:
 			walls.push_back(wall);
 			wall.setPosition(gridSize * 16, gridSize * 44);
 			walls.push_back(wall);
-			wall.setPosition(gridSize * 17, gridSize * 33);
+			wall.setPosition(gridSize * 18, gridSize * 33);
 			walls.push_back(wall);
 			wall.setPosition(gridSize * 17, gridSize * 34);
 			walls.push_back(wall);
@@ -1643,7 +1649,6 @@ PLAY:
 		time_show.setLetterSpacing(2);
 
 
-		player_choose = 1;
 
 		if (player_choose == 1) {
 
@@ -1674,6 +1679,7 @@ PLAY:
 		player.setPosition(1050.f, 3000.f);
 		Grandma.setPosition(3424.f, 878.f);
 		Dog_mc.setPosition(3443.f, 939.f);
+		cat_mc.setPosition(1122.f, 2088.f);
 		Aunt.setPosition(2163.f, 1224.f);
 		male.setPosition(2037.f, 2576.f);
 
@@ -1912,6 +1918,10 @@ PLAY:
 								wall.setPosition(gridSize * 16, gridSize * 44);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 17, gridSize * 33);
+								walls.push_back(wall);
+								wall.setPosition(gridSize * 17, gridSize * 33);
+								walls.push_back(wall);
+								wall.setPosition(gridSize * 18, gridSize * 33);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 17, gridSize * 34);
 								walls.push_back(wall);
@@ -2414,7 +2424,7 @@ PLAY:
 							}
 							else {
 								house_check = 0;
-								Home2.setPosition({ 1188.f, 2083.f });
+								Home2.setPosition({ 1168.f, 2083.f });
 								myhouse5.setPosition(-10000.f, -10000.f);
 								player.setPosition(1132.f, 2108.f);
 								stairsHome2.setPosition(-10000.f, -10000.f);
@@ -2487,6 +2497,8 @@ PLAY:
 								wall.setPosition(gridSize * 16, gridSize * 44);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 17, gridSize * 33);
+								walls.push_back(wall);
+								wall.setPosition(gridSize * 18, gridSize * 33);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 17, gridSize * 34);
 								walls.push_back(wall);
@@ -3065,6 +3077,8 @@ PLAY:
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 17, gridSize * 33);
 							walls.push_back(wall);
+							wall.setPosition(gridSize * 18, gridSize * 33);
+							walls.push_back(wall);
 							wall.setPosition(gridSize * 17, gridSize * 34);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 17, gridSize * 35);
@@ -3520,6 +3534,7 @@ PLAY:
 							Home4.setPosition(3120.f, 1526.f);
 							Grandma.setPosition(-10000.f, -10000.f);
 							Dog_mc.setPosition(-10000.f, -10000.f);
+							cat_mc.setPosition(-10000.f, -10000.f);
 							Aunt.setPosition(-10000.f, -10000.f);
 							house_check = 1;
 							wall.setPosition(gridSize * 37, gridSize * 6);
@@ -3682,6 +3697,7 @@ PLAY:
 							player.setPosition(3189.f,898.f);
 							Grandma.setPosition(3424.f, 878.f);
 							Dog_mc.setPosition(3443.f, 939.f);
+							cat_mc.setPosition(1122.f, 2088.f);
 							Aunt.setPosition(2163.f, 1224.f);
 							row = 0;
 							walls.clear();
@@ -3752,6 +3768,8 @@ PLAY:
 							wall.setPosition(gridSize * 16, gridSize * 44);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 17, gridSize * 33);
+							walls.push_back(wall);
+							wall.setPosition(gridSize * 18, gridSize * 33);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 17, gridSize * 34);
 							walls.push_back(wall);
@@ -4210,6 +4228,7 @@ PLAY:
 							Home5.setPosition(2950.f, 2260.f);
 							Grandma.setPosition(-10000.f, -10000.f);
 							Dog_mc.setPosition(-10000.f, -10000.f);
+							cat_mc.setPosition(-10000.f, -10000.f);
 							Aunt.setPosition(-10000.f, -10000.f);
 							house_check = 1;
 							wall.setPosition(gridSize * 44, gridSize * 28);
@@ -4282,6 +4301,7 @@ PLAY:
 							player.setPosition(3246.f, 2048.f);
 							Grandma.setPosition(3424.f, 878.f);
 							Dog_mc.setPosition(3443.f, 939.f);
+							cat_mc.setPosition(1122.f, 2088.f);
 							Aunt.setPosition(2163.f, 1224.f);
 							door1.setPosition(-10000.f, -10000.f);
 							door2.setPosition(-10000.f, -10000.f);
@@ -4354,6 +4374,8 @@ PLAY:
 							wall.setPosition(gridSize * 16, gridSize * 44);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 17, gridSize * 33);
+							walls.push_back(wall);
+							wall.setPosition(gridSize * 18, gridSize * 33);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 17, gridSize * 34);
 							walls.push_back(wall);
@@ -4811,6 +4833,7 @@ PLAY:
 								Home6.setPosition(4271.f, 1889.f);
 								Grandma.setPosition(-10000.f, -10000.f);
 								Dog_mc.setPosition(-10000.f, -10000.f);
+								cat_mc.setPosition(-10000.f, -10000.f);
 								house_check = 1;
 								wall.setPosition(gridSize * 59, gridSize * 20);
 								walls.push_back(wall);
@@ -4908,6 +4931,7 @@ PLAY:
 								player.setPosition(4274.f, 1606.f);
 								Grandma.setPosition(3424.f, 878.f);
 								Dog_mc.setPosition(3443.f, 939.f);
+								cat_mc.setPosition(1122.f, 2088.f);
 								stairsHome6.setPosition(-10000.f, -10000.f);
 								row = 0;
 								walls.clear();
@@ -4977,7 +5001,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 16, gridSize * 44);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 17, gridSize * 33);
+								wall.setPosition(gridSize * 18, gridSize * 33);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 17, gridSize * 34);
 								walls.push_back(wall);
@@ -5434,7 +5458,7 @@ PLAY:
 								textCheckDialogGrandma = 1;
 							}
 							else if (textCheckDialogGrandma == 1) {
-								textStatus.setString("2");
+								textStatus.setString("Hope you find your pet soon");
 								textPlayerName.setPosition(-10000.f, -10000.f);
 							}
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
@@ -5452,12 +5476,15 @@ PLAY:
 
 						else if (player.getGlobalBounds().intersects(Aunt.getGlobalBounds())) {
 						if (Dialog_check == 0) {
-							if (textCheckDialogAunt == 0) {
+							if (textCheckDialogAunt == 0 && FlowerExist == 0) {
 								textStatus.setString("How do you do?");
 								textCheckDialogAunt = 1;
 							}
-							else if (textCheckDialogAunt == 1) {
-								textStatus.setString("2");
+							else if (textCheckDialogAunt == 1 && FlowerExist == 0) {
+								textStatus.setString("i find flower to put in vase .. ");
+							}
+							else if (FlowerExist == 1) {
+								textStatus.setString("Thanks. your flower is so pretty");
 							}
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
 							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
@@ -5484,14 +5511,31 @@ PLAY:
 						}
 						}
 
+						else if (player.getGlobalBounds().intersects(cat_mc.getGlobalBounds())) {
+						if (Dialog_check == 0) {
+							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+							textStatus.setString("Meoww~");
+							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+							Dialog_check = 1;
+						}
+						else if (Dialog_check == 1) {
+							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textStatus.setPosition(-10000.f, -10000.f);
+							Dialog_check = 0;
+						}
+						}
+
 						else if (player.getGlobalBounds().intersects(male.getGlobalBounds())) {
 						if (Dialog_check == 0) {
-							if (textCheckDialogMale == 0) {
+							if (textCheckDialogMale == 0 && AppleExist == 0) {
 								textStatus.setString("Have a nice day!");
 								textCheckDialogMale = 1;
 							}
-							else if (textCheckDialogMale == 1) {
-								textStatus.setString("2");
+							else if (textCheckDialogMale == 1 && AppleExist == 0) {
+								textStatus.setString("can you have some fruit?");
+							}
+							else if (AppleExist == 1) {
+								textStatus.setString("thank you so much!");
 							}
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
 							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
@@ -5777,12 +5821,11 @@ PLAY:
 				}
 				ScoreSprite.setPosition(player.getPosition().x - 575, player.getPosition().y - 310);
 				time_show.setPosition(player.getPosition().x - 505, player.getPosition().y - 322);
-
-
 			}
 
 			//Update MC
 			Dog_mc.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
+			cat_mc.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			Aunt.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			male.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			Grandma.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
@@ -5816,6 +5859,7 @@ PLAY:
 			window.draw(door2);
 			window.draw(Grandma);
 			window.draw(Dog_mc);
+			window.draw(cat_mc);
 			window.draw(Aunt);
 			window.draw(male);
 			window.draw(player);
@@ -5907,8 +5951,6 @@ PLAY:
 			window.display();
 
 		}
-
-
 
 		return 0;
 

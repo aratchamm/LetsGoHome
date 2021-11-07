@@ -178,6 +178,47 @@ int main()
 	fish.setTexture(fishTexture);
 	fish.setScale(2.f, 2.f);
 
+	sf::Texture cakeTexture;
+	sf::Sprite cake;
+
+	if (!cakeTexture.loadFromFile("img/tileset/cake.png"))
+		std::cout << "Error could not load cake" << std::endl;
+	cake.setTexture(cakeTexture);
+	cake.setScale(2.f, 2.f);
+
+	sf::Texture glassTexture;
+	sf::Sprite glass;
+
+	if (!glassTexture.loadFromFile("img/tileset/glass.png"))
+		std::cout << "Error could not load glass" << std::endl;
+	glass.setTexture(glassTexture);
+	glass.setScale(4.f, 4.f);
+
+	sf::Texture clockTexture;
+	sf::Sprite clockPlus;
+
+	if (!clockTexture.loadFromFile("img/tileset/clock.png"))
+		std::cout << "Error could not load clock" << std::endl;
+	clockPlus.setTexture(clockTexture);
+	clockPlus.setScale(2.f, 2.f);
+
+	sf::Texture vaseTexture;
+	sf::Sprite vase;
+
+	if (!vaseTexture.loadFromFile("img/tileset/vase.png"))
+		std::cout << "Error could not load vase" << std::endl;
+	vase.setTexture(vaseTexture);
+	vase.setScale(2.f, 2.f);
+
+	sf::Texture bookTexture;
+	sf::Sprite book;
+
+	if (!bookTexture.loadFromFile("img/tileset/book.png"))
+		std::cout << "Error could not load book" << std::endl;
+	book.setTexture(bookTexture);
+	book.setScale(2.f, 2.f);
+
+
 	
 
 
@@ -657,9 +698,6 @@ int main()
 	int collision_check = 0;
 	int Dialog_check = 0;
 
-	int AppleExist = 0;
-	int FishExist = 0;
-	int FlowerExist = 0;
 
 	goto MENU;
 
@@ -1173,6 +1211,112 @@ PLAY:
 		sf::RectangleShape FishCheck7(sf::Vector2f(64.0f, 118.0f));
 		FishCheck7.setPosition(788.f, 2734.f);
 		FishCheck7.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape GlassCheck(sf::Vector2f(118.0f, 64.0f));
+		GlassCheck.setPosition(1317.f, 2034.f);
+		GlassCheck.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape GlassCheck2(sf::Vector2f(64.0f, 118.0f));
+		GlassCheck2.setPosition(1411.f, 2034.f);
+		GlassCheck2.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape GlassCheck3(sf::Vector2f(64.0f, 118.0f));
+		GlassCheck3.setPosition(1375.f, 1814.f);
+		GlassCheck3.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape GlassCheck4(sf::Vector2f(64.0f, 118.0f));
+		GlassCheck4.setPosition(1189.f, 1813.f);
+		GlassCheck4.setFillColor(sf::Color::Transparent);
+		
+		sf::RectangleShape CakeCheck(sf::Vector2f(64.0f, 118.0f));
+		CakeCheck.setPosition(2496.f, 812.f);
+		CakeCheck.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape CakeCheck2(sf::Vector2f(118.0f, 64.0f));
+		CakeCheck2.setPosition(2507.f, 914.f);
+		CakeCheck2.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape CakeCheck3(sf::Vector2f(64.0f, 118.0f));
+		CakeCheck3.setPosition(2302.f, 681.f);
+		CakeCheck3.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape CakeCheck4(sf::Vector2f(64.0f, 118.0f));
+		CakeCheck4.setPosition(2562.f, 942.f);
+		CakeCheck4.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape VaseCheck(sf::Vector2f(190.f, 63.0f));
+		VaseCheck.setPosition(3968.f, 1117.f);
+		VaseCheck.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape VaseCheck2(sf::Vector2f(190.f, 63.0f));
+		VaseCheck2.setPosition(4086.f, 1117.f);
+		VaseCheck2.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape VaseCheck3(sf::Vector2f(190.f, 63.0f));
+		VaseCheck3.setPosition(4517.f, 1288.f);
+		VaseCheck3.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape VaseCheck4(sf::Vector2f(190.f, 63.0f));
+		VaseCheck4.setPosition(4264.f, 1080.f);
+		VaseCheck4.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape BookCheck(sf::Vector2f(95.f, 63.0f));
+		BookCheck.setPosition(1950.f, 965.f);
+		BookCheck.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape BookCheck2(sf::Vector2f(95.f, 63.0f));
+		BookCheck2.setPosition(3342.f, 544.f);
+		BookCheck2.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape BookCheck3(sf::Vector2f(95.f, 63.0f));
+		BookCheck3.setPosition(3102.f, 1189.f);
+		BookCheck3.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape BookCheck5(sf::Vector2f(95.f, 63.0f));
+		BookCheck5.setPosition(1364.f, 3208.f);
+		BookCheck5.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape BookCheck4(sf::Vector2f(95.f, 63.0f));
+		BookCheck4.setPosition(1056.f, 1784.f);
+		BookCheck4.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape BookCheck6(sf::Vector2f(95.f, 63.0f));
+		BookCheck6.setPosition(3563.f, 1325.f);
+		BookCheck6.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape ClockCheck(sf::Vector2f(95.f, 63.0f));
+		ClockCheck.setPosition(1056.f, 1784.f);
+		ClockCheck.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape ClockCheck2(sf::Vector2f(95.f, 63.0f));
+		ClockCheck2.setPosition(3020.f, 1602.f);
+		ClockCheck2.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape ClockCheck3(sf::Vector2f(95.f, 63.0f));
+		ClockCheck3.setPosition(2049.f, 764.f);
+		ClockCheck3.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape ClockCheck4(sf::Vector2f(95.f, 63.0f));
+		ClockCheck4.setPosition(4156.f, 962.f);
+		ClockCheck4.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape PetCheck(sf::Vector2f(95.f, 63.0f));
+		PetCheck.setPosition(3310.f, 1658.f);
+		PetCheck.setFillColor(sf::Color::Transparent);
+
+		sf::RectangleShape PetCheck2(sf::Vector2f(95.f, 63.0f));
+		PetCheck2.setPosition(3757.f, 1658.f);
+		PetCheck2.setFillColor(sf::Color::Transparent);
+
+
+
+
+
+
+
+
+
+
 
 		
 
@@ -1743,16 +1887,51 @@ PLAY:
 		int cat_check = 0;
 		int fish_check = 0;
 
+		int glass_check = 0;
+		int cake_check = 0;
+		int vase_check = 0;
+		int book_check = 0;
+		int clock_check = 0;
+
+		int glass_aunt = 0;
+
 
 		int home3check = 0;
 		int home5check = 0;
 		int home6check = 0;
 
-		int randXFish[7] = { 2462.f,3027.f,2753.f,3943.f, 2465.f, 1052.f,786.f }; // -5 จาก ps
-		int randYFish[7] = { 400.f,435.f,1323.f,433.f, 1343.f, 2838.f,2722.f }; // -9 จาก ps
+		int randXFish[7] = { 2462.f,3027.f,2753.f,3943.f, 2465.f, 1052.f,786.f }; 
+		int randYFish[7] = { 400.f,435.f,1323.f,433.f, 1343.f, 2838.f,2722.f }; 
 
-		int i = 7;
+		int randXPet[2] = { 3797.f,3286.f}; 
+		int randYPet[2] = { 1619.f,1619.f}; 
+
+		int randXGlass[3] = { 1188.f,1376.f,1346.f};
+		int randYGlass[3] = { 1759.f,1989.f,1759.f };
+
+		int randXCake[3] = { 2495.f,2562.f,2298.f };
+		int randYCake[3] = { 781.f,915.f,663.f }; 
+
+		int randXVase[4] = { 4546.f,4291.f,3967.f,4091.f }; 
+		int randYVase[4] = { 1299.f,1101.f,1167.f ,1165.f }; 
+
+		int randXBook[6] = { 3347.f,3107.f,3590.f,1923.f , 1391.f , 1094.f };
+		int randYBook[6] = { 516.f,1167.f,1345.f , 955.f  ,3298.f , 1757.f };
+
+		int randXClock[4] = { 2064.f,4168.f,3028.f,1040.f };
+		int randYClock[4] = { 736.f,937.f,1577.f ,1766.f };
+
+
+
+		int i = 6, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8;
 		while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
+		while (a != 1 && a != 0)a = rand();
+		while (b != 2 && b != 1 && b != 0)b = rand();
+		while (c != 2 && c != 1 && c != 0 )c= rand();
+		while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
+		while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4 && e != 5)e = rand();
+		while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
+
 
 		//Start the game loop
 		while (window.isOpen()) {
@@ -1834,7 +2013,7 @@ PLAY:
 								Home1.setPosition(1553.f, 2883.f);
 								male.setPosition(-10000.f, -10000.f);
 								if(fish_check == 0)fish.setPosition(Vector2f(randXFish[i], randYFish[i]));
-								//else if (fish_check == 1)fish.setPosition();
+								if (book_check == 0)book.setPosition(Vector2f(randXBook[f], randYBook[f]));
 								house_check = 1;
 								wall.setPosition(gridSize * 11, gridSize * 43);
 								walls.push_back(wall);
@@ -1918,6 +2097,7 @@ PLAY:
 								Home1.setPosition(846.f, 2971.f);
 								myhouse.setPosition(-10000.f, -10000.f);
 								fish.setPosition(-10000.f, -10000.f);
+								book.setPosition(-10000.f, -10000.f);
 								player.setPosition(805.f, 2995.f);
 								male.setPosition(2037.f, 2576.f);
 								stairsHome12.setPosition(-10000.f, -10000.f);
@@ -2454,6 +2634,9 @@ PLAY:
 								row = 3;
 								walls.clear();
 								catMC.clear();
+								if (glass_check == 0)glass.setPosition(Vector2f(randXGlass[c], randYGlass[c]));
+								if (book_check == 0)book.setPosition(Vector2f(randXBook[f], randYBook[f]));
+								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
 								Home2.setPosition(1295.f, 2189.f);
 								stairsHome2.setPosition(1045.f, 1870.f);
 								house_check = 1;
@@ -2502,6 +2685,10 @@ PLAY:
 
 							}
 							else {
+								glass.setPosition(-10000.f, -10000.f);
+								book.setPosition(-10000.f, -10000.f);
+								clockPlus.setPosition(-10000.f, -10000.f);
+
 								house_check = 0;
 								Home2.setPosition({ 1168.f, 2083.f });
 								myhouse5.setPosition(-10000.f, -10000.f);
@@ -3030,6 +3217,10 @@ PLAY:
 						else if (player.getGlobalBounds().intersects(Home3.getGlobalBounds())) {
 						if (home3check == 1) {
 							if (house_check == 0) {
+
+								if (cake_check == 0)cake.setPosition(Vector2f(randXCake[b], randYCake[b]));
+								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
+
 								myhouse1.setPosition({ 1247.f, 260.f });
 								player.setPosition(2097.f, 1074.f);
 								stairsHome3.setPosition(2032.f, 882.f);
@@ -3087,6 +3278,8 @@ PLAY:
 								Home3.setPosition(2291.f, 1026.f);
 								myhouse1.setPosition(-10000.f, -10000.f);
 								stairsHome3.setPosition(-10000.f, -10000.f);
+								cake.setPosition(-10000.f, -10000.f);
+								clockPlus.setPosition(-10000.f, -10000.f);
 								player.setPosition(2291.f, 1030.f);
 								Aunt.setPosition(2163.f, 1224.f);
 
@@ -3632,6 +3825,8 @@ PLAY:
 							walls.clear();
 							Home4.setPosition(3120.f, 1526.f);
 							if (fish_check == 0)fish.setPosition(Vector2f(randXFish[i], randYFish[i]));
+							if (book_check == 0)book.setPosition(Vector2f(randXBook[f], randYBook[f]));
+							if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
 							Grandma.setPosition(-10000.f, -10000.f);
 							Dog_mc.setPosition(-10000.f, -10000.f);
 							cat_mc.setPosition(-10000.f, -10000.f);
@@ -3795,6 +3990,8 @@ PLAY:
 							Home4.setPosition({ 3216.f, 865.f });
 							myhouse4.setPosition(-10000.f, -10000.f);
 							fish.setPosition(-10000.f, -10000.f);
+							clockPlus.setPosition(-10000.f, -10000.f);
+							book.setPosition(-10000.f, -10000.f);
 							player.setPosition(3189.f,898.f);
 							Grandma.setPosition(3424.f, 878.f);
 							Dog_mc.setPosition(3443.f, 939.f);
@@ -4324,6 +4521,7 @@ PLAY:
 						else if (player.getGlobalBounds().intersects(Home5.getGlobalBounds())) {
 						if (home5check == 1) {
 							if (house_check == 0) {
+
 								myhouse2.setPosition({ 2207.f, 1268.f });
 								player.setPosition(2950.f, 2260.f);
 								door1.setPosition(3352.f, 1882.f);
@@ -4949,6 +5147,9 @@ PLAY:
 						else if (player.getGlobalBounds().intersects(Home6.getGlobalBounds())) {
 						if (home6check == 1) {
 							if (house_check == 0) {
+								if (vase_check == 0)fish.setPosition(Vector2f(randXVase[i], randYVase[i]));
+								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
+
 								myhouse3.setPosition({ 3088.f, 606.f });
 								player.setPosition(4271.f, 1889.f);
 								stairsHome6.setPosition(4704.0f, 1359.0f);
@@ -5053,6 +5254,8 @@ PLAY:
 								house_check = 0;
 								Home6.setPosition({ 4302.f, 1563.f });
 								myhouse3.setPosition(-10000.f, -10000.f);
+								vase.setPosition(-10000.f, -10000.f);
+								clockPlus.setPosition(-10000.f, -10000.f);
 								player.setPosition(4274.f, 1606.f);
 								Grandma.setPosition(3424.f, 878.f);
 								Dog_mc.setPosition(3443.f, 939.f);
@@ -5617,15 +5820,17 @@ PLAY:
 						}
 						else if (player.getGlobalBounds().intersects(Aunt.getGlobalBounds())) {
 						if (Dialog_check == 0) {
-							if (textCheckDialogAunt == 0 && FlowerExist == 0) {
+							if (textCheckDialogAunt == 0 && glass_check == 0) {
 								textStatus.setString("How do you do?");
 								textCheckDialogAunt = 1;
 							}
-							else if (textCheckDialogAunt == 1 && FlowerExist == 0) {
-								textStatus.setString("i find flower to put in vase .. ");
+							else if (textCheckDialogAunt == 1 && glass_check == 0) {
+								textStatus.setString("Have you seen my glasses?");
 							}
-							else if (FlowerExist == 1) {
-textStatus.setString("Thanks. your flower is so pretty");
+							else if (glass_check == 1) {
+							textStatus.setString("Ohh Thanks!");
+							glass_aunt = 1;
+							home3check = 1;
 							}
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
 							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
@@ -5653,17 +5858,20 @@ textStatus.setString("Thanks. your flower is so pretty");
 						else if (player.getGlobalBounds().intersects(cat_mc.getGlobalBounds())) {
 						if (Dialog_check == 0) {
 							if (fish_check == 0) {
-								textStatus.setString("Maaorrao!");
+								textStatus.setCharacterSize(34);
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+								textStatus.setString("EEEEEEAAAAAAAAAAAAAAARRRRRRRRRRRRRREIR!");
 							}
 							else {
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
 								textStatus.setString("Meowww~");
 							}
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
-							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
 							Dialog_check = 1;
 						}
 						else if (Dialog_check == 1) {
 							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textStatus.setCharacterSize(50);
 							textStatus.setPosition(-10000.f, -10000.f);
 							Dialog_check = 0;
 							if (fish_check == 1) {
@@ -5676,26 +5884,28 @@ textStatus.setString("Thanks. your flower is so pretty");
 						}
 						else if (player.getGlobalBounds().intersects(male.getGlobalBounds())) {
 						if (Dialog_check == 0) {
-							if (textCheckDialogMale == 0 && AppleExist == 0) {
+							if (textCheckDialogMale == 0 && vase_check == 0) {
 								textStatus.setString("Have a nice day!");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
 								textCheckDialogMale = 1;
 							}
-							else if (textCheckDialogMale == 1 && AppleExist == 0) {
-								textStatus.setString("can you have some food?");
+							else if (textCheckDialogMale == 1 && vase_check == 0) {
+								textStatus.setCharacterSize(34);
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+								textStatus.setString("My vase is gone. do you think it in the pool?");
 							}
-							else if (AppleExist == 1) {
-								textStatus.setString("thank you so much!");
+							else if (vase_check == 1) {
+								textStatus.setCharacterSize(34);
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+								textStatus.setString("OMG!!! THANK YOU SO MUCH. It very important for me!!");
 							}
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
-							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
-							Dialog_check = 1;
-							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
-							textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
 							Dialog_check = 1;
 						}
 						else if (Dialog_check == 1) {
 							Textbox_dialog.setPosition(10000.f, 10000.f);
 							textStatus.setPosition(-10000.f, -10000.f);
+							textStatus.setCharacterSize(50);
 							Dialog_check = 0;
 						}
 						}
@@ -5725,6 +5935,28 @@ textStatus.setString("Thanks. your flower is so pretty");
 							Dialog_check = 0;
 						}
 						}
+						else if (glass.getGlobalBounds().intersects(GlassCheck.getGlobalBounds()) || glass.getGlobalBounds().intersects(GlassCheck2.getGlobalBounds()) ||
+						glass.getGlobalBounds().intersects(GlassCheck3.getGlobalBounds()) || glass.getGlobalBounds().intersects(GlassCheck4.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(GlassCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(GlassCheck2.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(GlassCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(GlassCheck4.getGlobalBounds())) {
+							if (Dialog_check == 0) {
+								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+								textStatus.setString("You got glass");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+								Dialog_check = 1;
+								glass_check = 1;
+							}
+							else if (Dialog_check == 1) {
+								Textbox_dialog.setPosition(10000.f, 10000.f);
+								textStatus.setPosition(-10000.f, -10000.f);
+								Dialog_check = 0;
+								glass.setPosition(-10000.f, -10000.f);
+							}
+						
+							}
+						}
+
 						else if (fish.getGlobalBounds().intersects(FishCheck1.getGlobalBounds()) || fish.getGlobalBounds().intersects(FishCheck2.getGlobalBounds()) ||
 						fish.getGlobalBounds().intersects(FishCheck3.getGlobalBounds()) || fish.getGlobalBounds().intersects(FishCheck4.getGlobalBounds()) ||
 						fish.getGlobalBounds().intersects(FishCheck5.getGlobalBounds()) || fish.getGlobalBounds().intersects(FishCheck6.getGlobalBounds()) ||
@@ -5748,9 +5980,76 @@ textStatus.setString("Thanks. your flower is so pretty");
 								Dialog_check = 0;
 								fish.setPosition(-10000.f, -10000.f);
 							}
-						
-							}
+
 						}
+						}
+
+						else if (cake.getGlobalBounds().intersects(CakeCheck.getGlobalBounds()) || cake.getGlobalBounds().intersects(CakeCheck2.getGlobalBounds()) ||
+						cake.getGlobalBounds().intersects(CakeCheck3.getGlobalBounds()) || cake.getGlobalBounds().intersects(CakeCheck4.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(CakeCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(CakeCheck2.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(CakeCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(CakeCheck4.getGlobalBounds())) {
+							if (Dialog_check == 0) {
+								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+								textStatus.setString("You got cake");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+								Dialog_check = 1;
+								cake_check = 1;
+							}
+							else if (Dialog_check == 1) {
+								Textbox_dialog.setPosition(10000.f, 10000.f);
+								textStatus.setPosition(-10000.f, -10000.f);
+								Dialog_check = 0;
+								cake.setPosition(-10000.f, -10000.f);
+							}
+
+						}
+						}
+
+						else if (vase.getGlobalBounds().intersects(VaseCheck.getGlobalBounds()) || vase.getGlobalBounds().intersects(VaseCheck2.getGlobalBounds()) ||
+						vase.getGlobalBounds().intersects(VaseCheck3.getGlobalBounds()) || vase.getGlobalBounds().intersects(VaseCheck4.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(VaseCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(VaseCheck2.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(VaseCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(VaseCheck4.getGlobalBounds())) {
+							if (Dialog_check == 0) {
+								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+								textStatus.setString("You got vase");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+								Dialog_check = 1;
+								vase_check = 1;
+							}
+							else if (Dialog_check == 1) {
+								Textbox_dialog.setPosition(10000.f, 10000.f);
+								textStatus.setPosition(-10000.f, -10000.f);
+								Dialog_check = 0;
+								vase.setPosition(-10000.f, -10000.f);
+							}
+
+						}
+						}
+
+						else if (book.getGlobalBounds().intersects(BookCheck.getGlobalBounds()) || book.getGlobalBounds().intersects(BookCheck2.getGlobalBounds()) ||
+						book.getGlobalBounds().intersects(BookCheck3.getGlobalBounds()) || book.getGlobalBounds().intersects(BookCheck4.getGlobalBounds()) ||
+						book.getGlobalBounds().intersects(BookCheck5.getGlobalBounds()) || book.getGlobalBounds().intersects(BookCheck6.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(BookCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(BookCheck2.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(BookCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(BookCheck4.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(BookCheck5.getGlobalBounds()) || player.getGlobalBounds().intersects(BookCheck6.getGlobalBounds())) {
+
+
+						}
+						}
+
+						else if (clockPlus.getGlobalBounds().intersects(ClockCheck.getGlobalBounds()) || clockPlus.getGlobalBounds().intersects(ClockCheck2.getGlobalBounds()) ||
+						clockPlus.getGlobalBounds().intersects(ClockCheck3.getGlobalBounds()) || clockPlus.getGlobalBounds().intersects(ClockCheck4.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(ClockCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(ClockCheck2.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(ClockCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(ClockCheck4.getGlobalBounds())) {
+
+
+						}
+						}
+
 
 					}
 				}
@@ -5758,7 +6057,7 @@ textStatus.setString("Thanks. your flower is so pretty");
 			}
 
 			
-			
+			if(glass_aunt == 1 && Dialog_check == 0)Aunt.setTextureRect(sf::IntRect(32 * frameMC, 32 * 1, 32, 32));
 
 
 			ss.str("");
@@ -5999,9 +6298,27 @@ textStatus.setString("Thanks. your flower is so pretty");
 					player_choose = 0;
 					player_choose_pet = 0;
 					fish_check = 0;
-					i = 7;
-					while (i != 2 && i != 1 && i != 0 && i !=3 && i != 4 && i != 5 && i != 6)i = rand();
+					cake_check = 0;
+					vase_check = 0;
+					glass_check = 0;
+
+					i = 7, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8;
+					while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
+					while (a != 2 && a != 1 && a != 0)a = rand();
+					while (b != 2 && b != 1 && b != 0 && b != 3)b = rand();
+					while (c != 2 && c != 1 && c != 0 && c != 3)c = rand();
+					while (d != 2 && d != 1 && d != 0 && d != 3 && d != 4)d = rand();
+					while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4 && e != 5 && e != 6)e = rand();
+					while (f != 2 && f != 1 && f != 0 && f != 3 && f != 4)f = rand();
+
+
 					fish.setPosition(-10000.f, -10000.f);
+					cake.setPosition(-10000.f, -10000.f);
+					glass.setPosition(-10000.f, -10000.f);
+					vase.setPosition(-10000.f, -10000.f);
+					clockPlus.setPosition(-10000.f, -10000.f);
+					book.setPosition(-10000.f, -10000.f);
+
 					house_check = 0;
 					Home1.setPosition(846.f, 2971.f);
 					Home2.setPosition({ 1168.f, 2083.f });
@@ -6596,7 +6913,7 @@ textStatus.setString("Thanks. your flower is so pretty");
 			//Update MC
 			Dog_mc.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			cat_mc.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
-			Aunt.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
+			if(glass_aunt == 0)Aunt.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			male.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			Grandma.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 
@@ -6635,6 +6952,29 @@ textStatus.setString("Thanks. your flower is so pretty");
 			window.draw(FishCheck5);
 			window.draw(FishCheck6);
 			window.draw(FishCheck7);
+			window.draw(CakeCheck);
+			window.draw(CakeCheck2);
+			window.draw(CakeCheck3);
+			window.draw(CakeCheck4);
+			window.draw(GlassCheck);
+			window.draw(GlassCheck2);
+			window.draw(GlassCheck3);
+			window.draw(GlassCheck4);
+			window.draw(VaseCheck);
+			window.draw(VaseCheck2);
+			window.draw(VaseCheck3);
+			window.draw(VaseCheck4);
+			window.draw(BookCheck);
+			window.draw(BookCheck2);
+			window.draw(BookCheck3);
+			window.draw(BookCheck4);
+			window.draw(BookCheck5);
+			window.draw(BookCheck6);
+			window.draw(ClockCheck);
+			window.draw(ClockCheck2);
+			window.draw(ClockCheck3);
+			window.draw(ClockCheck4);
+
 
 			for (auto& i : catMC)
 			{
@@ -6652,6 +6992,11 @@ textStatus.setString("Thanks. your flower is so pretty");
 			window.draw(male);
 
 			window.draw(fish);
+			window.draw(cake);
+			window.draw(glass);
+			window.draw(vase);
+			window.draw(book);
+			window.draw(clockPlus);
 			
 			window.draw(player);
 

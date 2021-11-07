@@ -197,7 +197,7 @@ int main()
 	sf::Texture clockTexture;
 	sf::Sprite clockPlus;
 
-	if (!clockTexture.loadFromFile("img/tileset/clock.png"))
+	if (!clockTexture.loadFromFile("img/tileset/clock1.png"))
 		std::cout << "Error could not load clock" << std::endl;
 	clockPlus.setTexture(clockTexture);
 	clockPlus.setScale(2.f, 2.f);
@@ -208,7 +208,7 @@ int main()
 	if (!vaseTexture.loadFromFile("img/tileset/vase.png"))
 		std::cout << "Error could not load vase" << std::endl;
 	vase.setTexture(vaseTexture);
-	vase.setScale(2.f, 2.f);
+	vase.setScale(4.f, 4.f);
 
 	sf::Texture bookTexture;
 	sf::Sprite book;
@@ -232,6 +232,14 @@ int main()
 		std::cout << "Error could not load MC image" << std::endl;
 	Grandma.setTexture(GrandmaTexture);
 	Grandma.setScale(3.f, 3.f);
+
+	sf::Texture BoyTexture;
+	sf::Sprite Boy;
+
+	if (!BoyTexture.loadFromFile("img/character/others/boy.png"))
+		std::cout << "Error could not load MC image" << std::endl;
+	Boy.setTexture(BoyTexture);
+	Boy.setScale(3.f, 3.f);
 
 
 	sf::Texture AuntTexture;
@@ -1180,6 +1188,7 @@ PLAY:
 		int house_check = 0;
 		int textCheckDialogGrandma = 0;
 		int textCheckDialogAunt = 0;
+		int textCheckDialogBoy = 0;
 		int textCheckDialogMale = 0;
 
 		// collision item //
@@ -1337,8 +1346,11 @@ PLAY:
 		catMCcheck.setSize(Vector2f(gridSize, gridSize));
 
 		if (house_check == 0) {
-			wall.setPosition(gridSize * 9, gridSize * 40); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 41); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 42); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 43); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 44); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 45); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 46); walls.push_back(wall);
+			wall.setPosition(gridSize * 9, gridSize * 40); 
+			walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 41); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 42); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 43); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 44); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 45); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 46); walls.push_back(wall);
 			wall.setPosition(gridSize * 9, gridSize * 47);
+			walls.push_back(wall);
+			wall.setPosition(gridSize * 57, gridSize * 34);
 			walls.push_back(wall);
 			wall.setPosition(gridSize * 9, gridSize * 48);
 			walls.push_back(wall);
@@ -1882,6 +1894,7 @@ PLAY:
 		Dog_mc.setPosition(3443.f, 939.f);
 		cat_mc.setPosition(1122.f, 2088.f);
 		Aunt.setPosition(2163.f, 1224.f);
+		Boy.setPosition(3608.f, 2175.f);
 		male.setPosition(2037.f, 2576.f);
 
 		int cat_check = 0;
@@ -2112,6 +2125,8 @@ PLAY:
 								
 								walls.clear();
 								wall.setPosition(gridSize * 9, gridSize * 40);
+								walls.push_back(wall);
+								wall.setPosition(gridSize * 57, gridSize * 34);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 9, gridSize * 41);
 								walls.push_back(wall);
@@ -2702,6 +2717,8 @@ PLAY:
 								walls.clear();
 								wall.setPosition(gridSize * 9, gridSize * 40);
 								walls.push_back(wall);
+								wall.setPosition(gridSize * 57, gridSize * 34);
+								walls.push_back(wall);
 								wall.setPosition(gridSize * 9, gridSize * 41);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 9, gridSize * 42);
@@ -3291,6 +3308,8 @@ PLAY:
 								walls.clear();
 								wall.setPosition(gridSize * 9, gridSize * 40);
 								walls.push_back(wall);
+								wall.setPosition(gridSize * 57, gridSize * 34);
+								walls.push_back(wall);
 								wall.setPosition(gridSize * 9, gridSize * 41);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 9, gridSize * 42);
@@ -3830,6 +3849,7 @@ PLAY:
 							Grandma.setPosition(-10000.f, -10000.f);
 							Dog_mc.setPosition(-10000.f, -10000.f);
 							cat_mc.setPosition(-10000.f, -10000.f);
+							Boy.setPosition(10000.f, 10000.f);
 							Aunt.setPosition(-10000.f, -10000.f);
 							house_check = 1;
 							wall.setPosition(gridSize * 37, gridSize * 6);
@@ -3995,6 +4015,7 @@ PLAY:
 							player.setPosition(3189.f,898.f);
 							Grandma.setPosition(3424.f, 878.f);
 							Dog_mc.setPosition(3443.f, 939.f);
+							Boy.setPosition(3608.f, 2175.f);
 							if (cat_check == 0) {
 								catMCcheck.setPosition(gridSize * 18, gridSize * 33);
 								catMC.push_back(catMCcheck);
@@ -4005,6 +4026,8 @@ PLAY:
 							row = 0;
 							walls.clear();
 							wall.setPosition(gridSize * 9, gridSize * 40);
+							walls.push_back(wall);
+							wall.setPosition(gridSize * 57, gridSize * 34);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 9, gridSize * 41);
 							walls.push_back(wall);
@@ -4522,6 +4545,7 @@ PLAY:
 						if (home5check == 1) {
 							if (house_check == 0) {
 
+								Boy.setPosition(-100000.f, -100000.f);
 								myhouse2.setPosition({ 2207.f, 1268.f });
 								player.setPosition(2950.f, 2260.f);
 								door1.setPosition(3352.f, 1882.f);
@@ -4600,6 +4624,7 @@ PLAY:
 							}
 							else {
 								house_check = 0;
+								Boy.setPosition(3608.f, 2175.f);
 								Home5.setPosition({ 3280.f, 2011.f });
 								myhouse2.setPosition(-10000.f, -10000.f);
 								player.setPosition(3246.f, 2048.f);
@@ -4617,6 +4642,8 @@ PLAY:
 
 								walls.clear();
 								wall.setPosition(gridSize * 9, gridSize * 40);
+								walls.push_back(wall);
+								wall.setPosition(gridSize * 57, gridSize * 34);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 9, gridSize * 41);
 								walls.push_back(wall);
@@ -5147,7 +5174,7 @@ PLAY:
 						else if (player.getGlobalBounds().intersects(Home6.getGlobalBounds())) {
 						if (home6check == 1) {
 							if (house_check == 0) {
-								if (vase_check == 0)fish.setPosition(Vector2f(randXVase[i], randYVase[i]));
+								if (vase_check == 0)vase.setPosition(Vector2f(randXVase[d], randYVase[d]));
 								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
 
 								myhouse3.setPosition({ 3088.f, 606.f });
@@ -5160,6 +5187,7 @@ PLAY:
 								Grandma.setPosition(-10000.f, -10000.f);
 								Dog_mc.setPosition(-10000.f, -10000.f);
 								cat_mc.setPosition(-10000.f, -10000.f);
+								Boy.setPosition(-10000.f, -10000.f);
 								house_check = 1;
 								wall.setPosition(gridSize * 59, gridSize * 20);
 								walls.push_back(wall);
@@ -5259,6 +5287,7 @@ PLAY:
 								player.setPosition(4274.f, 1606.f);
 								Grandma.setPosition(3424.f, 878.f);
 								Dog_mc.setPosition(3443.f, 939.f);
+								Boy.setPosition(3608.f, 2175.f);
 								if (cat_check == 0) {
 									cat_mc.setPosition(1122.f, 2088.f);
 									catMCcheck.setPosition(gridSize * 18, gridSize * 33);
@@ -5268,6 +5297,8 @@ PLAY:
 								row = 0;
 								walls.clear();
 								wall.setPosition(gridSize * 9, gridSize * 40);
+								walls.push_back(wall);
+								wall.setPosition(gridSize * 57, gridSize * 34);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 9, gridSize * 41);
 								walls.push_back(wall);
@@ -5895,9 +5926,10 @@ PLAY:
 								textStatus.setString("My vase is gone. do you think it in the pool?");
 							}
 							else if (vase_check == 1) {
-								textStatus.setCharacterSize(34);
-								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
-								textStatus.setString("OMG!!! THANK YOU SO MUCH. It very important for me!!");
+								textStatus.setCharacterSize(32);
+								textStatus.setPosition(player.getPosition().x - 315, player.getPosition().y + 233);
+								textStatus.setString("OMG! Thanks a lot. This vase very important for me");
+								home5check = 1;
 							}
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
 							Dialog_check = 1;
@@ -5909,6 +5941,35 @@ PLAY:
 							Dialog_check = 0;
 						}
 						}
+						else if (player.getGlobalBounds().intersects(Boy.getGlobalBounds())) {
+						if (Dialog_check == 0) {
+							if (textCheckDialogBoy == 0 && cake_check == 0) {
+								textStatus.setString("the sky looks beautiful");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+								textCheckDialogBoy = 1;
+							}
+							else if (textCheckDialogBoy == 1 && cake_check == 0) {
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+								textStatus.setString("today is my wife's birthday!");
+							}
+							else if (cake_check == 1) {
+								textStatus.setCharacterSize(34);
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+								textStatus.setString("WOW, what lovely cake. You shouldn't have!");
+								home6check = 1;
+							}
+							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+							Dialog_check = 1;
+						}
+						else if (Dialog_check == 1) {
+							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textStatus.setPosition(-10000.f, -10000.f);
+							textStatus.setCharacterSize(50);
+							Dialog_check = 0;
+						}
+						}
+
+
 						else if (player.getGlobalBounds().intersects(Text1.getGlobalBounds())) {
 						if (Dialog_check == 0) {
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
@@ -6344,6 +6405,8 @@ PLAY:
 
 					walls.clear();
 					wall.setPosition(gridSize * 9, gridSize * 40);
+					walls.push_back(wall);
+					wall.setPosition(gridSize * 57, gridSize * 34);
 					walls.push_back(wall);
 					wall.setPosition(gridSize * 9, gridSize * 41);
 					walls.push_back(wall);
@@ -6916,6 +6979,7 @@ PLAY:
 			if(glass_aunt == 0)Aunt.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			male.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			Grandma.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
+			Boy.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 
 			if (frameMCCounter == 50) {
 				frameMC = (frameMC + 1) % 3;
@@ -6990,6 +7054,7 @@ PLAY:
 			window.draw(cat_mc);
 			window.draw(Aunt);
 			window.draw(male);
+			window.draw(Boy);
 
 			window.draw(fish);
 			window.draw(cake);

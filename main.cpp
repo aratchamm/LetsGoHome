@@ -200,7 +200,26 @@ int main()
 	if (!clockTexture.loadFromFile("img/tileset/clock1.png"))
 		std::cout << "Error could not load clock" << std::endl;
 	clockPlus.setTexture(clockTexture);
-	clockPlus.setScale(2.f, 2.f);
+	clockPlus.setScale(1.15f, 1.15f);
+
+
+	sf::Texture Key1Texture;
+	sf::Sprite key1;
+
+	if (!Key1Texture.loadFromFile("img/tileset/key1.png"))
+		std::cout << "Error could not load clock" << std::endl;
+	key1.setTexture(Key1Texture);
+	key1.setScale(0.5f, 0.5f);
+
+
+	sf::Texture Key2Texture;
+	sf::Sprite key2;
+
+	if (!Key2Texture.loadFromFile("img/tileset/key2.png"))
+		std::cout << "Error could not load clock" << std::endl;
+	key2.setTexture(Key2Texture);
+	key2.setScale(0.5f, 0.5f);
+
 
 	sf::Texture vaseTexture;
 	sf::Sprite vase;
@@ -240,6 +259,14 @@ int main()
 		std::cout << "Error could not load MC image" << std::endl;
 	Boy.setTexture(BoyTexture);
 	Boy.setScale(3.f, 3.f);
+
+	sf::Texture GirlTexture;
+	sf::Sprite Girl;
+
+	if (!GirlTexture.loadFromFile("img/character/others/girl.png"))
+		std::cout << "Error could not load MC image" << std::endl;
+	Girl.setTexture(GirlTexture);
+	Girl.setScale(2.8f, 2.8f);
 
 
 	sf::Texture AuntTexture;
@@ -687,6 +714,13 @@ int main()
 	textPlayerName.setCharacterSize(50);
 	textPlayerName.setPosition(-10000.f, -10000.f);
 	textPlayerName.setFillColor(Color::Black);
+
+	sf::Text textPetName;
+
+	textPetName.setFont(font);
+	textPetName.setCharacterSize(34);
+	textPetName.setPosition(-10000.f, -10000.f);
+	textPetName.setFillColor(Color::Black);
 
 
 	const float gridSize = 64.f;
@@ -1189,6 +1223,7 @@ PLAY:
 		int textCheckDialogGrandma = 0;
 		int textCheckDialogAunt = 0;
 		int textCheckDialogBoy = 0;
+		int textCheckDialogGirl = 0;
 		int textCheckDialogMale = 0;
 
 		// collision item //
@@ -1253,19 +1288,19 @@ PLAY:
 		CakeCheck4.setPosition(2562.f, 942.f);
 		CakeCheck4.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape VaseCheck(sf::Vector2f(190.f, 63.0f));
+		sf::RectangleShape VaseCheck(sf::Vector2f(63.0f, 190.f));
 		VaseCheck.setPosition(3968.f, 1117.f);
 		VaseCheck.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape VaseCheck2(sf::Vector2f(190.f, 63.0f));
+		sf::RectangleShape VaseCheck2(sf::Vector2f(63.0f, 190.f));
 		VaseCheck2.setPosition(4086.f, 1117.f);
 		VaseCheck2.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape VaseCheck3(sf::Vector2f(190.f, 63.0f));
+		sf::RectangleShape VaseCheck3(sf::Vector2f(63.0f, 190.f));
 		VaseCheck3.setPosition(4517.f, 1288.f);
 		VaseCheck3.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape VaseCheck4(sf::Vector2f(190.f, 63.0f));
+		sf::RectangleShape VaseCheck4(sf::Vector2f(63.0f, 190.f));
 		VaseCheck4.setPosition(4264.f, 1080.f);
 		VaseCheck4.setFillColor(sf::Color::Transparent);
 
@@ -1293,19 +1328,19 @@ PLAY:
 		BookCheck6.setPosition(3563.f, 1325.f);
 		BookCheck6.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape ClockCheck(sf::Vector2f(95.f, 63.0f));
+		sf::RectangleShape ClockCheck(sf::Vector2f(63.0f, 95.f));
 		ClockCheck.setPosition(1056.f, 1784.f);
 		ClockCheck.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape ClockCheck2(sf::Vector2f(95.f, 63.0f));
-		ClockCheck2.setPosition(3020.f, 1602.f);
+		sf::RectangleShape ClockCheck2(sf::Vector2f(63.0f, 95.f));
+		ClockCheck2.setPosition(3774.f, 1916.f);
 		ClockCheck2.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape ClockCheck3(sf::Vector2f(95.f, 63.0f));
+		sf::RectangleShape ClockCheck3(sf::Vector2f(63.0f, 95.f));
 		ClockCheck3.setPosition(2049.f, 764.f);
 		ClockCheck3.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape ClockCheck4(sf::Vector2f(95.f, 63.0f));
+		sf::RectangleShape ClockCheck4(sf::Vector2f(63.0f, 95.f));
 		ClockCheck4.setPosition(4156.f, 962.f);
 		ClockCheck4.setFillColor(sf::Color::Transparent);
 
@@ -1317,16 +1352,31 @@ PLAY:
 		PetCheck2.setPosition(3757.f, 1658.f);
 		PetCheck2.setFillColor(sf::Color::Transparent);
 
+		sf::RectangleShape KeyCheck(sf::Vector2f(63.0f, 95.f));
+		KeyCheck.setPosition(2940.f, 1658.f);
+		KeyCheck.setFillColor(sf::Color::Transparent);
 
+		sf::RectangleShape KeyCheck2(sf::Vector2f(63.0f, 95.f));
+		KeyCheck2.setPosition(3027.f, 1626.f);
+		KeyCheck2.setFillColor(sf::Color::Transparent);
 
+		sf::RectangleShape KeyCheck3(sf::Vector2f(63.0f, 95.f));
+		KeyCheck3.setPosition(3151.f, 1623.f);
+		KeyCheck3.setFillColor(sf::Color::Transparent);
 
+		sf::RectangleShape KeyCheck4(sf::Vector2f(63.0f, 95.f));
+		KeyCheck4.setPosition(3119.f, 1841.f);
+		KeyCheck4.setFillColor(sf::Color::Transparent);
 
+		sf::RectangleShape KeyCheck5(sf::Vector2f(63.0f, 95.f));
+		KeyCheck5.setPosition(3209.f, 1936.f);
+		KeyCheck5.setFillColor(sf::Color::Transparent);
 
+		sf::RectangleShape KeyCheck6(sf::Vector2f(63.0f, 95.f));
+		KeyCheck6.setPosition(3530.f, 1936.f);
+		KeyCheck6.setFillColor(sf::Color::Transparent);
 
-
-
-
-
+		
 		
 
 		// walls zone //
@@ -1344,6 +1394,20 @@ PLAY:
 		RectangleShape catMCcheck;
 		catMCcheck.setFillColor(Color::Transparent);
 		catMCcheck.setSize(Vector2f(gridSize, gridSize));
+
+		// door check //
+
+		std::vector<RectangleShape> door1Wall;
+
+		RectangleShape door1WallCheck;
+		door1WallCheck.setFillColor(Color::Transparent);
+		door1WallCheck.setSize(Vector2f(gridSize, gridSize));
+
+		std::vector<RectangleShape> door2Wall;
+
+		RectangleShape door2WallCheck;
+		door2WallCheck.setFillColor(Color::Transparent);
+		door2WallCheck.setSize(Vector2f(gridSize, gridSize));
 
 		if (house_check == 0) {
 			wall.setPosition(gridSize * 9, gridSize * 40); 
@@ -1906,12 +1970,18 @@ PLAY:
 		int book_check = 0;
 		int clock_check = 0;
 
+		int keyleft_check = 0;
+		int keyright_check = 0;
+
 		int glass_aunt = 0;
 
 
 		int home3check = 0;
 		int home5check = 0;
 		int home6check = 0;
+
+		int roomleft = 0;
+		int roomight = 0;
 
 		int randXFish[7] = { 2462.f,3027.f,2753.f,3943.f, 2465.f, 1052.f,786.f }; 
 		int randYFish[7] = { 400.f,435.f,1323.f,433.f, 1343.f, 2838.f,2722.f }; 
@@ -1931,12 +2001,17 @@ PLAY:
 		int randXBook[6] = { 3347.f,3107.f,3590.f,1923.f , 1391.f , 1094.f };
 		int randYBook[6] = { 516.f,1167.f,1345.f , 955.f  ,3298.f , 1757.f };
 
-		int randXClock[4] = { 2064.f,4168.f,3028.f,1040.f };
-		int randYClock[4] = { 736.f,937.f,1577.f ,1766.f };
+		int randXClock[4] = { 2064.f,3793.f,3028.f,1040.f };
+		int randYClock[4] = { 736.f,1902.f,1577.f ,1766.f };
+
+		int randXKey1[3] = { 2955,3174.f,3222.f };
+		int randYKey1[3] = { 1699.f,1651.f ,1978.f };
+
+		int randXKey2[3] = { 3040.f,3156.f,3547.f };
+		int randYKey2[3] = { 1663.f,1887.f,1954.f };
 
 
-
-		int i = 6, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8;
+		int i = 6, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8, g = 9, h=10;
 		while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
 		while (a != 1 && a != 0)a = rand();
 		while (b != 2 && b != 1 && b != 0)b = rand();
@@ -1944,6 +2019,8 @@ PLAY:
 		while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
 		while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4 && e != 5)e = rand();
 		while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
+		while (g != 2 && g != 1 && g != 0)g = rand();
+		while (h != 2 && h != 1 && h != 0)h = rand();
 
 
 		//Start the game loop
@@ -2000,17 +2077,44 @@ PLAY:
 								Dialog_check = 0;
 							}
 						}
-						if (player.getGlobalBounds().intersects(door1.getGlobalBounds()) || player.getGlobalBounds().intersects(door2.getGlobalBounds())) {
-							if (Dialog_check == 0) {
-								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
-								textStatus.setString("The room is locked");
-								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
-								Dialog_check = 1;
+						if (player.getGlobalBounds().intersects(door1.getGlobalBounds())) {
+							if (keyleft_check == 0) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("The room is locked");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									
+								}
 							}
-							else if (Dialog_check == 1) {
-								Textbox_dialog.setPosition(10000.f, 10000.f);
-								textStatus.setPosition(-10000.f, -10000.f);
-								Dialog_check = 0;
+							else {
+								door1.setPosition(10000.f, 100000.f);
+								door1Wall.clear();
+							}
+						}
+						if (player.getGlobalBounds().intersects(door2.getGlobalBounds())) {
+							if (keyright_check == 0) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("The room is locked");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									
+								}
+							}
+							else {
+								door2.setPosition(10000.f, 100000.f);
+								door2Wall.clear();
 							}
 						}
 						if (player.getGlobalBounds().intersects(Home1.getGlobalBounds())) {
@@ -2655,6 +2759,7 @@ PLAY:
 								Home2.setPosition(1295.f, 2189.f);
 								stairsHome2.setPosition(1045.f, 1870.f);
 								house_check = 1;
+
 								wall.setPosition(gridSize * 14, gridSize * 31);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 15, gridSize * 29);
@@ -3850,6 +3955,7 @@ PLAY:
 							Dog_mc.setPosition(-10000.f, -10000.f);
 							cat_mc.setPosition(-10000.f, -10000.f);
 							Boy.setPosition(10000.f, 10000.f);
+							Girl.setPosition(10000.f, 10000.f);
 							Aunt.setPosition(-10000.f, -10000.f);
 							house_check = 1;
 							wall.setPosition(gridSize * 37, gridSize * 6);
@@ -4546,10 +4652,11 @@ PLAY:
 							if (house_check == 0) {
 
 								Boy.setPosition(-100000.f, -100000.f);
+								Girl.setPosition(10000.f, 10000.f);
 								myhouse2.setPosition({ 2207.f, 1268.f });
 								player.setPosition(2950.f, 2260.f);
-								door1.setPosition(3352.f, 1882.f);
-								door2.setPosition(3672.f, 1882.f);
+								door1.setPosition(3319.f, 1882.f);
+								door2.setPosition(3644.f, 1882.f);
 								row = 3;
 								catMC.clear();
 								walls.clear();
@@ -4559,6 +4666,21 @@ PLAY:
 								cat_mc.setPosition(-10000.f, -10000.f);
 								Aunt.setPosition(-10000.f, -10000.f);
 								house_check = 1;
+
+								//pet.setPosition(Vector2f(randXBook[f], randYBook[f]));
+
+								if (keyleft_check == 0) {
+									key1.setPosition(Vector2f(randXKey1[g], randYKey1[g]));
+									door1WallCheck.setPosition(gridSize * 53, gridSize * 29);
+									door1Wall.push_back(door1WallCheck);
+								}
+								if (keyright_check == 0) {
+									key2.setPosition(Vector2f(randXKey2[h], randYKey2[h]));
+									door2WallCheck.setPosition(gridSize * 58, gridSize * 29);
+									door2Wall.push_back(door2WallCheck);
+								}
+
+								
 								wall.setPosition(gridSize * 44, gridSize * 28);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 44, gridSize * 30);
@@ -4601,7 +4723,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 50, gridSize * 29);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 52, gridSize * 29);
+								wall.setPosition(gridSize * 51, gridSize * 29);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 54, gridSize * 29);
 								walls.push_back(wall);
@@ -4609,7 +4731,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 55, gridSize * 30);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 58, gridSize * 29);
+								wall.setPosition(gridSize * 59, gridSize * 29);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 48, gridSize * 28);
 								walls.push_back(wall);
@@ -4621,6 +4743,10 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 47, gridSize * 25);
 								walls.push_back(wall);
+								wall.setPosition(gridSize * 50, gridSize * 30);
+								walls.push_back(wall);
+								wall.setPosition(gridSize * 50, gridSize * 30);
+								walls.push_back(wall);
 							}
 							else {
 								house_check = 0;
@@ -4630,16 +4756,13 @@ PLAY:
 								player.setPosition(3246.f, 2048.f);
 								Grandma.setPosition(3424.f, 878.f);
 								Dog_mc.setPosition(3443.f, 939.f);
-								if (cat_check == 0) {
-									catMCcheck.setPosition(gridSize * 18, gridSize * 33);
-									catMC.push_back(catMCcheck);
-									cat_mc.setPosition(1122.f, 2088.f);
-								}
 								Aunt.setPosition(2163.f, 1224.f);
 								door1.setPosition(-10000.f, -10000.f);
 								door2.setPosition(-10000.f, -10000.f);
 								row = 0;
 
+								door1Wall.clear();
+								door2Wall.clear();
 								walls.clear();
 								wall.setPosition(gridSize * 9, gridSize * 40);
 								walls.push_back(wall);
@@ -5177,21 +5300,24 @@ PLAY:
 								if (vase_check == 0)vase.setPosition(Vector2f(randXVase[d], randYVase[d]));
 								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
 
+
 								myhouse3.setPosition({ 3088.f, 606.f });
+								Girl.setPosition(3896.f, 1360.f);
 								player.setPosition(4271.f, 1889.f);
 								stairsHome6.setPosition(4704.0f, 1359.0f);
 								row = 3;
 								walls.clear();
-								catMC.clear();
 								Home6.setPosition(4271.f, 1889.f);
 								Grandma.setPosition(-10000.f, -10000.f);
 								Dog_mc.setPosition(-10000.f, -10000.f);
 								cat_mc.setPosition(-10000.f, -10000.f);
 								Boy.setPosition(-10000.f, -10000.f);
+								door1.setPosition(-10000.f, -10000.f);
+								door2.setPosition(-10000.f, -10000.f);
 								house_check = 1;
 								wall.setPosition(gridSize * 59, gridSize * 20);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 61, gridSize * 20);
+								wall.setPosition(gridSize * 61, gridSize * 21);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 59, gridSize * 30);
 								walls.push_back(wall);
@@ -5284,15 +5410,11 @@ PLAY:
 								myhouse3.setPosition(-10000.f, -10000.f);
 								vase.setPosition(-10000.f, -10000.f);
 								clockPlus.setPosition(-10000.f, -10000.f);
+								Girl.setPosition(-10000.f, -10000.f);
 								player.setPosition(4274.f, 1606.f);
 								Grandma.setPosition(3424.f, 878.f);
 								Dog_mc.setPosition(3443.f, 939.f);
 								Boy.setPosition(3608.f, 2175.f);
-								if (cat_check == 0) {
-									cat_mc.setPosition(1122.f, 2088.f);
-									catMCcheck.setPosition(gridSize * 18, gridSize * 33);
-									catMC.push_back(catMCcheck);
-								}
 								stairsHome6.setPosition(-10000.f, -10000.f);
 								row = 0;
 								walls.clear();
@@ -5968,6 +6090,30 @@ PLAY:
 							Dialog_check = 0;
 						}
 						}
+						else if (player.getGlobalBounds().intersects(Girl.getGlobalBounds())) {
+						if (Dialog_check == 0) {
+							if (textCheckDialogGirl == 0) {
+								textStatus.setString("Thanks for cake! it's so sweet");
+								textStatus.setCharacterSize(34);
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+								textCheckDialogGirl = 1;
+							}
+							else if (textCheckDialogGirl == 1) {
+								textStatus.setCharacterSize(30);
+								textStatus.setPosition(player.getPosition().x - 315, player.getPosition().y + 235);
+								textStatus.setString("your pet's missing? I think i saw her in Peter's home");
+							}
+							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+							Dialog_check = 1;
+						}
+						else if (Dialog_check == 1) {
+							Textbox_dialog.setPosition(10000.f, 10000.f);
+							textPetName.setPosition(-10000.f, -10000.f);
+							textStatus.setPosition(-10000.f, -10000.f);
+							textStatus.setCharacterSize(50);
+							Dialog_check = 0;
+						}
+						}
 
 
 						else if (player.getGlobalBounds().intersects(Text1.getGlobalBounds())) {
@@ -6107,6 +6253,56 @@ PLAY:
 						if (player.getGlobalBounds().intersects(ClockCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(ClockCheck2.getGlobalBounds()) ||
 							player.getGlobalBounds().intersects(ClockCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(ClockCheck4.getGlobalBounds())) {
 
+
+						}
+						}
+
+						else if (key1.getGlobalBounds().intersects(KeyCheck.getGlobalBounds()) ||
+						key1.getGlobalBounds().intersects(KeyCheck3.getGlobalBounds()) ||
+						key1.getGlobalBounds().intersects(KeyCheck5.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(KeyCheck.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(KeyCheck3.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(KeyCheck5.getGlobalBounds())) {
+
+							if (Dialog_check == 0) {
+								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+								textStatus.setString("You got key");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+								Dialog_check = 1;
+								keyleft_check = 1;
+							}
+							else if (Dialog_check == 1) {
+								Textbox_dialog.setPosition(10000.f, 10000.f);
+								textStatus.setPosition(-10000.f, -10000.f);
+								Dialog_check = 0;
+								key1.setPosition(-10000.f, -10000.f);
+							}
+
+						}
+						}
+
+						else if (key2.getGlobalBounds().intersects(KeyCheck2.getGlobalBounds()) ||
+						key2.getGlobalBounds().intersects(KeyCheck4.getGlobalBounds()) ||
+						key2.getGlobalBounds().intersects(KeyCheck6.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(KeyCheck2.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(KeyCheck4.getGlobalBounds()) ||
+							player.getGlobalBounds().intersects(KeyCheck6.getGlobalBounds())) {
+
+							if (Dialog_check == 0) {
+								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+								textStatus.setString("You got key");
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+								Dialog_check = 1;
+								keyright_check = 1;
+							}
+							else if (Dialog_check == 1) {
+								Textbox_dialog.setPosition(10000.f, 10000.f);
+								textStatus.setPosition(-10000.f, -10000.f);
+								Dialog_check = 0;
+								key2.setPosition(-10000.f, -10000.f);
+							}
 
 						}
 						}
@@ -6328,6 +6524,118 @@ PLAY:
 					}
 				}
 			}
+			for (auto& wall : door1Wall)
+			{
+				FloatRect playerBounds = player.getGlobalBounds();
+				FloatRect wallBounds = wall.getGlobalBounds();
+
+				nextPos = playerBounds;
+				nextPos.left += velocity.x;
+				nextPos.top += velocity.y;
+
+				if (wallBounds.intersects(nextPos))
+				{
+					//Bottom collision
+					if (playerBounds.top < wallBounds.top
+						&& playerBounds.top + playerBounds.height < wallBounds.top + wallBounds.height
+						&& playerBounds.left < wallBounds.left + wallBounds.width
+						&& playerBounds.left + playerBounds.width > wallBounds.left
+						)
+					{
+						velocity.y = 0.f;
+						player.setPosition(playerBounds.left, wallBounds.top - playerBounds.height);
+					}
+
+					//Top collision
+					else if (playerBounds.top > wallBounds.top
+						&& playerBounds.top + playerBounds.height > wallBounds.top + wallBounds.height
+						&& playerBounds.left < wallBounds.left + wallBounds.width
+						&& playerBounds.left + playerBounds.width > wallBounds.left
+						)
+					{
+						velocity.y = 0.f;
+						player.setPosition(playerBounds.left, wallBounds.top + wallBounds.height);
+					}
+
+					//Right collision
+					if (playerBounds.left < wallBounds.left
+						&& playerBounds.left + playerBounds.width < wallBounds.left + wallBounds.width
+						&& playerBounds.top < wallBounds.top + wallBounds.height
+						&& playerBounds.top + playerBounds.height > wallBounds.top
+						)
+					{
+						velocity.x = 0.f;
+						player.setPosition(wallBounds.left - playerBounds.width, playerBounds.top);
+					}
+
+					//Left collision
+					else if (playerBounds.left > wallBounds.left
+						&& playerBounds.left + playerBounds.width > wallBounds.left + wallBounds.width
+						&& playerBounds.top < wallBounds.top + wallBounds.height
+						&& playerBounds.top + playerBounds.height > wallBounds.top
+						)
+					{
+						velocity.x = 0.f;
+						player.setPosition(wallBounds.left + wallBounds.width, playerBounds.top);
+					}
+				}
+			}
+			for (auto& wall : door2Wall)
+			{
+				FloatRect playerBounds = player.getGlobalBounds();
+				FloatRect wallBounds = wall.getGlobalBounds();
+
+				nextPos = playerBounds;
+				nextPos.left += velocity.x;
+				nextPos.top += velocity.y;
+
+				if (wallBounds.intersects(nextPos))
+				{
+					//Bottom collision
+					if (playerBounds.top < wallBounds.top
+						&& playerBounds.top + playerBounds.height < wallBounds.top + wallBounds.height
+						&& playerBounds.left < wallBounds.left + wallBounds.width
+						&& playerBounds.left + playerBounds.width > wallBounds.left
+						)
+					{
+						velocity.y = 0.f;
+						player.setPosition(playerBounds.left, wallBounds.top - playerBounds.height);
+					}
+
+					//Top collision
+					else if (playerBounds.top > wallBounds.top
+						&& playerBounds.top + playerBounds.height > wallBounds.top + wallBounds.height
+						&& playerBounds.left < wallBounds.left + wallBounds.width
+						&& playerBounds.left + playerBounds.width > wallBounds.left
+						)
+					{
+						velocity.y = 0.f;
+						player.setPosition(playerBounds.left, wallBounds.top + wallBounds.height);
+					}
+
+					//Right collision
+					if (playerBounds.left < wallBounds.left
+						&& playerBounds.left + playerBounds.width < wallBounds.left + wallBounds.width
+						&& playerBounds.top < wallBounds.top + wallBounds.height
+						&& playerBounds.top + playerBounds.height > wallBounds.top
+						)
+					{
+						velocity.x = 0.f;
+						player.setPosition(wallBounds.left - playerBounds.width, playerBounds.top);
+					}
+
+					//Left collision
+					else if (playerBounds.left > wallBounds.left
+						&& playerBounds.left + playerBounds.width > wallBounds.left + wallBounds.width
+						&& playerBounds.top < wallBounds.top + wallBounds.height
+						&& playerBounds.top + playerBounds.height > wallBounds.top
+						)
+					{
+						velocity.x = 0.f;
+						player.setPosition(wallBounds.left + wallBounds.width, playerBounds.top);
+					}
+				}
+			}
 
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
@@ -6363,15 +6671,16 @@ PLAY:
 					vase_check = 0;
 					glass_check = 0;
 
-					i = 7, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8;
+					i = 6, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8, g = 9;
 					while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
-					while (a != 2 && a != 1 && a != 0)a = rand();
-					while (b != 2 && b != 1 && b != 0 && b != 3)b = rand();
-					while (c != 2 && c != 1 && c != 0 && c != 3)c = rand();
-					while (d != 2 && d != 1 && d != 0 && d != 3 && d != 4)d = rand();
-					while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4 && e != 5 && e != 6)e = rand();
-					while (f != 2 && f != 1 && f != 0 && f != 3 && f != 4)f = rand();
-
+					while (a != 1 && a != 0)a = rand();
+					while (b != 2 && b != 1 && b != 0)b = rand();
+					while (c != 2 && c != 1 && c != 0)c = rand();
+					while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
+					while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4 && e != 5)e = rand();
+					while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
+					while (g != 2 && g != 1 && g != 0)g = rand();
+					while (h != 2 && h != 1 && h != 0)h = rand();
 
 					fish.setPosition(-10000.f, -10000.f);
 					cake.setPosition(-10000.f, -10000.f);
@@ -6980,6 +7289,7 @@ PLAY:
 			male.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			Grandma.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 			Boy.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
+			Girl.setTextureRect(sf::IntRect(32 * frameMC, 32 * 0, 32, 32));
 
 			if (frameMCCounter == 50) {
 				frameMC = (frameMC + 1) % 3;
@@ -7038,9 +7348,24 @@ PLAY:
 			window.draw(ClockCheck2);
 			window.draw(ClockCheck3);
 			window.draw(ClockCheck4);
+			window.draw(KeyCheck);
+			window.draw(KeyCheck2);
+			window.draw(KeyCheck3);
+			window.draw(KeyCheck4);
+			window.draw(KeyCheck5);
+			window.draw(KeyCheck6);
+
 
 
 			for (auto& i : catMC)
+			{
+				window.draw(i);
+			}
+			for (auto& i : door1Wall)
+			{
+				window.draw(i);
+			}
+			for (auto& i : door2Wall)
 			{
 				window.draw(i);
 			}
@@ -7055,6 +7380,7 @@ PLAY:
 			window.draw(Aunt);
 			window.draw(male);
 			window.draw(Boy);
+			window.draw(Girl);
 
 			window.draw(fish);
 			window.draw(cake);
@@ -7062,6 +7388,8 @@ PLAY:
 			window.draw(vase);
 			window.draw(book);
 			window.draw(clockPlus);
+			window.draw(key1);
+			window.draw(key2);
 			
 			window.draw(player);
 
@@ -7075,6 +7403,7 @@ PLAY:
 			window.draw(Textbox_dialog);
 			window.draw(textStatus);
 			window.draw(textPlayerName);
+			window.draw(textPetName);
 			
 			window.draw(time_show);
 			window.draw(ScoreSprite);

@@ -1,16 +1,16 @@
 ﻿  Main.cpp
 C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(27,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(76,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(78,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(76,36): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(78,36): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(308,69): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(334,69): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -19,7 +19,7 @@ C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(308,49): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(334,49): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -28,324 +28,305 @@ C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(309,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(335,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(309,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(335,43): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,53): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,61): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,61): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,68): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1986,68): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,36): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,50): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,58): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,58): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1987,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1989,23): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1989,23): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1989,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1989,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1990,23): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1990,23): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1990,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1990,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1992,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1992,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1992,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1992,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1992,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1992,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1993,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1993,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1993,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1993,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1993,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1993,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1995,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1995,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1995,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1995,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1995,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1995,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1996,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1996,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1996,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1996,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1996,36): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1996,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1998,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1998,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1998,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1998,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1998,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1998,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1998,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1998,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1999,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1999,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1999,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1999,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1999,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1999,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1999,46): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(1999,46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,54): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,54): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,63): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2001,63): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,37): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,37): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,46): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,54): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,54): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,63): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2002,63): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2004,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2004,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2004,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2004,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2004,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2004,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2004,46): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2004,46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2005,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2005,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2005,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2005,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2005,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2005,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2005,46): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2005,46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2007,29): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2007,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2007,36): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2007,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2008,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2008,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2008,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2008,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2008,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2008,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2010,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2010,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2010,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2010,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2010,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2010,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2011,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2011,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2011,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2011,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2011,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2011,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2132,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,53): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,61): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,61): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,68): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2094,68): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,36): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,43): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,43): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,50): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,58): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,58): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,65): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2095,65): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2097,23): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2097,23): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2097,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2097,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2098,23): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2098,23): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2098,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2098,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2100,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2100,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2100,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2100,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2100,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2100,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2101,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2101,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2101,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2101,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2101,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2101,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2103,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2103,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2103,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2103,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2103,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2103,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2104,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2104,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2104,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2104,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2104,36): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2104,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2106,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2106,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2106,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2106,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2106,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2106,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2106,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2106,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2107,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2107,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2107,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2107,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2107,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2107,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2107,46): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2107,46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,45): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,54): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,54): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,63): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2109,63): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,30): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,30): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,37): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,37): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,46): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,54): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,54): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,63): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2110,63): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2112,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2112,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2112,32): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2112,32): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2112,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2112,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2112,46): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2112,46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2113,25): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2113,25): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2113,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2113,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2113,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2113,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2113,46): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2113,46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2115,29): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2115,29): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2115,36): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2115,36): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2116,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2116,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2116,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2116,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2116,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2116,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2118,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2118,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2118,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2118,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2118,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2118,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2119,24): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2119,24): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2119,31): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2119,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2119,38): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2119,38): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2244,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2132,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2244,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2133,80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2245,80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2133,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2245,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2756,84): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2868,84): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2756,69): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2868,69): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2757,80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2869,80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2757,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2869,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2758,88): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2870,88): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2758,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(2870,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3343,80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3455,80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3343,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3455,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3344,88): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3456,88): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3344,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3456,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3951,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4063,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3951,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4063,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3952,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4064,79): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3952,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4064,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3953,87): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4065,87): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(3953,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4065,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4671,61): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4790,57): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4671,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4790,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4676,61): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4793,61): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4676,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4793,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5298,80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4798,61): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5298,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(4798,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5299,88): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5455,80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5299,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5455,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6321,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6343,72): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6343,52): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6344,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5456,88): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6344,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(5456,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6648,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6273,74): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -354,7 +335,7 @@ C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6648,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6273,54): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -363,22 +344,135 @@ C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6649,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6274,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6649,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6274,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(7263,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6485,23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6507,72): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6507,52): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6508,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(7268,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6508,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6812,73): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6812,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6813,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(6813,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(7435,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(7440,37): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(7610,74): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(7610,54): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(7611,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(7611,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(8270,74): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(8270,54): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(8271,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\mookm_v0n6lvt\Desktop\work\c-programimg\Let's go home\let's go home\let's go home\Main.cpp(8271,48): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float

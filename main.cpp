@@ -223,10 +223,7 @@ int main()
 	sf::Texture clockTexture;
 	sf::Sprite clockPlus;
 
-	if (!clockTexture.loadFromFile("img/tileset/clock1.png"))
-		std::cout << "Error could not load clock" << std::endl;
-	clockPlus.setTexture(clockTexture);
-	clockPlus.setScale(1.15f, 1.15f);
+	
 
 
 	sf::Texture Key1Texture;
@@ -714,23 +711,23 @@ int main()
 
 	// stairs //
 
-	sf::RectangleShape stairsHome11(sf::Vector2f(54.0f, 21.0f));
+	sf::RectangleShape stairsHome11(sf::Vector2f(24.0f, 21.0f));
 	stairsHome11.setPosition(-10000.f, -10000.f);
 	stairsHome11.setFillColor(sf::Color::Transparent);
 
-	sf::RectangleShape stairsHome12(sf::Vector2f(54.0f, 21.0f));
+	sf::RectangleShape stairsHome12(sf::Vector2f(24.0f, 21.0f));
 	stairsHome12.setPosition(-10000.f, -10000.f);
 	stairsHome12.setFillColor(sf::Color::Transparent);
 
-	sf::RectangleShape stairsHome2(sf::Vector2f(54.0f, 21.0f));
+	sf::RectangleShape stairsHome2(sf::Vector2f(24.0f, 21.0f));
 	stairsHome2.setPosition(-10000.f, -10000.f);
 	stairsHome2.setFillColor(sf::Color::Transparent);
 
-	sf::RectangleShape stairsHome3(sf::Vector2f(54.0f, 21.0f));
+	sf::RectangleShape stairsHome3(sf::Vector2f(24.0f, 21.0f));
 	stairsHome3.setPosition(-10000.f, -10000.f);
 	stairsHome3.setFillColor(sf::Color::Transparent);
 
-	sf::RectangleShape stairsHome6(sf::Vector2f(54.0f, 21.0f));
+	sf::RectangleShape stairsHome6(sf::Vector2f(24.0f, 21.0f));
 	stairsHome6.setPosition(-10000.f, -10000.f);
 	stairsHome6.setFillColor(sf::Color::Transparent);
 
@@ -1313,47 +1310,47 @@ PLAY:
 
 		// collision item //
 
-		sf::RectangleShape FishCheck1(sf::Vector2f(118.0f, 64.0f));
+		sf::RectangleShape FishCheck1(sf::Vector2f(98.0f, 64.0f));
 		FishCheck1.setPosition(2461.f, 1342.f);
 		FishCheck1.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape FishCheck2(sf::Vector2f(118.0f, 64.0f));
+		sf::RectangleShape FishCheck2(sf::Vector2f(98.0f, 64.0f));
 		FishCheck2.setPosition(2695.f, 1352.f);
 		FishCheck2.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape FishCheck3(sf::Vector2f(64.0f, 118.0f));
+		sf::RectangleShape FishCheck3(sf::Vector2f(44.0f, 118.0f));
 		FishCheck3.setPosition(2461.f, 429.f);
 		FishCheck3.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape FishCheck4(sf::Vector2f(64.0f, 118.0f));
+		sf::RectangleShape FishCheck4(sf::Vector2f(44.0f, 118.0f));
 		FishCheck4.setPosition(3023.f, 457.f);
 		FishCheck4.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape FishCheck5(sf::Vector2f(64.0f, 118.0f));
+		sf::RectangleShape FishCheck5(sf::Vector2f(44.0f, 118.0f));
 		FishCheck5.setPosition(3931.f, 457.f);
 		FishCheck5.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape FishCheck6(sf::Vector2f(64.0f, 118.0f));
+		sf::RectangleShape FishCheck6(sf::Vector2f(44.0f, 118.0f));
 		FishCheck6.setPosition(1051.f, 2846.f);
 		FishCheck6.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape FishCheck7(sf::Vector2f(64.0f, 118.0f));
+		sf::RectangleShape FishCheck7(sf::Vector2f(44.0f, 118.0f));
 		FishCheck7.setPosition(788.f, 2734.f);
 		FishCheck7.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape GlassCheck(sf::Vector2f(118.0f, 64.0f));
+		sf::RectangleShape GlassCheck(sf::Vector2f(98.0f, 64.0f));
 		GlassCheck.setPosition(1317.f, 2034.f);
 		GlassCheck.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape GlassCheck2(sf::Vector2f(64.0f, 118.0f));
+		sf::RectangleShape GlassCheck2(sf::Vector2f(44.0f, 118.0f));
 		GlassCheck2.setPosition(1411.f, 2034.f);
 		GlassCheck2.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape GlassCheck3(sf::Vector2f(64.0f, 118.0f));
+		sf::RectangleShape GlassCheck3(sf::Vector2f(44.0f, 118.0f));
 		GlassCheck3.setPosition(1375.f, 1814.f);
 		GlassCheck3.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape GlassCheck4(sf::Vector2f(64.0f, 118.0f));
+		sf::RectangleShape GlassCheck4(sf::Vector2f(44.0f, 118.0f));
 		GlassCheck4.setPosition(1189.f, 1813.f);
 		GlassCheck4.setFillColor(sf::Color::Transparent);
 		
@@ -1389,10 +1386,6 @@ PLAY:
 		VaseCheck4.setPosition(4264.f, 1080.f);
 		VaseCheck4.setFillColor(sf::Color::Transparent);
 
-		sf::RectangleShape BookCheck(sf::Vector2f(95.f, 63.0f));
-		BookCheck.setPosition(1950.f, 965.f);
-		BookCheck.setFillColor(sf::Color::Transparent);
-
 		sf::RectangleShape BookCheck2(sf::Vector2f(95.f, 63.0f));
 		BookCheck2.setPosition(3342.f, 544.f);
 		BookCheck2.setFillColor(sf::Color::Transparent);
@@ -1414,7 +1407,7 @@ PLAY:
 		BookCheck6.setFillColor(sf::Color::Transparent);
 
 		sf::RectangleShape ClockCheck(sf::Vector2f(63.0f, 95.f));
-		ClockCheck.setPosition(1056.f, 1784.f);
+		ClockCheck.setPosition(1019.f, 2144.f);
 		ClockCheck.setFillColor(sf::Color::Transparent);
 
 		sf::RectangleShape ClockCheck2(sf::Vector2f(63.0f, 95.f));
@@ -1422,7 +1415,7 @@ PLAY:
 		ClockCheck2.setFillColor(sf::Color::Transparent);
 
 		sf::RectangleShape ClockCheck3(sf::Vector2f(63.0f, 95.f));
-		ClockCheck3.setPosition(2049.f, 764.f);
+		ClockCheck3.setPosition(3712.f, 739.f);
 		ClockCheck3.setFillColor(sf::Color::Transparent);
 
 		sf::RectangleShape ClockCheck4(sf::Vector2f(63.0f, 95.f));
@@ -2061,7 +2054,8 @@ PLAY:
 		key2.setPosition(-10000.f, -10000.f);
 
 		//player.setPosition(1050.f, 3000.f);
-		player.setPosition(3608.f, 2175.f);
+		//player.setPosition(3608.f, 2175.f);
+		player.setPosition(3324.f, 878.f);
 		Grandma.setPosition(3424.f, 878.f);
 		Dog_mc.setPosition(3443.f, 939.f);
 		cat_mc.setPosition(1122.f, 2088.f);
@@ -2091,7 +2085,7 @@ PLAY:
 		int roomleft = 0;
 		int roomight = 0;
 
-		int randXFish[7] = { 2462.f,3027.f,2753.f,3943.f, 2465.f, 1052.f,786.f }; 
+		int randXFish[7] = { 2462.f,3027.f,2753.f,3943.f, 2465.f, 1052.f,783.f }; 
 		int randYFish[7] = { 400.f,435.f,1323.f,433.f, 1343.f, 2838.f,2722.f }; 
 
 		int randXPet[2] = { 3767.f,3256.f}; 
@@ -2106,29 +2100,59 @@ PLAY:
 		int randXVase[4] = { 4546.f,4291.f,3967.f,4091.f }; 
 		int randYVase[4] = { 1299.f,1101.f,1167.f ,1165.f }; 
 
-		int randXBook[6] = { 3347.f,3107.f,3590.f,1923.f , 1391.f , 1094.f };
-		int randYBook[6] = { 516.f,1167.f,1345.f , 955.f  ,3298.f , 1757.f };
+		int randXBook[5] = { 3347.f,3107.f,3590.f, 1391.f , 1098.f };
+		int randYBook[5] = { 516.f,1167.f,1345.f,3298.f , 1763.f };
 
-		int randXClock[4] = { 2064.f,3793.f,3028.f,1040.f };
-		int randYClock[4] = { 736.f,1902.f,1577.f ,1766.f };
+		int randXClock[4] = { 1008.f,3788.f,3028.f,3729.f };
+		int randYClock[4] = { 2169.f,1902.f,1577.f ,778.f };
+
 
 		int randXKey1[3] = { 2905,3174.f,3222.f };
-		int randYKey1[3] = { 1699.f,1651.f ,1978.f };
+		int randYKey1[3] = { 1694.f,1646.f ,1973.f };
 
 		int randXKey2[3] = { 3040.f,3156.f,3547.f };
-		int randYKey2[3] = { 1663.f,1887.f,1954.f };
+		int randYKey2[3] = { 1658.f,1882.f,1949.f };
+
+		int randClock[4] = { 0,1,2,3 };
+		int randTime[4] = { 30,60,90,120 };
+
+		int TimePlus = 0;
+		int chooseClock = 0;
 
 
-		int i = 7, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8, g = 9, h=10;
+		int i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 3, g = 10, h= 10, j = 10, k = 10;
 		while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
 		while (a != 1 && a != 0)a = rand();
 		while (b != 2 && b != 1 && b != 0)b = rand();
-		while (c != 2 && c != 1 && c != 0 )c= rand();
+		while (c != 2 && c != 1 && c != 0)c = rand();
 		while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
-		while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4 && e != 5)e = rand();
+		while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4)e = rand();
 		while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
 		while (g != 2 && g != 1 && g != 0)g = rand();
 		while (h != 2 && h != 1 && h != 0)h = rand();
+		while (j != 2 && j != 1 && j != 0 && j != 3)j = rand();
+		while (k != 30 && k != 60 && k != 90 && k != 120)k = rand();
+		
+		chooseClock = randClock[j];
+
+
+		if (chooseClock == 0) {
+			if (!clockTexture.loadFromFile("img/tileset/clock1.png"))
+				std::cout << "Error could not load clock" << std::endl;
+		}
+		if (chooseClock == 1) {
+			if (!clockTexture.loadFromFile("img/tileset/clock2.png"))
+				std::cout << "Error could not load clock" << std::endl;
+		}
+		if (chooseClock == 2) {
+			if (!clockTexture.loadFromFile("img/tileset/clock3.png"))
+				std::cout << "Error could not load clock" << std::endl;
+		}
+		if (chooseClock == 3) {
+			if (!clockTexture.loadFromFile("img/tileset/clock4.png"))
+				std::cout << "Error could not load clock" << std::endl;
+		}
+		clockPlus.setTexture(clockTexture);
 
 
 		//Start the game loop
@@ -2202,8 +2226,8 @@ PLAY:
 							}
 							else {
 								door1.setPosition(10000.f, 100000.f);
-								door1after.setPosition(3349.f, 1914.f);
-								wallhouse5.setPosition(3301.f, 1792.f);
+								door1after.setPosition(3349.f, 1909.f);
+								wallhouse5.setPosition(3301.f, 1787.f);
 								door1Wall.clear();
 							}
 						}
@@ -2224,8 +2248,8 @@ PLAY:
 							}
 							else {
 								door2.setPosition(10000.f, 100000.f);
-								door2after.setPosition(3674.f, 1914.f);
-								wallhouse5.setPosition(3301.f, 1792.f);
+								door2after.setPosition(3674.f, 1909.f);
+								wallhouse5.setPosition(3301.f, 1787.f);
 								door2Wall.clear();
 							}
 						}
@@ -2242,7 +2266,7 @@ PLAY:
 								Home1.setPosition(1553.f, 2883.f);
 								male.setPosition(-10000.f, -10000.f);
 								if(fish_check == 0)fish.setPosition(Vector2f(randXFish[i], randYFish[i]));
-								if (book_check == 0)book.setPosition(Vector2f(randXBook[f], randYBook[f]));
+								if (book_check == 0)book.setPosition(Vector2f(randXBook[e], randYBook[e]));
 								house_check = 1;
 								wall.setPosition(gridSize * 11, gridSize * 43);
 								walls.push_back(wall);
@@ -2865,9 +2889,9 @@ PLAY:
 								row = 3;
 								walls.clear();
 								catMC.clear();
-								if (glass_check == 0)glass.setPosition(Vector2f(randXGlass[c], randYGlass[c]));
-								if (book_check == 0)book.setPosition(Vector2f(randXBook[f], randYBook[f]));
-								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
+								if (glass_check == 0)glass.setPosition(Vector2f(randXGlass[b], randYGlass[b]));
+								if (book_check == 0)book.setPosition(Vector2f(randXBook[e], randYBook[e]));
+								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[f], randYClock[f]));
 								Home2.setPosition(1295.f, 2189.f);
 								stairsHome2.setPosition(1045.f, 1870.f);
 								house_check = 1;
@@ -2880,9 +2904,9 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 16, gridSize * 27);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 16, gridSize * 33);
+								wall.setPosition(gridSize * 14, gridSize * 33);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 16, gridSize * 34);
+								wall.setPosition(gridSize * 15, gridSize * 34);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 17, gridSize * 35);
 								walls.push_back(wall);
@@ -2904,13 +2928,11 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 22, gridSize * 31);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 22, gridSize * 32);
-								walls.push_back(wall);
 								wall.setPosition(gridSize * 23, gridSize * 29);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 23, gridSize * 30);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 23, gridSize * 33);
+								wall.setPosition(gridSize * 23, gridSize * 32);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 23, gridSize * 34);
 								walls.push_back(wall);
@@ -3452,8 +3474,8 @@ PLAY:
 						if (home3check == 1) {
 							if (house_check == 0) {
 
-								if (cake_check == 0)cake.setPosition(Vector2f(randXCake[b], randYCake[b]));
-								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
+								if (cake_check == 0)cake.setPosition(Vector2f(randXCake[c], randYCake[c]));
+								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[f], randYClock[f]));
 
 								myhouse1.setPosition({ 1247.f, 260.f });
 								player.setPosition(2097.f, 1074.f);
@@ -4061,8 +4083,8 @@ PLAY:
 							walls.clear();
 							Home4.setPosition(3120.f, 1526.f);
 							if (fish_check == 0)fish.setPosition(Vector2f(randXFish[i], randYFish[i]));
-							if (book_check == 0)book.setPosition(Vector2f(randXBook[f], randYBook[f]));
-							if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
+							if (book_check == 0)book.setPosition(Vector2f(randXBook[e], randYBook[e]));
+							if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[f], randYClock[f]));
 							Grandma.setPosition(-10000.f, -10000.f);
 							Dog_mc.setPosition(-10000.f, -10000.f);
 							cat_mc.setPosition(-10000.f, -10000.f);
@@ -4765,17 +4787,17 @@ PLAY:
 
 								Boy.setPosition(-100000.f, -100000.f);
 								Girl.setPosition(10000.f, 10000.f);
-								myhouse2.setPosition({ 2207.f, 1268.f });
-								player.setPosition(2950.f, 2260.f);
-								if(keyleft_check == 0)door1.setPosition(3321.f, 1882.f);
-								if (keyright_check == 0)door2.setPosition(3646.f, 1882.f);
+								myhouse2.setPosition({ 2207.f, 1263.f });
+								player.setPosition(2950.f, 2245.f);
+								if(keyleft_check == 0)door1.setPosition(3321.f, 1877.f);
+								if (keyright_check == 0)door2.setPosition(3646.f, 1877.f);
 								if (keyleft_check == 1) {
 									door1after.setPosition(3349.f, 1914.f);
 									wallhouse5.setPosition(3301.f, 1792.f);
 								}
 								if (keyright_check == 1) {
 									door2after.setPosition(3674.f, 1914.f);
-									wallhouse5.setPosition(3301.f, 1792.f);
+									wallhouse5.setPosition(3301.f, 1787.f);
 								}
 								row = 3;
 								catMC.clear();
@@ -5453,7 +5475,7 @@ PLAY:
 						if (home6check == 1) {
 							if (house_check == 0) {
 								if (vase_check == 0)vase.setPosition(Vector2f(randXVase[d], randYVase[d]));
-								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[e], randYClock[e]));
+								if (clock_check == 0)clockPlus.setPosition(Vector2f(randXClock[f], randYClock[f]));
 
 
 								myhouse3.setPosition({ 3088.f, 606.f });
@@ -6304,11 +6326,11 @@ PLAY:
 							Dialog_check = 0;
 						}
 						}
-						else if (glass.getGlobalBounds().intersects(GlassCheck.getGlobalBounds()) || glass.getGlobalBounds().intersects(GlassCheck2.getGlobalBounds()) ||
-						glass.getGlobalBounds().intersects(GlassCheck3.getGlobalBounds()) || glass.getGlobalBounds().intersects(GlassCheck4.getGlobalBounds())) {
 
-						if (player.getGlobalBounds().intersects(GlassCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(GlassCheck2.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(GlassCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(GlassCheck4.getGlobalBounds())) {
+
+						if (glass.getGlobalBounds().intersects(GlassCheck.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(GlassCheck.getGlobalBounds())) {
 							if (Dialog_check == 0) {
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
 								textStatus.setString("You got glass");
@@ -6325,16 +6347,66 @@ PLAY:
 						
 							}
 						}
+						else if (glass.getGlobalBounds().intersects(GlassCheck2.getGlobalBounds())) {
 
-						else if (fish.getGlobalBounds().intersects(FishCheck1.getGlobalBounds()) || fish.getGlobalBounds().intersects(FishCheck2.getGlobalBounds()) ||
-						fish.getGlobalBounds().intersects(FishCheck3.getGlobalBounds()) || fish.getGlobalBounds().intersects(FishCheck4.getGlobalBounds()) ||
-						fish.getGlobalBounds().intersects(FishCheck5.getGlobalBounds()) || fish.getGlobalBounds().intersects(FishCheck6.getGlobalBounds()) ||
-						fish.getGlobalBounds().intersects(FishCheck7.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(GlassCheck2.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got glass");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									glass_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									glass.setPosition(-10000.f, -10000.f);
+								}
 
-						if (player.getGlobalBounds().intersects(FishCheck1.getGlobalBounds()) || player.getGlobalBounds().intersects(FishCheck2.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(FishCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(FishCheck4.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(FishCheck5.getGlobalBounds()) || player.getGlobalBounds().intersects(FishCheck6.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(FishCheck7.getGlobalBounds())) {
+							}
+						}
+						else if (glass.getGlobalBounds().intersects(GlassCheck3.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(GlassCheck3.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got glass");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									glass_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									glass.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else if (glass.getGlobalBounds().intersects(GlassCheck4.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(GlassCheck4.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got glass");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									glass_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									glass.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+
+						if (fish.getGlobalBounds().intersects(FishCheck1.getGlobalBounds())) {
+						if (player.getGlobalBounds().intersects(FishCheck1.getGlobalBounds())) {
 
 							if (Dialog_check == 0) {
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
@@ -6352,12 +6424,125 @@ PLAY:
 
 						}
 						}
+						else if (fish.getGlobalBounds().intersects(FishCheck2.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(FishCheck2.getGlobalBounds())) {
 
-						else if (cake.getGlobalBounds().intersects(CakeCheck.getGlobalBounds()) || cake.getGlobalBounds().intersects(CakeCheck2.getGlobalBounds()) ||
-						cake.getGlobalBounds().intersects(CakeCheck3.getGlobalBounds()) || cake.getGlobalBounds().intersects(CakeCheck4.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got fish");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									fish_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									fish.setPosition(-10000.f, -10000.f);
+								}
 
-						if (player.getGlobalBounds().intersects(CakeCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(CakeCheck2.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(CakeCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(CakeCheck4.getGlobalBounds())) {
+							}
+						}
+						else if (fish.getGlobalBounds().intersects(FishCheck3.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(FishCheck3.getGlobalBounds())) {
+
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got fish");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									fish_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									fish.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else if (fish.getGlobalBounds().intersects(FishCheck4.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(FishCheck4.getGlobalBounds())) {
+
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got fish");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									fish_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									fish.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else if (fish.getGlobalBounds().intersects(FishCheck5.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(FishCheck5.getGlobalBounds())) {
+
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got fish");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									fish_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									fish.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else if (fish.getGlobalBounds().intersects(FishCheck6.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(FishCheck6.getGlobalBounds())) {
+
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got fish");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									fish_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									fish.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else if (fish.getGlobalBounds().intersects(FishCheck7.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(FishCheck7.getGlobalBounds())) {
+
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got fish");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									fish_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									fish.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+
+
+						if (cake.getGlobalBounds().intersects(CakeCheck.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(CakeCheck.getGlobalBounds())) {
 							if (Dialog_check == 0) {
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
 								textStatus.setString("You got cake");
@@ -6374,12 +6559,67 @@ PLAY:
 
 						}
 						}
+						else if (cake.getGlobalBounds().intersects(CakeCheck2.getGlobalBounds())) {
 
-						else if (vase.getGlobalBounds().intersects(VaseCheck.getGlobalBounds()) || vase.getGlobalBounds().intersects(VaseCheck2.getGlobalBounds()) ||
-						vase.getGlobalBounds().intersects(VaseCheck3.getGlobalBounds()) || vase.getGlobalBounds().intersects(VaseCheck4.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(CakeCheck2.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got cake");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									cake_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									cake.setPosition(-10000.f, -10000.f);
+								}
 
-						if (player.getGlobalBounds().intersects(VaseCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(VaseCheck2.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(VaseCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(VaseCheck4.getGlobalBounds())) {
+							}
+						}
+						else if (cake.getGlobalBounds().intersects(CakeCheck3.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(CakeCheck3.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got cake");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									cake_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									cake.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else if (cake.getGlobalBounds().intersects(CakeCheck4.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(CakeCheck4.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("traffic is really bad. mommy come home late 15 minutes");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									vase_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									vase.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+
+						if (vase.getGlobalBounds().intersects(VaseCheck.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(VaseCheck.getGlobalBounds())) {
 							if (Dialog_check == 0) {
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
 								textStatus.setString("You got vase");
@@ -6396,36 +6636,188 @@ PLAY:
 
 						}
 						}
+						else if (vase.getGlobalBounds().intersects(VaseCheck2.getGlobalBounds())) {
 
-						else if (book.getGlobalBounds().intersects(BookCheck.getGlobalBounds()) || book.getGlobalBounds().intersects(BookCheck2.getGlobalBounds()) ||
-						book.getGlobalBounds().intersects(BookCheck3.getGlobalBounds()) || book.getGlobalBounds().intersects(BookCheck4.getGlobalBounds()) ||
-						book.getGlobalBounds().intersects(BookCheck5.getGlobalBounds()) || book.getGlobalBounds().intersects(BookCheck6.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(VaseCheck2.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got vase");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									vase_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									vase.setPosition(-10000.f, -10000.f);
+								}
 
-						if (player.getGlobalBounds().intersects(BookCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(BookCheck2.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(BookCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(BookCheck4.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(BookCheck5.getGlobalBounds()) || player.getGlobalBounds().intersects(BookCheck6.getGlobalBounds())) {
+							}
+						}
+						else if (vase.getGlobalBounds().intersects(VaseCheck3.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(VaseCheck3.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got vase");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									vase_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									vase.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else if (vase.getGlobalBounds().intersects(VaseCheck4.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(VaseCheck4.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got vase");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									vase_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									vase.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+
+						if (book.getGlobalBounds().intersects(BookCheck2.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(BookCheck2.getGlobalBounds())) {
 
 
+							}
+						}
+						else if (book.getGlobalBounds().intersects(BookCheck3.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(BookCheck3.getGlobalBounds())) {
+
+
+							}
+						}
+						else if (book.getGlobalBounds().intersects(BookCheck4.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(BookCheck4.getGlobalBounds())) {
+
+
+							}
+						}
+						else if (book.getGlobalBounds().intersects(BookCheck5.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(BookCheck5.getGlobalBounds())) {
+
+
+							}
+						}
+						else if (book.getGlobalBounds().intersects(BookCheck6.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(BookCheck6.getGlobalBounds())) {
+
+
+							}
+						}
+
+						if (clockPlus.getGlobalBounds().intersects(ClockCheck.getGlobalBounds())) {
+						if (player.getGlobalBounds().intersects(ClockCheck.getGlobalBounds())) {
+
+							TimePlus = randTime[k];
+							if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("the traffic is really bad. mommy come home late 15 minutes");
+									textStatus.setCharacterSize(34);
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+									Dialog_check = 1;
+									clock_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									clockPlus.setPosition(-10000.f, -10000.f);
+								}
 						}
 						}
+						else if (clockPlus.getGlobalBounds().intersects(ClockCheck2.getGlobalBounds())) {
 
-						else if (clockPlus.getGlobalBounds().intersects(ClockCheck.getGlobalBounds()) || clockPlus.getGlobalBounds().intersects(ClockCheck2.getGlobalBounds()) ||
-						clockPlus.getGlobalBounds().intersects(ClockCheck3.getGlobalBounds()) || clockPlus.getGlobalBounds().intersects(ClockCheck4.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(ClockCheck2.getGlobalBounds())) {
 
-						if (player.getGlobalBounds().intersects(ClockCheck.getGlobalBounds()) || player.getGlobalBounds().intersects(ClockCheck2.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(ClockCheck3.getGlobalBounds()) || player.getGlobalBounds().intersects(ClockCheck4.getGlobalBounds())) {
+								TimePlus = randTime[k];
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("the traffic is really bad. mommy come home late 15 minutes");
+									textStatus.setCharacterSize(34);
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+									Dialog_check = 1;
+									clock_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									clockPlus.setPosition(-10000.f, -10000.f);
+								}
 
-
+							}
 						}
+						else if (clockPlus.getGlobalBounds().intersects(ClockCheck3.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(ClockCheck3.getGlobalBounds())) {
+								TimePlus = randTime[k];
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("the traffic is really bad. mommy come home late 15 minutes");
+									textStatus.setCharacterSize(34);
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+									Dialog_check = 1;
+									clock_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									clockPlus.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else if (clockPlus.getGlobalBounds().intersects(ClockCheck4.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(ClockCheck4.getGlobalBounds())) {
+
+								TimePlus = randTime[k];
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("the traffic is really bad. mommy come home late 15 minutes");
+									textStatus.setCharacterSize(34);
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+									Dialog_check = 1;
+									clock_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									clockPlus.setPosition(-10000.f, -10000.f);
+								}
+							}
 						}
 
-						if (key1.getGlobalBounds().intersects(KeyCheck.getGlobalBounds()) ||
-						key1.getGlobalBounds().intersects(KeyCheck3.getGlobalBounds()) ||
-						key1.getGlobalBounds().intersects(KeyCheck5.getGlobalBounds())) {
+						if (key1.getGlobalBounds().intersects(KeyCheck.getGlobalBounds())) {
 
-						if (player.getGlobalBounds().intersects(KeyCheck.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(KeyCheck3.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(KeyCheck5.getGlobalBounds())) {
+						if (player.getGlobalBounds().intersects(KeyCheck.getGlobalBounds())) {
 
 							if (Dialog_check == 0) {
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
@@ -6443,14 +6835,50 @@ PLAY:
 
 						}
 						}
+						else if (key1.getGlobalBounds().intersects(KeyCheck3.getGlobalBounds())) {
 
-						if (key2.getGlobalBounds().intersects(KeyCheck2.getGlobalBounds()) ||
-						key2.getGlobalBounds().intersects(KeyCheck4.getGlobalBounds()) ||
-						key2.getGlobalBounds().intersects(KeyCheck6.getGlobalBounds())) {
+							if (player.getGlobalBounds().intersects(KeyCheck3.getGlobalBounds())) {
 
-						if (player.getGlobalBounds().intersects(KeyCheck2.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(KeyCheck4.getGlobalBounds()) ||
-							player.getGlobalBounds().intersects(KeyCheck6.getGlobalBounds())) {
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got key");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									keyleft_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									key1.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else if (key1.getGlobalBounds().intersects(KeyCheck5.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(KeyCheck5.getGlobalBounds())) {
+
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got key");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									keyleft_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									key1.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+
+						if (key2.getGlobalBounds().intersects(KeyCheck2.getGlobalBounds())) {
+
+						if (player.getGlobalBounds().intersects(KeyCheck2.getGlobalBounds())) {
 
 							if (Dialog_check == 0) {
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
@@ -6468,6 +6896,46 @@ PLAY:
 
 						}
 						}
+						else  if (key2.getGlobalBounds().intersects(KeyCheck4.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(KeyCheck4.getGlobalBounds())) {
+
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got key");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									keyright_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									key2.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
+						else  if (key2.getGlobalBounds().intersects(KeyCheck6.getGlobalBounds())) {
+
+							if (player.getGlobalBounds().intersects(KeyCheck6.getGlobalBounds())) {
+
+								if (Dialog_check == 0) {
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setString("You got key");
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 220);
+									Dialog_check = 1;
+									keyright_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									key2.setPosition(-10000.f, -10000.f);
+								}
+
+							}
+						}
 
 
 					}
@@ -6478,9 +6946,7 @@ PLAY:
 			
 			if(glass_aunt == 1 && Dialog_check == 0)Aunt.setTextureRect(sf::IntRect(32 * frameMC, 32 * 1, 32, 32));
 
-
 			ss.str("");
-
 			timer = clock_count.getElapsedTime();
 			s = timer.asSeconds();
 			m = s / 60;
@@ -6499,31 +6965,140 @@ PLAY:
 				ss << " : " << s;
 			}
 
-			if (m == 7 && s >= 50) {
-				time_show.setFillColor(Color::Red);
+			if (TimePlus == 0) {
+				if (m == 7 && s >= 50) {
+					time_show.setFillColor(Color::Red);
+				}
+				if (s == 7) {
+					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
+					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
+					view.setCenter(position);
+					window.setView(view);
+					ExitButtonCheck = 0;
+					yourname.clear();
+					playerName.setString(yourname);
+					player_check = 0;
+					yourPetname.clear();
+					playerPetName.setString(yourPetname);
+					player_Petcheck = 0;
+					character1.setPosition({ 115.f, 61.f });
+					character2.setPosition({ 363.f, 61.f });
+					character3.setPosition({ 115.f, 313.f });
+					character4.setPosition({ 364.f, 313.f });
+					characterPet1.setPosition({ 720.f, 288.f });
+					characterPet2.setPosition({ 967.f, 288.f });
+					player_choose = 0;
+					player_choose_pet = 0;
+					goto GAMEOVER;
+				}
 			}
-
-			if (m == 8) {
-				view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
-				sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
-				view.setCenter(position);
-				window.setView(view);
-				ExitButtonCheck = 0;
-				yourname.clear();
-				playerName.setString(yourname);
-				player_check = 0;
-				yourPetname.clear();
-				playerPetName.setString(yourPetname);
-				player_Petcheck = 0;
-				character1.setPosition({ 115.f, 61.f });
-				character2.setPosition({ 363.f, 61.f });
-				character3.setPosition({ 115.f, 313.f });
-				character4.setPosition({ 364.f, 313.f });
-				characterPet1.setPosition({ 720.f, 288.f });
-				characterPet2.setPosition({ 967.f, 288.f });
-				player_choose = 0;
-				player_choose_pet = 0;
-				goto GAMEOVER;
+			if (TimePlus == 30) {
+				if (m == 8 && s >= 20) {
+					time_show.setFillColor(Color::Red);
+				}
+				if (s == 8) {
+					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
+					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
+					view.setCenter(position);
+					window.setView(view);
+					ExitButtonCheck = 0;
+					yourname.clear();
+					playerName.setString(yourname);
+					player_check = 0;
+					yourPetname.clear();
+					playerPetName.setString(yourPetname);
+					player_Petcheck = 0;
+					character1.setPosition({ 115.f, 61.f });
+					character2.setPosition({ 363.f, 61.f });
+					character3.setPosition({ 115.f, 313.f });
+					character4.setPosition({ 364.f, 313.f });
+					characterPet1.setPosition({ 720.f, 288.f });
+					characterPet2.setPosition({ 967.f, 288.f });
+					player_choose = 0;
+					player_choose_pet = 0;
+					goto GAMEOVER;
+				}
+			}
+			if (TimePlus == 60) {
+				if (m == 8 && s >= 50) {
+					time_show.setFillColor(Color::Red);
+				}
+				if (s == 9) {
+					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
+					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
+					view.setCenter(position);
+					window.setView(view);
+					ExitButtonCheck = 0;
+					yourname.clear();
+					playerName.setString(yourname);
+					player_check = 0;
+					yourPetname.clear();
+					playerPetName.setString(yourPetname);
+					player_Petcheck = 0;
+					character1.setPosition({ 115.f, 61.f });
+					character2.setPosition({ 363.f, 61.f });
+					character3.setPosition({ 115.f, 313.f });
+					character4.setPosition({ 364.f, 313.f });
+					characterPet1.setPosition({ 720.f, 288.f });
+					characterPet2.setPosition({ 967.f, 288.f });
+					player_choose = 0;
+					player_choose_pet = 0;
+					goto GAMEOVER;
+				}
+			}
+			if (TimePlus == 90) {
+				if (m == 9 && s >= 20) {
+					time_show.setFillColor(Color::Red);
+				}
+				if (s == 10) {
+					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
+					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
+					view.setCenter(position);
+					window.setView(view);
+					ExitButtonCheck = 0;
+					yourname.clear();
+					playerName.setString(yourname);
+					player_check = 0;
+					yourPetname.clear();
+					playerPetName.setString(yourPetname);
+					player_Petcheck = 0;
+					character1.setPosition({ 115.f, 61.f });
+					character2.setPosition({ 363.f, 61.f });
+					character3.setPosition({ 115.f, 313.f });
+					character4.setPosition({ 364.f, 313.f });
+					characterPet1.setPosition({ 720.f, 288.f });
+					characterPet2.setPosition({ 967.f, 288.f });
+					player_choose = 0;
+					player_choose_pet = 0;
+					goto GAMEOVER;
+				}
+			}
+			if (TimePlus == 120) {
+				if (m == 9 && s >= 50) {
+					time_show.setFillColor(Color::Red);
+				}
+				if (s == 11) {
+					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
+					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
+					view.setCenter(position);
+					window.setView(view);
+					ExitButtonCheck = 0;
+					yourname.clear();
+					playerName.setString(yourname);
+					player_check = 0;
+					yourPetname.clear();
+					playerPetName.setString(yourPetname);
+					player_Petcheck = 0;
+					character1.setPosition({ 115.f, 61.f });
+					character2.setPosition({ 363.f, 61.f });
+					character3.setPosition({ 115.f, 313.f });
+					character4.setPosition({ 364.f, 313.f });
+					characterPet1.setPosition({ 720.f, 288.f });
+					characterPet2.setPosition({ 967.f, 288.f });
+					player_choose = 0;
+					player_choose_pet = 0;
+					goto GAMEOVER;
+				}
 			}
 
 
@@ -6537,15 +7112,12 @@ PLAY:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && ExitButtonCheck == 0 && Dialog_check == 0) {
 				velocity.y += movementSpeed * dt;
 			}
-
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && ExitButtonCheck == 0 && Dialog_check == 0) {
 				velocity.x += -movementSpeed * dt;
 			}
-
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && ExitButtonCheck == 0 && Dialog_check == 0) {
 				velocity.x += movementSpeed * dt;
 			}
-
 			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && ExitButtonCheck == 0 && Dialog_check == 0) {
 				velocity.y += -movementSpeed * dt;
 			}
@@ -6555,7 +7127,6 @@ PLAY:
 			}
 			else if (velocity.x < 0.f) {
 				row = 1;
-
 			}
 			else if (velocity.x > 0.f) {
 				row = 2;
@@ -6563,7 +7134,6 @@ PLAY:
 			else if (velocity.y < 0.f) {
 				row = 3;
 			}
-
 
 			// Idle check
 
@@ -6833,16 +7403,18 @@ PLAY:
 					vase_check = 0;
 					glass_check = 0;
 
-					i = 7, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8, g = 9;
+					i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h = 10, j = 10, k = 10;
 					while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
 					while (a != 1 && a != 0)a = rand();
 					while (b != 2 && b != 1 && b != 0)b = rand();
 					while (c != 2 && c != 1 && c != 0)c = rand();
 					while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
-					while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4 && e != 5)e = rand();
+					while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4)e = rand();
 					while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
 					while (g != 2 && g != 1 && g != 0)g = rand();
 					while (h != 2 && h != 1 && h != 0)h = rand();
+					while (j != 2 && j != 1 && j != 0 && j != 3)j = rand();
+					while (k != 30 && k != 60 && k != 90 && k != 120)k = rand();
 
 					fish.setPosition(-10000.f, -10000.f);
 					cake.setPosition(-10000.f, -10000.f);
@@ -7511,7 +8083,6 @@ PLAY:
 			window.draw(VaseCheck2);
 			window.draw(VaseCheck3);
 			window.draw(VaseCheck4);
-			window.draw(BookCheck);
 			window.draw(BookCheck2);
 			window.draw(BookCheck3);
 			window.draw(BookCheck4);
@@ -7593,7 +8164,6 @@ PLAY:
 		}
 
 	GAMEOVER:
-
 		while (window.isOpen()) {
 
 			Event aevent;
@@ -7633,16 +8203,18 @@ PLAY:
 						keyright_check = 0;
 						keyleft_check = 0;
 
-						i = 7, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8, g = 9;
+						i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h = 10, j = 10, k = 10;
 						while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
 						while (a != 1 && a != 0)a = rand();
 						while (b != 2 && b != 1 && b != 0)b = rand();
 						while (c != 2 && c != 1 && c != 0)c = rand();
 						while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
-						while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4 && e != 5)e = rand();
+						while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4)e = rand();
 						while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
 						while (g != 2 && g != 1 && g != 0)g = rand();
 						while (h != 2 && h != 1 && h != 0)h = rand();
+						while (j != 2 && j != 1 && j != 0 && j != 3)j = rand();
+						while (k != 30 && k != 60 && k != 90 && k != 120)k = rand();
 
 						fish.setPosition(-10000.f, -10000.f);
 						cake.setPosition(-10000.f, -10000.f);
@@ -8291,16 +8863,18 @@ PLAY:
 						vase_check = 0;
 						glass_check = 0;
 
-						i = 7, a = 3, b = 4, c = 5, d = 6, e = 7, f = 8, g = 9;
+						i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h = 10, j = 10, k = 10;
 						while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
 						while (a != 1 && a != 0)a = rand();
 						while (b != 2 && b != 1 && b != 0)b = rand();
 						while (c != 2 && c != 1 && c != 0)c = rand();
 						while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
-						while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4 && e != 5)e = rand();
+						while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4)e = rand();
 						while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
 						while (g != 2 && g != 1 && g != 0)g = rand();
 						while (h != 2 && h != 1 && h != 0)h = rand();
+						while (j != 2 && j != 1 && j != 0 && j != 3)j = rand();
+						while (k != 30 && k != 60 && k != 90 && k != 120)k = rand();
 
 						fish.setPosition(-10000.f, -10000.f);
 						cake.setPosition(-10000.f, -10000.f);

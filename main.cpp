@@ -44,7 +44,7 @@ int main()
  
 	// Create short screne // 
  
-	std::string mediaFile = "img/bg/short screne.mp4"; 
+	std::string mediaFile = "img/bg/short screne2.mp4"; 
 	std::cout << "Going to open movie file \"" << mediaFile << "\"" << std::endl; 
  
 	sfe::Movie movie; 
@@ -1191,12 +1191,12 @@ SHORT_SCRENE:
 					switch (ev.key.code) { 
 					case sf::Keyboard::Space: { 
 						goto PLAY; 
-						movie.stop(); 
+						movie.pause();
 						break; 
 					} 
 					case sf::Keyboard::Escape: { 
 						goto MENU; 
-						movie.stop(); 
+						movie.pause();
 						break; 
 					} 
 					default: 
@@ -1204,6 +1204,8 @@ SHORT_SCRENE:
 					} 
 				} 
 			} 
+
+			
  
 			window.clear(); 
 			movie.update(); 

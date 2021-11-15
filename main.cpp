@@ -830,17 +830,39 @@ int main()
 	score_show.setFillColor(Color::Black); 
  
 	int secondMOVIE = 0;
+
+	sf::Music musicMENU;
+	if (!musicMENU.openFromFile("sounds/MENUsound.ogg"))
+		return -1; 
+
+	sf::Music musicPLAY;
+	if (!musicPLAY.openFromFile("sounds/PLAYsound.ogg"))
+		return -1;
+
+	sf::Music musicGO;
+	if (!musicGO.openFromFile("sounds/GOsound.ogg"))
+		return -1; 
+
+	sf::Music musicWIN;
+	if (!musicWIN.openFromFile("sounds/WINsound.ogg"))
+		return -1;
+
+
+	musicMENU.play();
+	musicMENU.setLoop(true);
  
 	goto MENU; 
  
 MENU: 
+
 	while (window.isOpen()) 
 	{ 
- 
-		Event event; 
+
+		Event event;
 		while (window.pollEvent(event)) 
 		{ 
- 
+
+
 			while (window.pollEvent(event)) { 
 				if (event.type == Event::Closed) { 
 					window.close(); 
@@ -906,6 +928,7 @@ MENU:
 				if (StartButton.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 
 					goto CHOOSE_CHARACTER; 
+					
 				} 
 				if (ScoreButton.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 
@@ -1052,6 +1075,7 @@ CHOOSE_CHARACTER:
 					case sf::Keyboard::Space: { 
  
 						if (player_choose != 0 && player_choose_pet != 0 && player_Petcheck == 1 && player_check == 1) { 
+							musicMENU.stop();
 							goto SHORT_SCRENE; 
 						} 
  
@@ -1128,6 +1152,7 @@ CHOOSE_CHARACTER:
 				} 
 				if (Next.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 
+					musicMENU.stop();
 					goto SHORT_SCRENE; 
 					 
 				} 
@@ -1316,6 +1341,10 @@ PLAY:
 		int textCheckDialogBoy = 0; 
 		int textCheckDialogGirl = 0; 
 		int textCheckDialogMale = 0; 
+
+		
+		musicPLAY.play();
+		musicPLAY.setLoop(true);
  
 		// collision item // 
  
@@ -6322,6 +6351,7 @@ PLAY:
 						sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2); 
 						view.setCenter(position); 
 						window.setView(view); 
+						musicPLAY.stop();
 						goto WIN; 
 						} 
  
@@ -7061,7 +7091,7 @@ PLAY:
 				if (m == 7 && s >= 20) { 
 					time_show.setFillColor(Color::Red); 
 				} 
-				if (m == 1 && s >= 10) { 
+				if (m == 0 && s >= 10) { 
 					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y)); 
 					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2); 
 					view.setCenter(position); 
@@ -7081,6 +7111,7 @@ PLAY:
 					characterPet2.setPosition({ 967.f, 288.f }); 
 					player_choose = 0; 
 					player_choose_pet = 0; 
+					musicPLAY.stop();
 					goto GAMEOVER; 
 				} 
 			} 
@@ -7546,6 +7577,9 @@ PLAY:
 					wallhouse5.setPosition(-10000.f, -10000.f); 
 					keyright_check = 0; 
 					keyleft_check = 0; 
+					musicMENU.play();
+					musicPLAY.stop();
+
 					goto MENU; 
 				} 
  
@@ -7735,6 +7769,10 @@ PLAY:
 		} 
  
 	GAMEOVER: 
+
+		musicGO.play();
+		musicGO.setLoop(true);
+
 		while (window.isOpen()) { 
  
 			Event aevent; 
@@ -7749,83 +7787,84 @@ PLAY:
 				if (gameoverMENU.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 
 						 
-						view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y)); 
-						sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2); 
-						view.setCenter(position); 
-						window.setView(view); 
-						ExitButtonCheck = 0; 
-						yourname.clear(); 
-						playerName.setString(yourname); 
-						player_check = 0; 
-						yourPetname.clear(); 
-						playerPetName.setString(yourPetname); 
-						player_Petcheck = 0; 
-						character1.setPosition({ 115.f, 61.f }); 
-						character2.setPosition({ 363.f, 61.f }); 
-						character3.setPosition({ 115.f, 313.f }); 
-						character4.setPosition({ 364.f, 313.f }); 
-						characterPet1.setPosition({ 720.f, 288.f }); 
-						characterPet2.setPosition({ 967.f, 288.f }); 
-						player_choose = 0; 
-						player_choose_pet = 0; 
-						fish_check = 0; 
-						cake_check = 0; 
-						vase_check = 0; 
-						glass_check = 0; 
-						keyright_check = 0; 
-						keyleft_check = 0; 
- 
-						i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h = 10, j = 10, k = 10; 
-						while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand(); 
-						while (a != 1 && a != 0)a = rand(); 
-						while (b != 2 && b != 1 && b != 0)b = rand(); 
-						while (c != 2 && c != 1 && c != 0)c = rand(); 
-						while (d != 2 && d != 1 && d != 0 && d != 3)d = rand(); 
-						while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4)e = rand(); 
-						while (f != 2 && f != 1 && f != 0 && f != 3)f = rand(); 
-						while (g != 2 && g != 1 && g != 0)g = rand(); 
-						while (h != 2 && h != 1 && h != 0)h = rand(); 
-						while (j != 2 && j != 1 && j != 0 && j != 3)j = rand(); 
-						while (k != 30 && k != 60 && k != 90 && k != 120)k = rand(); 
- 
-						fish.setPosition(-10000.f, -10000.f); 
-						cake.setPosition(-10000.f, -10000.f); 
-						glass.setPosition(-10000.f, -10000.f); 
-						vase.setPosition(-10000.f, -10000.f); 
-						clockPlus.setPosition(-10000.f, -10000.f); 
-						book.setPosition(-10000.f, -10000.f); 
- 
-						house_check = 0; 
-						Home1.setPosition(846.f, 2971.f); 
-						Home2.setPosition({ 1168.f, 2083.f }); 
-						Home3.setPosition({ 2320.f, 995.f }); 
-						Home4.setPosition({ 3216.f, 865.f }); 
-						Home5.setPosition({ 3280.f, 2011.f }); 
-						Home6.setPosition({ 4302.f, 1563.f }); 
-						myhouse1.setPosition(-10000.f, -10000.f); 
-						myhouse.setPosition(-10000.f, -10000.f); 
-						myhouse2.setPosition(-10000.f, -10000.f); 
-						myhouse3.setPosition(-10000.f, -10000.f); 
-						myhouse4.setPosition(-10000.f, -10000.f); 
-						myhouse5.setPosition(-10000.f, -10000.f); 
-						stairsHome3.setPosition(-10000.f, -10000.f); 
-						stairsHome11.setPosition(-10000.f, -10000.f); 
-						stairsHome12.setPosition(-10000.f, -10000.f); 
-						stairsHome2.setPosition(-10000.f, -10000.f); 
-						Grandma.setPosition(3424.f, 878.f); 
-						Dog_mc.setPosition(3443.f, 939.f); 
-						if (cat_check == 0)cat_mc.setPosition(1122.f, 2088.f); 
-						Aunt.setPosition(2163.f, 1224.f); 
-						male.setPosition(2037.f, 2576.f); 
-						pet.setPosition(-10000.f, -10000.f); 
-						door1.setPosition(-10000.f, -10000.f); 
-						door2.setPosition(-10000.f, -10000.f); 
-						door1after.setPosition(-10000.f, -10000.f); 
-						door2after.setPosition(-10000.f, -10000.f); 
-						wallhouse5.setPosition(-10000.f, -10000.f); 
-						keyright_check = 0; 
-						keyleft_check = 0; 
-						goto MENU; 
+					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
+					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
+					view.setCenter(position);
+					window.setView(view);
+					ExitButtonCheck = 0;
+					yourname.clear();
+					playerName.setString(yourname);
+					player_check = 0;
+					yourPetname.clear();
+					playerPetName.setString(yourPetname);
+					player_Petcheck = 0;
+					character1.setPosition({ 115.f, 61.f });
+					character2.setPosition({ 363.f, 61.f });
+					character3.setPosition({ 115.f, 313.f });
+					character4.setPosition({ 364.f, 313.f });
+					characterPet1.setPosition({ 720.f, 288.f });
+					characterPet2.setPosition({ 967.f, 288.f });
+					player_choose = 0;
+					player_choose_pet = 0;
+					fish_check = 0;
+					cake_check = 0;
+					vase_check = 0;
+					glass_check = 0;
+
+					i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h = 10, j = 10, k = 10;
+					while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
+					while (a != 1 && a != 0)a = rand();
+					while (b != 2 && b != 1 && b != 0)b = rand();
+					while (c != 2 && c != 1 && c != 0)c = rand();
+					while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
+					while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4)e = rand();
+					while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
+					while (g != 2 && g != 1 && g != 0)g = rand();
+					while (h != 2 && h != 1 && h != 0)h = rand();
+					while (j != 2 && j != 1 && j != 0 && j != 3)j = rand();
+					while (k != 30 && k != 60 && k != 90 && k != 120)k = rand();
+
+					fish.setPosition(-10000.f, -10000.f);
+					cake.setPosition(-10000.f, -10000.f);
+					glass.setPosition(-10000.f, -10000.f);
+					vase.setPosition(-10000.f, -10000.f);
+					clockPlus.setPosition(-10000.f, -10000.f);
+					book.setPosition(-10000.f, -10000.f);
+
+					house_check = 0;
+					Home1.setPosition(846.f, 2971.f);
+					Home2.setPosition({ 1168.f, 2083.f });
+					Home3.setPosition({ 2320.f, 995.f });
+					Home4.setPosition({ 3216.f, 865.f });
+					Home5.setPosition({ 3280.f, 2011.f });
+					Home6.setPosition({ 4302.f, 1563.f });
+					myhouse1.setPosition(-10000.f, -10000.f);
+					myhouse.setPosition(-10000.f, -10000.f);
+					myhouse2.setPosition(-10000.f, -10000.f);
+					myhouse3.setPosition(-10000.f, -10000.f);
+					myhouse4.setPosition(-10000.f, -10000.f);
+					myhouse5.setPosition(-10000.f, -10000.f);
+					stairsHome3.setPosition(-10000.f, -10000.f);
+					stairsHome11.setPosition(-10000.f, -10000.f);
+					stairsHome12.setPosition(-10000.f, -10000.f);
+					stairsHome2.setPosition(-10000.f, -10000.f);
+					Grandma.setPosition(3424.f, 878.f);
+					Dog_mc.setPosition(3443.f, 939.f);
+					if (cat_check == 0)cat_mc.setPosition(1122.f, 2088.f);
+					Aunt.setPosition(2163.f, 1224.f);
+					male.setPosition(2037.f, 2576.f);
+					pet.setPosition(-10000.f, -10000.f);
+					door1.setPosition(-10000.f, -10000.f);
+					door2.setPosition(-10000.f, -10000.f);
+					door1after.setPosition(-10000.f, -10000.f);
+					door2after.setPosition(-10000.f, -10000.f);
+					wallhouse5.setPosition(-10000.f, -10000.f);
+					keyright_check = 0;
+					keyleft_check = 0;
+					musicMENU.play();
+					musicGO.stop();
+
+					goto MENU; 
 				} 
 				if (gameoverQUIT.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 
@@ -7876,6 +7915,8 @@ PLAY:
  
  
 	WIN: 
+		musicWIN.play();
+		musicWIN.setLoop(true);
 		while (window.isOpen()) { 
  
 			Event aevent; 
@@ -7889,79 +7930,164 @@ PLAY:
 			{ 
 				if (winScoreButton.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 
+					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
+					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
+					view.setCenter(position);
+					window.setView(view);
+					ExitButtonCheck = 0;
+					yourname.clear();
+					playerName.setString(yourname);
+					player_check = 0;
+					yourPetname.clear();
+					playerPetName.setString(yourPetname);
+					player_Petcheck = 0;
+					character1.setPosition({ 115.f, 61.f });
+					character2.setPosition({ 363.f, 61.f });
+					character3.setPosition({ 115.f, 313.f });
+					character4.setPosition({ 364.f, 313.f });
+					characterPet1.setPosition({ 720.f, 288.f });
+					characterPet2.setPosition({ 967.f, 288.f });
+					player_choose = 0;
+					player_choose_pet = 0;
+					fish_check = 0;
+					cake_check = 0;
+					vase_check = 0;
+					glass_check = 0;
+
+					i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h = 10, j = 10, k = 10;
+					while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
+					while (a != 1 && a != 0)a = rand();
+					while (b != 2 && b != 1 && b != 0)b = rand();
+					while (c != 2 && c != 1 && c != 0)c = rand();
+					while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
+					while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4)e = rand();
+					while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
+					while (g != 2 && g != 1 && g != 0)g = rand();
+					while (h != 2 && h != 1 && h != 0)h = rand();
+					while (j != 2 && j != 1 && j != 0 && j != 3)j = rand();
+					while (k != 30 && k != 60 && k != 90 && k != 120)k = rand();
+
+					fish.setPosition(-10000.f, -10000.f);
+					cake.setPosition(-10000.f, -10000.f);
+					glass.setPosition(-10000.f, -10000.f);
+					vase.setPosition(-10000.f, -10000.f);
+					clockPlus.setPosition(-10000.f, -10000.f);
+					book.setPosition(-10000.f, -10000.f);
+
+					house_check = 0;
+					Home1.setPosition(846.f, 2971.f);
+					Home2.setPosition({ 1168.f, 2083.f });
+					Home3.setPosition({ 2320.f, 995.f });
+					Home4.setPosition({ 3216.f, 865.f });
+					Home5.setPosition({ 3280.f, 2011.f });
+					Home6.setPosition({ 4302.f, 1563.f });
+					myhouse1.setPosition(-10000.f, -10000.f);
+					myhouse.setPosition(-10000.f, -10000.f);
+					myhouse2.setPosition(-10000.f, -10000.f);
+					myhouse3.setPosition(-10000.f, -10000.f);
+					myhouse4.setPosition(-10000.f, -10000.f);
+					myhouse5.setPosition(-10000.f, -10000.f);
+					stairsHome3.setPosition(-10000.f, -10000.f);
+					stairsHome11.setPosition(-10000.f, -10000.f);
+					stairsHome12.setPosition(-10000.f, -10000.f);
+					stairsHome2.setPosition(-10000.f, -10000.f);
+					Grandma.setPosition(3424.f, 878.f);
+					Dog_mc.setPosition(3443.f, 939.f);
+					if (cat_check == 0)cat_mc.setPosition(1122.f, 2088.f);
+					Aunt.setPosition(2163.f, 1224.f);
+					male.setPosition(2037.f, 2576.f);
+					pet.setPosition(-10000.f, -10000.f);
+					door1.setPosition(-10000.f, -10000.f);
+					door2.setPosition(-10000.f, -10000.f);
+					door1after.setPosition(-10000.f, -10000.f);
+					door2after.setPosition(-10000.f, -10000.f);
+					wallhouse5.setPosition(-10000.f, -10000.f);
+					keyright_check = 0;
+					keyleft_check = 0;
+					musicWIN.stop();
+					musicMENU.play();
 					goto SCORE; 
 				} 
 				if (winMenuButton.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 
-						view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y)); 
-						sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2); 
-						view.setCenter(position); 
-						window.setView(view); 
-						ExitButtonCheck = 0; 
-						yourname.clear(); 
-						playerName.setString(yourname); 
-						player_check = 0; 
-						yourPetname.clear(); 
-						playerPetName.setString(yourPetname); 
-						player_Petcheck = 0; 
-						character1.setPosition({ 115.f, 61.f }); 
-						character2.setPosition({ 363.f, 61.f }); 
-						character3.setPosition({ 115.f, 313.f }); 
-						character4.setPosition({ 364.f, 313.f }); 
-						characterPet1.setPosition({ 720.f, 288.f }); 
-						characterPet2.setPosition({ 967.f, 288.f }); 
-						player_choose = 0; 
-						player_choose_pet = 0; 
-						fish_check = 0; 
-						cake_check = 0; 
-						vase_check = 0; 
-						glass_check = 0; 
- 
-						i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h = 10, j = 10, k = 10; 
-						while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand(); 
-						while (a != 1 && a != 0)a = rand(); 
-						while (b != 2 && b != 1 && b != 0)b = rand(); 
-						while (c != 2 && c != 1 && c != 0)c = rand(); 
-						while (d != 2 && d != 1 && d != 0 && d != 3)d = rand(); 
-						while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4)e = rand(); 
-						while (f != 2 && f != 1 && f != 0 && f != 3)f = rand(); 
-						while (g != 2 && g != 1 && g != 0)g = rand(); 
-						while (h != 2 && h != 1 && h != 0)h = rand(); 
-						while (j != 2 && j != 1 && j != 0 && j != 3)j = rand(); 
-						while (k != 30 && k != 60 && k != 90 && k != 120)k = rand(); 
- 
-						fish.setPosition(-10000.f, -10000.f); 
-						cake.setPosition(-10000.f, -10000.f); 
-						glass.setPosition(-10000.f, -10000.f); 
-						vase.setPosition(-10000.f, -10000.f); 
-						clockPlus.setPosition(-10000.f, -10000.f); 
-						book.setPosition(-10000.f, -10000.f); 
- 
-						house_check = 0; 
-						Home1.setPosition(846.f, 2971.f); 
-						Home2.setPosition({ 1168.f, 2083.f }); 
-						Home3.setPosition({ 2320.f, 995.f }); 
-						Home4.setPosition({ 3216.f, 865.f }); 
-						Home5.setPosition({ 3280.f, 2011.f }); 
-						Home6.setPosition({ 4302.f, 1563.f }); 
-						myhouse1.setPosition(-10000.f, -10000.f); 
-						myhouse.setPosition(-10000.f, -10000.f); 
-						myhouse2.setPosition(-10000.f, -10000.f); 
-						myhouse3.setPosition(-10000.f, -10000.f); 
-						myhouse4.setPosition(-10000.f, -10000.f); 
-						myhouse5.setPosition(-10000.f, -10000.f); 
-						stairsHome3.setPosition(-10000.f, -10000.f); 
-						stairsHome11.setPosition(-10000.f, -10000.f); 
-						stairsHome12.setPosition(-10000.f, -10000.f); 
-						stairsHome2.setPosition(-10000.f, -10000.f); 
-						Grandma.setPosition(3424.f, 878.f); 
-						Dog_mc.setPosition(3443.f, 939.f); 
-						if (cat_check == 0)cat_mc.setPosition(1122.f, 2088.f); 
-						Aunt.setPosition(2163.f, 1224.f); 
-						male.setPosition(2037.f, 2576.f); 
-						pet.setPosition(-10000.f, -10000.f); 
-						wallhouse5.setPosition(-10000.f, -10000.f); 
-						goto MENU; 
+					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
+					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
+					view.setCenter(position);
+					window.setView(view);
+					ExitButtonCheck = 0;
+					yourname.clear();
+					playerName.setString(yourname);
+					player_check = 0;
+					yourPetname.clear();
+					playerPetName.setString(yourPetname);
+					player_Petcheck = 0;
+					character1.setPosition({ 115.f, 61.f });
+					character2.setPosition({ 363.f, 61.f });
+					character3.setPosition({ 115.f, 313.f });
+					character4.setPosition({ 364.f, 313.f });
+					characterPet1.setPosition({ 720.f, 288.f });
+					characterPet2.setPosition({ 967.f, 288.f });
+					player_choose = 0;
+					player_choose_pet = 0;
+					fish_check = 0;
+					cake_check = 0;
+					vase_check = 0;
+					glass_check = 0;
+
+					i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h = 10, j = 10, k = 10;
+					while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
+					while (a != 1 && a != 0)a = rand();
+					while (b != 2 && b != 1 && b != 0)b = rand();
+					while (c != 2 && c != 1 && c != 0)c = rand();
+					while (d != 2 && d != 1 && d != 0 && d != 3)d = rand();
+					while (e != 2 && e != 1 && e != 0 && e != 3 && e != 4)e = rand();
+					while (f != 2 && f != 1 && f != 0 && f != 3)f = rand();
+					while (g != 2 && g != 1 && g != 0)g = rand();
+					while (h != 2 && h != 1 && h != 0)h = rand();
+					while (j != 2 && j != 1 && j != 0 && j != 3)j = rand();
+					while (k != 30 && k != 60 && k != 90 && k != 120)k = rand();
+
+					fish.setPosition(-10000.f, -10000.f);
+					cake.setPosition(-10000.f, -10000.f);
+					glass.setPosition(-10000.f, -10000.f);
+					vase.setPosition(-10000.f, -10000.f);
+					clockPlus.setPosition(-10000.f, -10000.f);
+					book.setPosition(-10000.f, -10000.f);
+
+					house_check = 0;
+					Home1.setPosition(846.f, 2971.f);
+					Home2.setPosition({ 1168.f, 2083.f });
+					Home3.setPosition({ 2320.f, 995.f });
+					Home4.setPosition({ 3216.f, 865.f });
+					Home5.setPosition({ 3280.f, 2011.f });
+					Home6.setPosition({ 4302.f, 1563.f });
+					myhouse1.setPosition(-10000.f, -10000.f);
+					myhouse.setPosition(-10000.f, -10000.f);
+					myhouse2.setPosition(-10000.f, -10000.f);
+					myhouse3.setPosition(-10000.f, -10000.f);
+					myhouse4.setPosition(-10000.f, -10000.f);
+					myhouse5.setPosition(-10000.f, -10000.f);
+					stairsHome3.setPosition(-10000.f, -10000.f);
+					stairsHome11.setPosition(-10000.f, -10000.f);
+					stairsHome12.setPosition(-10000.f, -10000.f);
+					stairsHome2.setPosition(-10000.f, -10000.f);
+					Grandma.setPosition(3424.f, 878.f);
+					Dog_mc.setPosition(3443.f, 939.f);
+					if (cat_check == 0)cat_mc.setPosition(1122.f, 2088.f);
+					Aunt.setPosition(2163.f, 1224.f);
+					male.setPosition(2037.f, 2576.f);
+					pet.setPosition(-10000.f, -10000.f);
+					door1.setPosition(-10000.f, -10000.f);
+					door2.setPosition(-10000.f, -10000.f);
+					door1after.setPosition(-10000.f, -10000.f);
+					door2after.setPosition(-10000.f, -10000.f);
+					wallhouse5.setPosition(-10000.f, -10000.f);
+					keyright_check = 0;
+					keyleft_check = 0;
+					musicMENU.play();
+					musicWIN.stop();
+
+					goto MENU; 
 				} 
 				if (winQuitButton.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 

@@ -829,6 +829,7 @@ int main()
 	score_show.setCharacterSize(50); 
 	score_show.setFillColor(Color::Black); 
  
+	int secondMOVIE = 0;
  
 	goto MENU; 
  
@@ -1173,8 +1174,9 @@ CHOOSE_CHARACTER:
 		} 
  
  
-SHORT_SCRENE: 
- 
+	SHORT_SCRENE: 
+
+		secondMOVIE = 0;
 		movie.fit(0, 0, 1280, 720); 
 		movie.play(); 
 		BlackSprite.setPosition(-100000, -100000); 
@@ -1183,6 +1185,7 @@ SHORT_SCRENE:
 		QuitButton.setPosition(-100000, -100000); 
 		MenuButton.setPosition(-100000, -100000); 
  
+
 		while (window.isOpen()) { 
 			sf::Event ev; 
 			while (window.pollEvent(ev)) { 
@@ -1190,13 +1193,9 @@ SHORT_SCRENE:
 				if (ev.type == sf::Event::KeyPressed) { 
 					switch (ev.key.code) { 
 					case sf::Keyboard::Space: { 
-						goto PLAY; 
-						movie.pause();
-						break; 
-					} 
-					case sf::Keyboard::Escape: { 
-						goto MENU; 
-						movie.pause();
+						if (secondMOVIE >= 600) {
+							goto PLAY;
+						}
 						break; 
 					} 
 					default: 
@@ -1205,8 +1204,8 @@ SHORT_SCRENE:
 				} 
 			} 
 
-			
- 
+			secondMOVIE++;
+
 			window.clear(); 
 			movie.update(); 
 			window.draw(movie); 
@@ -1463,7 +1462,12 @@ PLAY:
 		sf::RectangleShape KeyCheck6(sf::Vector2f(63.0f, 95.f)); 
 		KeyCheck6.setPosition(3530.f, 1936.f); 
 		KeyCheck6.setFillColor(sf::Color::Transparent); 
+
+		sf::RectangleShape otherCheck(sf::Vector2f(63.0f, 95.f));
+		otherCheck.setPosition(4774.f, 2049.f);
+		otherCheck.setFillColor(sf::Color::Transparent);
  
+
 		 
 		 
  
@@ -6241,6 +6245,7 @@ PLAY:
 						else if (player.getGlobalBounds().intersects(male.getGlobalBounds())) { 
 						if (Dialog_check == 0) { 
 							if (textCheckDialogMale == 0 && vase_check == 0) { 
+								textStatus.setCharacterSize(34);
 								textStatus.setString("Have a nice day!"); 
 								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233); 
 								textCheckDialogMale = 1; 
@@ -6250,13 +6255,12 @@ PLAY:
 								textStatus.setString("My vase is gone. do you think it in the pool?"); 
 							} 
 							else if (vase_check == 1) { 
-								textStatus.setCharacterSize(32); 
-								textStatus.setPosition(player.getPosition().x - 315, player.getPosition().y + 233); 
-								textStatus.setString("OMG! Thanks a lot. This vase very important for me"); 
+								textStatus.setCharacterSize(30);
+								textStatus.setPosition(player.getPosition().x - 315, player.getPosition().y + 235);
+								textStatus.setString("OMG! Thanks a lot. This vase very important for me");
 								home5check = 1; 
 							} 
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182); 
-							textStatus.setCharacterSize(34); 
 							Dialog_check = 1; 
 						} 
 						else if (Dialog_check == 1) { 
@@ -7002,6 +7006,24 @@ PLAY:
  
 							} 
 						} 
+
+						if (player.getGlobalBounds().intersects(otherCheck.getGlobalBounds())) {
+
+							if (Dialog_check == 0) {
+								textStatus.setString("You can't go the outside");
+								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+								textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+								Dialog_check = 1;
+								vase_check = 1;
+							}
+							else if (Dialog_check == 1) {
+								Textbox_dialog.setPosition(10000.f, 10000.f);
+								textStatus.setPosition(-10000.f, -10000.f);
+								Dialog_check = 0;
+								vase.setPosition(-10000.f, -10000.f);
+							}
+						
+						}
  
  
 					} 

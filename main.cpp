@@ -1,19 +1,39 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <fstream>
+#include<vector>
+#include<algorithm>
 #include <SFML/Audio.hpp> 
 #include <SFML/Graphics.hpp> 
 #include <SFML/Config.hpp> 
 #include <sfeMovie/Movie.hpp> 
-#include <string> 
-#include <iostream> 
 #include <algorithm> 
 #include <SFML/OpenGL.hpp> 
 #include<sstream> 
 #include<cstdlib> 
+#include<stdio.h>
+#include<utility>
+#include<algorithm>
+#include<string>
+#include<vector>
+#include<iostream>
  
 #include"MainMenu.h" 
  
 using namespace std; 
 using namespace sf; 
  
+
+void showHighScore(int x, int y, string word, sf::RenderWindow& window, sf::Font* font)
+{
+	sf::Text text;
+	text.setFont(*font);
+	text.setPosition(x, y);
+	text.setString(word);
+	text.setCharacterSize(32);
+	window.draw(text);
+}
+
 void my_pause() { 
 #ifdef SFML_SYSTEM_WINDOWS 
 	system("PAUSE"); 
@@ -23,7 +43,6 @@ void my_pause() {
  
 int main() 
 { 
- 
 	srand(time(NULL)); 
  
 	// Create video logo // 
@@ -44,7 +63,7 @@ int main()
  
 	// Create short screne // 
  
-	std::string mediaFile = "img/bg/short screne2.mp4"; 
+	std::string mediaFile = "img/bg/short screne.mp4"; 
 	std::cout << "Going to open movie file \"" << mediaFile << "\"" << std::endl; 
  
 	sfe::Movie movie; 
@@ -110,11 +129,11 @@ int main()
 	// bg score // 
  
 	sf::Texture scoreTexture; 
-	sf::Sprite score; 
+	sf::Sprite scoreBG; 
  
 	if (!scoreTexture.loadFromFile("img/bg/score_animation.png")) 
 		std::cout << "Error could not load about bg" << std::endl; 
-	score.setTexture(scoreTexture); 
+	scoreBG.setTexture(scoreTexture);
  
 	// bg gameover // 
  
@@ -238,19 +257,19 @@ int main()
 	sf::Texture Key1Texture; 
 	sf::Sprite key1; 
  
-	if (!Key1Texture.loadFromFile("img/tileset/key1.png")) 
+	if (!Key1Texture.loadFromFile("img/tileset/key1-2.png")) 
 		std::cout << "Error could not load clock" << std::endl; 
 	key1.setTexture(Key1Texture); 
-	key1.setScale(0.5f, 0.5f); 
+	//key1.setScale(0.5f, 0.5f); 
  
  
 	sf::Texture Key2Texture; 
 	sf::Sprite key2; 
  
-	if (!Key2Texture.loadFromFile("img/tileset/key2.png")) 
+	if (!Key2Texture.loadFromFile("img/tileset/key2-2.png")) 
 		std::cout << "Error could not load clock" << std::endl; 
 	key2.setTexture(Key2Texture); 
-	key2.setScale(0.5f, 0.5f); 
+	//key2.setScale(0.5f, 0.5f); 
  
  
 	sf::Texture vaseTexture; 
@@ -851,6 +870,15 @@ int main()
 	musicMENU.play();
 	musicMENU.setLoop(true);
  
+	vector<pair<int, string>> scoreboard;
+	int score;
+	string name;
+
+	ofstream myFile;
+	ifstream loadFile;
+	Text scoreNAME, scoreSCORE; //ประกาศ Text
+
+
 	goto MENU; 
  
 MENU: 
@@ -981,6 +1009,8 @@ MENU:
  
 CHOOSE_CHARACTER: 
  
+	yourname.clear();
+	playerName.setString(yourname);
 	while (window.isOpen()) { 
 			sf::Event ev; 
 			while (window.pollEvent(ev)) { 
@@ -1199,7 +1229,7 @@ CHOOSE_CHARACTER:
 		} 
  
  
-	SHORT_SCRENE: 
+SHORT_SCRENE: 
 
 		secondMOVIE = 0;
 		movie.fit(0, 0, 1280, 720); 
@@ -1218,8 +1248,9 @@ CHOOSE_CHARACTER:
 				if (ev.type == sf::Event::KeyPressed) { 
 					switch (ev.key.code) { 
 					case sf::Keyboard::Space: { 
+						goto PLAY;
 						if (secondMOVIE >= 600) {
-							goto PLAY;
+							
 						}
 						break; 
 					} 
@@ -1285,47 +1316,89 @@ ABOUT:
  
 		} 
  
-SCORE: 
-		ExitSprite.setPosition(0, 0); 
-		while (window.isOpen()) { 
- 
-				Event aevent; 
-				while (window.pollEvent(aevent)) { 
-					if (aevent.type == Event::Closed) { 
-						window.close(); 
-					} 
-					if (aevent.type == Event::KeyPressed) { 
-						if (aevent.key.code == Keyboard::Escape) { 
-							goto MENU; 
-						} 
-					} 
-				} 
- 
-				if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) 
-				{ 
-					if (ExitSprite.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
-					{ 
-						goto MENU; 
-					} 
- 
-				} 
- 
-				//Update score bg 
-				score.setTextureRect(sf::IntRect(1280 * frameScore, 720 * 0, 1280, 720)); 
- 
- 
-				if (frameScoreCounter == 20) { 
-					frameScore = (frameScore + 1) % 8; 
-					frameScoreCounter = 0; 
-				} 
-				frameScoreCounter++; 
- 
- 
-				window.clear(); 
-				window.draw(score); 
-				window.draw(ExitSprite); 
-				window.display(); 
-			} 
+
+SCORE:
+
+		if (player_namecheck != 0) {
+			name = yourname;
+			score = 50;
+			myFile.open("score/score.txt", ios::out | ios::app);
+			myFile << "\n" << name << " " << score;
+			myFile.close();
+			while (!loadFile.eof()) {
+				string tempName;
+				int tempScore;
+				loadFile >> tempName >> tempScore;
+				cout << ">> \"" << tempName << "\" " << tempScore << endl;
+				scoreboard.push_back({ tempScore,tempName });
+			}
+			sort(scoreboard.begin(), scoreboard.end(), greater<pair<int, string>>());
+			loadFile.open("score/score.txt");
+		}
+
+			
+		ExitSprite.setPosition(0, 0);
+		while (window.isOpen()) {
+
+			Event aevent;
+			while (window.pollEvent(aevent)) {
+				if (aevent.type == Event::Closed) {
+					window.close();
+				}
+				if (aevent.type == Event::KeyPressed) {
+					if (aevent.key.code == Keyboard::Escape) {
+						goto MENU;
+					}
+				}
+			}
+
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				if (ExitSprite.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
+				{
+					goto MENU;
+				}
+
+			}
+
+			//Update score bg 
+			scoreBG.setTextureRect(sf::IntRect(1280 * frameScore, 720 * 0, 1280, 720));
+
+
+			if (frameScoreCounter == 20) {
+				frameScore = (frameScore + 1) % 8;
+				frameScoreCounter = 0;
+			}
+			frameScoreCounter++;
+
+			int cnt = 0;
+
+
+			window.clear();
+			window.draw(scoreBG);
+
+			for (vector<pair<int, string>>::iterator i = scoreboard.begin(); i != scoreboard.end(); ++i) {
+				++cnt;
+				if (cnt > 5) break; //เมื่อตัวนับเกิน 5 ให้จบการทำงาน
+
+				scoreSCORE.setString(to_string(i->first)); //เนื่องจากค่าคะแนนเป็น integer จึงต้องทำการแปลงเป็น string ก่อนนำมาแสดงผล (first คือpair ตัวที่หนึ่ง =>int)
+				scoreSCORE.setFont(font); //การตั้งค่า Font คะแนน
+				scoreSCORE.setFillColor(sf::Color::White);
+				scoreNAME.setFillColor(sf::Color::White);
+				scoreSCORE.setCharacterSize(40); //ตั้งค่าขนาด Font คะแนน
+				scoreSCORE.setPosition(0, 0 + (30 * cnt)); //ตั้งค่าตำแหน่งแสดงผลของคะแนน และเพิ่มค่าตำแหน่งให้ลงมาตัวละ 80 หน่วย
+
+				scoreNAME.setString(i->second); // (second คือpair ตัวที่สอง =>string)
+				scoreNAME.setFont(font); //การตั้งค่า Font ชื่อผู้เล่น
+				scoreNAME.setCharacterSize(40); //ตั้งค่าขนาด Font ชื่อผู้เล่น
+				scoreNAME.setPosition(100, 0 + (30 * cnt)); //ตั้งค่าตำแหน่งแสดงผลของชื่อผู้เล่น และเพิ่มค่าตำแหน่งให้ลงมาตัวละ 80 หน่วย 
+				window.draw(scoreSCORE); //แสดงผลคะแนน
+				window.draw(scoreNAME); //แสดงผลชื่อผู้เล่น
+			}
+
+			window.draw(ExitSprite);
+			window.display();
+		}
  
 PLAY: 
  
@@ -1460,11 +1533,11 @@ PLAY:
 		ClockCheck4.setPosition(4156.f, 962.f); 
 		ClockCheck4.setFillColor(sf::Color::Transparent); 
  
-		sf::RectangleShape PetCheck(sf::Vector2f(95.f, 63.0f)); 
-		PetCheck.setPosition(3310.f, 1658.f); 
+		sf::RectangleShape PetCheck(sf::Vector2f(66.f, 63.0f)); 
+		PetCheck.setPosition(3310.f, 1658.f);
 		PetCheck.setFillColor(sf::Color::Red); 
  
-		sf::RectangleShape PetCheck2(sf::Vector2f(95.f, 63.0f)); 
+		sf::RectangleShape PetCheck2(sf::Vector2f(66.f, 63.0f));
 		PetCheck2.setPosition(3757.f, 1658.f); 
 		PetCheck2.setFillColor(sf::Color::Red); 
  
@@ -1472,33 +1545,30 @@ PLAY:
 		KeyCheck.setPosition(2890.f, 1658.f); 
 		KeyCheck.setFillColor(sf::Color::Transparent); 
  
-		sf::RectangleShape KeyCheck2(sf::Vector2f(63.0f, 95.f)); 
-		KeyCheck2.setPosition(3027.f, 1626.f); 
+		sf::RectangleShape KeyCheck2(sf::Vector2f(34.0f, 105.f)); 
+		KeyCheck2.setPosition(3051.f, 1607.f);
 		KeyCheck2.setFillColor(sf::Color::Transparent); 
  
-		sf::RectangleShape KeyCheck3(sf::Vector2f(63.0f, 95.f)); 
-		KeyCheck3.setPosition(3151.f, 1623.f); 
+		sf::RectangleShape KeyCheck3(sf::Vector2f(34.0f, 105.f));
+		KeyCheck3.setPosition(3167.f, 1606.f);
 		KeyCheck3.setFillColor(sf::Color::Transparent); 
  
 		sf::RectangleShape KeyCheck4(sf::Vector2f(63.0f, 95.f)); 
 		KeyCheck4.setPosition(3119.f, 1841.f); 
 		KeyCheck4.setFillColor(sf::Color::Transparent); 
  
-		sf::RectangleShape KeyCheck5(sf::Vector2f(63.0f, 95.f)); 
-		KeyCheck5.setPosition(3209.f, 1936.f); 
+		sf::RectangleShape KeyCheck5(sf::Vector2f(34.0f, 105.f));
+		KeyCheck5.setPosition(3224.f, 1918.f);
 		KeyCheck5.setFillColor(sf::Color::Transparent); 
  
-		sf::RectangleShape KeyCheck6(sf::Vector2f(63.0f, 95.f)); 
-		KeyCheck6.setPosition(3530.f, 1936.f); 
+		sf::RectangleShape KeyCheck6(sf::Vector2f(47.0f, 71.f));
+		KeyCheck6.setPosition(3396.f, 1708.f);
 		KeyCheck6.setFillColor(sf::Color::Transparent); 
 
 		sf::RectangleShape otherCheck(sf::Vector2f(63.0f, 95.f));
 		otherCheck.setPosition(4774.f, 2049.f);
 		otherCheck.setFillColor(sf::Color::Transparent);
  
-
-		 
-		 
  
 		// walls zone // 
  
@@ -2107,8 +2177,8 @@ PLAY:
 		key2.setPosition(-10000.f, -10000.f); 
  
 		//player.setPosition(1050.f, 3000.f); 
-		//player.setPosition(3608.f, 2175.f); 
-		player.setPosition(3224.f, 978.f); 
+		player.setPosition(3608.f, 2175.f); 
+		//player.setPosition(3224.f, 978.f); 
 		Grandma.setPosition(3424.f, 878.f); 
 		Dog_mc.setPosition(3443.f, 939.f); 
 		cat_mc.setPosition(1122.f, 2088.f); 
@@ -2160,11 +2230,11 @@ PLAY:
 		int randYClock[4] = { 2169.f,1902.f,1577.f ,778.f }; 
  
  
-		int randXKey1[3] = { 2905,3174.f,3222.f }; 
-		int randYKey1[3] = { 1694.f,1646.f ,1973.f }; 
+		int randXKey1[3] = { 2926,3176.f,3235.f }; 
+		int randYKey1[3] = { 1660.f,1596.f ,1908.f }; 
  
-		int randXKey2[3] = { 3040.f,3156.f,3547.f }; 
-		int randYKey2[3] = { 1658.f,1882.f,1949.f }; 
+		int randXKey2[3] = { 3060.f,3142.f,3427.f };
+		int randYKey2[3] = { 1597.f,1857.f,1706.f };
  
 		int randClock[4] = { 0,1,2,3 }; 
 		int randTime[4] = { 30,60,90,120 }; 
@@ -2176,7 +2246,7 @@ PLAY:
  
 		TimeSS.str(""); 
  
-		int i = 10, a = 10, b = 10, c = 10, d = 10, e = 0, f = 3, g = 10, h= 10, j = 10, k = 10; 
+		int i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h= 10, j = 10, k = 10; 
 		while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand(); 
 		while (a != 1 && a != 0)a = rand(); 
 		while (b != 2 && b != 1 && b != 0)b = rand(); 
@@ -2190,11 +2260,7 @@ PLAY:
 		while (k != 2 && k != 1 && k != 0 && k != 3)k = rand(); 
 		 
 		chooseClock = randClock[j]; 
-		TimePlus = randTime[k]; 
-		 
-		 
-		 
- 
+	
  
 		if (chooseClock == 0) { 
 			if (!clockTexture.loadFromFile("img/tileset/clock1.png")) 
@@ -2214,7 +2280,9 @@ PLAY:
 		} 
 		clockPlus.setTexture(clockTexture); 
  
- 
+		
+
+
 		//Start the game loop 
 		while (window.isOpen()) { 
  
@@ -6830,6 +6898,7 @@ PLAY:
  
 						if (clockPlus.getGlobalBounds().intersects(ClockCheck.getGlobalBounds())) { 
 						if (player.getGlobalBounds().intersects(ClockCheck.getGlobalBounds())) { 
+							TimePlus = randTime[k];
 							TimeSS << TimePlus << " seconds!"; 
 							TimePlus_show.setPosition(player.getPosition().x - 210, player.getPosition().y + 233); 
 							Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182); 
@@ -6852,6 +6921,7 @@ PLAY:
 						else if (clockPlus.getGlobalBounds().intersects(ClockCheck2.getGlobalBounds())) { 
 							 
 							if (player.getGlobalBounds().intersects(ClockCheck2.getGlobalBounds())) { 
+								TimePlus = randTime[k];
 								TimeSS << TimePlus << " seconds!"; 
 								TimePlus_show.setPosition(player.getPosition().x - 210, player.getPosition().y + 233); 
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182); 
@@ -6874,6 +6944,7 @@ PLAY:
 						else if (clockPlus.getGlobalBounds().intersects(ClockCheck3.getGlobalBounds())) { 
 							 
 							if (player.getGlobalBounds().intersects(ClockCheck3.getGlobalBounds())) { 
+								TimePlus = randTime[k];
 								TimeSS << TimePlus << " seconds!"; 
 								TimePlus_show.setPosition(player.getPosition().x - 210, player.getPosition().y + 233); 
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182); 
@@ -6896,6 +6967,7 @@ PLAY:
 						else if (clockPlus.getGlobalBounds().intersects(ClockCheck4.getGlobalBounds())) { 
 							 
 							if (player.getGlobalBounds().intersects(ClockCheck4.getGlobalBounds())) { 
+								TimePlus = randTime[k];
 								TimeSS << TimePlus << " seconds!"; 
 								TimePlus_show.setPosition(player.getPosition().x - 210, player.getPosition().y + 233); 
 								Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182); 
@@ -7020,19 +7092,19 @@ PLAY:
  
 							if (player.getGlobalBounds().intersects(KeyCheck6.getGlobalBounds())) { 
  
-								if (Dialog_check == 0) { 
-									textStatus.setString("You got key"); 
-									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182); 
-									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233); 
-									Dialog_check = 1; 
-									keyright_check = 1; 
-								} 
-								else if (Dialog_check == 1) { 
-									Textbox_dialog.setPosition(10000.f, 10000.f); 
-									textStatus.setPosition(-10000.f, -10000.f); 
-									Dialog_check = 0; 
-									key2.setPosition(-10000.f, -10000.f); 
-								} 
+								if (Dialog_check == 0) {
+									textStatus.setString("You got key");
+									Textbox_dialog.setPosition(player.getPosition().x - 400, player.getPosition().y + 182);
+									textStatus.setPosition(player.getPosition().x - 300, player.getPosition().y + 233);
+									Dialog_check = 1;
+									keyright_check = 1;
+								}
+								else if (Dialog_check == 1) {
+									Textbox_dialog.setPosition(10000.f, 10000.f);
+									textStatus.setPosition(-10000.f, -10000.f);
+									Dialog_check = 0;
+									key2.setPosition(-10000.f, -10000.f);
+								}
  
 							} 
 						} 
@@ -7064,41 +7136,44 @@ PLAY:
 			if(glass_aunt == 1 && Dialog_check == 0)Aunt.setTextureRect(sf::IntRect(32 * frameMC, 32 * 1, 32, 32)); 
  
 			ss.str(""); 
-			timer = clock_count.getElapsedTime(); 
-			s = timer.asSeconds(); 
-			m = s / 60; 
-			s = s - (m * 60); 
+			timer = clock_count.getElapsedTime();
+			s = timer.asSeconds();
+			m = s / 60;
+			s = s - (m * 60);
  
-			if (s++) { 
+			/*if (s++) { 
 				timeScoreSet+= 10; 
 				printf("%d \n",timeScoreSet); 
-			}	 
- 
-			if (m < 10) 
-			{ 
-				ss << "0" << m; 
-			} 
-			if (s < 10) 
-			{ 
-				ss << " : " << "0" << s; 
-			} 
-			else 
-			{ 
-				ss << " : " << s; 
-			} 
+			}	*/
+
+			if (s == 60) {
+				s = 0;
+				ss << " : " << s;
+			}
+			if (m < 10)
+			{
+				ss << "0" << m;
+			}
+			if (s < 10)
+			{
+				ss << " : " << "0" << s;
+			}
+			else if(s >= 10 && s!=60)
+			{
+				ss << " : " << s;
+			}
+			
  
 			if (TimePlus == 0) { 
 				if (m == 7 && s >= 20) { 
 					time_show.setFillColor(Color::Red); 
 				} 
-				if (m == 0 && s >= 10) { 
+				if (m == 0 && s >= 30) { 
 					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y)); 
 					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2); 
 					view.setCenter(position); 
 					window.setView(view); 
 					ExitButtonCheck = 0; 
-					yourname.clear(); 
-					playerName.setString(yourname); 
 					player_check = 0; 
 					yourPetname.clear(); 
 					playerPetName.setString(yourPetname); 
@@ -7125,8 +7200,6 @@ PLAY:
 					view.setCenter(position); 
 					window.setView(view); 
 					ExitButtonCheck = 0; 
-					yourname.clear(); 
-					playerName.setString(yourname); 
 					player_check = 0; 
 					yourPetname.clear(); 
 					playerPetName.setString(yourPetname); 
@@ -7152,8 +7225,6 @@ PLAY:
 					view.setCenter(position); 
 					window.setView(view); 
 					ExitButtonCheck = 0; 
-					yourname.clear(); 
-					playerName.setString(yourname); 
 					player_check = 0; 
 					yourPetname.clear(); 
 					playerPetName.setString(yourPetname); 
@@ -7179,8 +7250,6 @@ PLAY:
 					view.setCenter(position); 
 					window.setView(view); 
 					ExitButtonCheck = 0; 
-					yourname.clear(); 
-					playerName.setString(yourname); 
 					player_check = 0; 
 					yourPetname.clear(); 
 					playerPetName.setString(yourPetname); 
@@ -7206,8 +7275,7 @@ PLAY:
 					view.setCenter(position); 
 					window.setView(view); 
 					ExitButtonCheck = 0; 
-					yourname.clear(); 
-					playerName.setString(yourname); 
+					
 					player_check = 0; 
 					yourPetname.clear(); 
 					playerPetName.setString(yourPetname); 
@@ -7508,8 +7576,7 @@ PLAY:
 					view.setCenter(position); 
 					window.setView(view); 
 					ExitButtonCheck = 0; 
-					yourname.clear(); 
-					playerName.setString(yourname); 
+					
 					player_check = 0; 
 					yourPetname.clear(); 
 					playerPetName.setString(yourPetname); 
@@ -7792,8 +7859,7 @@ PLAY:
 					view.setCenter(position);
 					window.setView(view);
 					ExitButtonCheck = 0;
-					yourname.clear();
-					playerName.setString(yourname);
+					
 					player_check = 0;
 					yourPetname.clear();
 					playerPetName.setString(yourPetname);
@@ -7935,8 +8001,7 @@ PLAY:
 					view.setCenter(position);
 					window.setView(view);
 					ExitButtonCheck = 0;
-					yourname.clear();
-					playerName.setString(yourname);
+					
 					player_check = 0;
 					yourPetname.clear();
 					playerPetName.setString(yourPetname);
@@ -8015,8 +8080,7 @@ PLAY:
 					view.setCenter(position);
 					window.setView(view);
 					ExitButtonCheck = 0;
-					yourname.clear();
-					playerName.setString(yourname);
+					
 					player_check = 0;
 					yourPetname.clear();
 					playerPetName.setString(yourPetname);
@@ -8144,8 +8208,8 @@ PLAY:
 			window.display(); 
 		} 
  
-		return 0; 
- 
+
+	return 0; 
 } 
  
 

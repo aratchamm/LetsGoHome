@@ -22,17 +22,6 @@
  
 using namespace std; 
 using namespace sf; 
- 
-
-void showHighScore(int x, int y, string word, sf::RenderWindow& window, sf::Font* font)
-{
-	sf::Text text;
-	text.setFont(*font);
-	text.setPosition(x, y);
-	text.setString(word);
-	text.setCharacterSize(32);
-	window.draw(text);
-}
 
 void my_pause() { 
 #ifdef SFML_SYSTEM_WINDOWS 
@@ -44,8 +33,13 @@ void my_pause() {
 int main() 
 { 
 	srand(time(NULL)); 
+
+	int scoreSHOW = 0;
+	string tempName;
+	int tempScore;
  
 	// Create video logo // 
+
  
 	std::string logoFile = "img/bg/menu_logo.mp4"; 
 	std::cout << "Going to open movie file \"" << logoFile << "\"" << std::endl; 
@@ -843,6 +837,8 @@ int main()
 	int ExitButtonCheck = 0; 
 	int collision_check = 0; 
 	int Dialog_check = 0; 
+
+	int gamecheck = 0;
  
 	Text score_show("", font); 
 	score_show.setCharacterSize(50); 
@@ -871,18 +867,21 @@ int main()
 	musicMENU.setLoop(true);
  
 	vector<pair<int, string>> scoreboard;
-	int score;
+	const int score = 50;
 	string name;
 
 	ofstream myFile;
 	ifstream loadFile;
 	Text scoreNAME, scoreSCORE; //ประกาศ Text
 
+	scoreSHOW = 0;
+	
 
 	goto MENU; 
  
 MENU: 
 
+	gamecheck = 0;
 	while (window.isOpen()) 
 	{ 
 
@@ -1319,24 +1318,24 @@ ABOUT:
 
 SCORE:
 
-		if (player_namecheck != 0) {
-			name = yourname;
-			score = 50;
+		if (gamecheck == 1) {
 			myFile.open("score/score.txt", ios::out | ios::app);
-			myFile << "\n" << name << " " << score;
+			name = yourname;
+			scoreSHOW = 50000 - score;
+			myFile << "\n" << name << " " << scoreSHOW;
 			myFile.close();
-			while (!loadFile.eof()) {
-				string tempName;
-				int tempScore;
-				loadFile >> tempName >> tempScore;
-				cout << ">> \"" << tempName << "\" " << tempScore << endl;
-				scoreboard.push_back({ tempScore,tempName });
-			}
-			sort(scoreboard.begin(), scoreboard.end(), greater<pair<int, string>>());
-			loadFile.open("score/score.txt");
+		}
+		loadFile.open("score/score.txt");
+		while (loadFile) {
+			loadFile >> tempName >> tempScore;
+			cout << ">> \"" << tempName << "\" " << tempScore << endl;
+			scoreboard.push_back({ tempScore,tempName });
+
 		}
 
-			
+		sort(scoreboard.begin(), scoreboard.end(), greater<pair<int, string>>());
+		
+
 		ExitSprite.setPosition(0, 0);
 		while (window.isOpen()) {
 
@@ -1381,19 +1380,19 @@ SCORE:
 				++cnt;
 				if (cnt > 5) break; //เมื่อตัวนับเกิน 5 ให้จบการทำงาน
 
-				scoreSCORE.setString(to_string(i->first)); //เนื่องจากค่าคะแนนเป็น integer จึงต้องทำการแปลงเป็น string ก่อนนำมาแสดงผล (first คือpair ตัวที่หนึ่ง =>int)
-				scoreSCORE.setFont(font); //การตั้งค่า Font คะแนน
+				scoreSCORE.setString(to_string(i->first));
+				scoreSCORE.setFont(font);
 				scoreSCORE.setFillColor(sf::Color::White);
 				scoreNAME.setFillColor(sf::Color::White);
-				scoreSCORE.setCharacterSize(40); //ตั้งค่าขนาด Font คะแนน
-				scoreSCORE.setPosition(0, 0 + (30 * cnt)); //ตั้งค่าตำแหน่งแสดงผลของคะแนน และเพิ่มค่าตำแหน่งให้ลงมาตัวละ 80 หน่วย
+				scoreSCORE.setCharacterSize(40); 
+				scoreSCORE.setPosition(1010, 320 + (60 * cnt)); 
 
-				scoreNAME.setString(i->second); // (second คือpair ตัวที่สอง =>string)
-				scoreNAME.setFont(font); //การตั้งค่า Font ชื่อผู้เล่น
-				scoreNAME.setCharacterSize(40); //ตั้งค่าขนาด Font ชื่อผู้เล่น
-				scoreNAME.setPosition(100, 0 + (30 * cnt)); //ตั้งค่าตำแหน่งแสดงผลของชื่อผู้เล่น และเพิ่มค่าตำแหน่งให้ลงมาตัวละ 80 หน่วย 
-				window.draw(scoreSCORE); //แสดงผลคะแนน
-				window.draw(scoreNAME); //แสดงผลชื่อผู้เล่น
+				scoreNAME.setString(i->second); 
+				scoreNAME.setFont(font); 
+				scoreNAME.setCharacterSize(40); 
+				scoreNAME.setPosition(645, 320 + (60 * cnt));
+				window.draw(scoreSCORE); 
+				window.draw(scoreNAME); 
 			}
 
 			window.draw(ExitSprite);
@@ -2260,6 +2259,8 @@ PLAY:
 		while (k != 2 && k != 1 && k != 0 && k != 3)k = rand(); 
 		 
 		chooseClock = randClock[j]; 
+
+		
 	
  
 		if (chooseClock == 0) { 
@@ -2280,8 +2281,6 @@ PLAY:
 		} 
 		clockPlus.setTexture(clockTexture); 
  
-		
-
 
 		//Start the game loop 
 		while (window.isOpen()) { 
@@ -2289,6 +2288,9 @@ PLAY:
 			dt = dt_clock.restart().asSeconds(); 
 			clock.restart(); 
 			 
+		//	name = yourname;
+		//	const int score = 50;
+
  
 			sf::Event aevent; 
 			while (window.pollEvent(aevent)) { 
@@ -7834,6 +7836,7 @@ PLAY:
 			window.display(); 
  
 		} 
+		
  
 	GAMEOVER: 
 
@@ -7981,6 +7984,7 @@ PLAY:
  
  
 	WIN: 
+		gamecheck = 1;
 		musicWIN.play();
 		musicWIN.setLoop(true);
 		while (window.isOpen()) { 
@@ -8207,9 +8211,19 @@ PLAY:
 			window.draw(Hover_menuWINSprite); 
 			window.display(); 
 		} 
- 
 
 	return 0; 
 } 
  
+void Showtexet(int x, int y, string word, int size, sf::RenderWindow& window, sf::Font* font)
+{
+	sf::Text text;
+	text.setFont(*font);
+	text.setPosition(x, y);
+	text.setString(word);
+	text.setCharacterSize(size);
+	window.draw(text);
+}
+
+
 

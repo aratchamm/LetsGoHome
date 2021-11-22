@@ -27,8 +27,6 @@ void my_pause() {
 #endif 
 } 
 
-
-
  
 int main() 
 { 
@@ -56,7 +54,6 @@ int main()
 	float height = std::min(static_cast<float>(desktopMode.height), movieLogo.getSize().y); 
  
 
- 
 	// Create short screne // 
  
 	std::string mediaFile = "img/bg/short screne.mp4"; 
@@ -76,7 +73,9 @@ int main()
 	int frameMC = 0; 
 	int frameGO = 0; 
 	int frameWIN = 0; 
+
 	int row = 0; 
+
 	int frameCounter = 0; 
 	int frameAboutCounter = 0; 
 	int frameMenuCounter = 0; 
@@ -1120,6 +1119,10 @@ CHOOSE_CHARACTER:
 			sf::Event ev; 
 			while (window.pollEvent(ev)) { 
  
+				if (ev.type == Event::Closed) {
+					window.close();
+				}
+
 				if (player_namecheck != 0) 
 				{ 
 					if (ev.type == sf::Event::TextEntered) { 
@@ -1370,7 +1373,6 @@ CHOOSE_CHARACTER:
 				
 			} 
  
- 
 			window.clear(); 
 			window.draw(chooseBG); 
 			window.draw(textboxYourname); 
@@ -1394,6 +1396,10 @@ HOWTO:
 	while (window.isOpen()) {
 			sf::Event ev;
 			while (window.pollEvent(ev)) {
+
+				if (ev.type == Event::Closed) {
+					window.close();
+				}
 
 				if (ev.type == sf::Event::KeyPressed) {
 					switch (ev.key.code) {
@@ -1427,7 +1433,6 @@ HOWTO:
  
 SHORT_SCRENE: 
 
-	
 		secondMOVIE = 0;
 		movie.fit(0, 0, 1280, 720); 
 		movie.play(); 
@@ -1437,6 +1442,10 @@ SHORT_SCRENE:
 			sf::Event ev; 
 			while (window.pollEvent(ev)) { 
  
+				if (ev.type == Event::Closed) {
+					window.close();
+				}
+
 				if (ev.type == sf::Event::KeyPressed) { 
 					switch (ev.key.code) { 
 					case sf::Keyboard::Space: { 
@@ -1718,7 +1727,7 @@ PLAY:
 		BookCheck6.setPosition(3583.f, 1359.f); 
 		BookCheck6.setFillColor(sf::Color::Transparent);
  
-		sf::RectangleShape ClockCheck(sf::Vector2f(27.0f, 12.0f));
+		sf::RectangleShape ClockCheck(sf::Vector2f(47.0f, 12.0f));
 		ClockCheck.setPosition(1029.f, 2179.f); 
 		ClockCheck.setFillColor(sf::Color::Transparent);
  
@@ -1908,6 +1917,40 @@ PLAY:
 			wall.setPosition(gridSize * 19, gridSize * 46); 
 			walls.push_back(wall); 
 
+			wallsOutsideShape.setPosition(gridSizeOutside * 116, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 113, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 110, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 107, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 104, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 101, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 119, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 122, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 125, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 132, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 135, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 138, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 141, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 143, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 146, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 149, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
+			wallsOutsideShape.setPosition(gridSizeOutside * 150, gridSizeOutside * 62);
+			wallsOutside.push_back(wallsOutsideShape);
 			wallsOutsideShape.setPosition(gridSizeOutside * 28, gridSizeOutside * 101);
 			wallsOutside.push_back(wallsOutsideShape);
 			wallsOutsideShape.setPosition(gridSizeOutside * 25, gridSizeOutside * 101);
@@ -2011,17 +2054,17 @@ PLAY:
 			wallsOutside.push_back(wallsOutsideShape);
 			wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 66);
 			wallsOutside.push_back(wallsOutsideShape);
-			wallsOutsideShape.setPosition(gridSizeOutside * 69, gridSizeOutside * 74);
+			wallsOutsideShape.setPosition(gridSizeOutside * 70, gridSizeOutside * 74);
 			wallsOutside.push_back(wallsOutsideShape);
 			wallsOutsideShape.setPosition(gridSizeOutside * 54, gridSizeOutside * 73);
 			wallsOutside.push_back(wallsOutsideShape);
-			wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 73);
+			wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 72);
 			wallsOutside.push_back(wallsOutsideShape);
-			wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 73);
+			wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 72);
 			wallsOutside.push_back(wallsOutsideShape);
-			wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 73);
+			wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 72);
 			wallsOutside.push_back(wallsOutsideShape);
-			wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 73);
+			wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 72);
 			wallsOutside.push_back(wallsOutsideShape);
 			wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 88);
 			wallsOutside.push_back(wallsOutsideShape);
@@ -2067,7 +2110,8 @@ PLAY:
 			wallsOutside.push_back(wallsOutsideShape);
 			wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 85);
 			wallsOutside.push_back(wallsOutsideShape);
-
+			wallsOutsideShape.setPosition(gridSizeOutside * 63, gridSizeOutside * 74);
+			wallsOutside.push_back(wallsOutsideShape);
 
 			wall.setPosition(gridSize * 31, gridSize * 28); 
 			walls.push_back(wall); 
@@ -2275,26 +2319,7 @@ PLAY:
 			walls.push_back(wall); 
 			wall.setPosition(gridSize * 76, gridSize * 33); 
 			walls.push_back(wall); 
-			wall.setPosition(gridSize * 70, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 68, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 66, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 62, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 60, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 58, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 56, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 54, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 52, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 50, gridSize * 31); 
-			walls.push_back(wall); 
+			
 			wall.setPosition(gridSize * 44, gridSize * 31); 
 			walls.push_back(wall); 
 			wall.setPosition(gridSize * 49, gridSize * 30); 
@@ -2443,10 +2468,7 @@ PLAY:
 			walls.push_back(wall); 
 			wall.setPosition(gridSize * 72, gridSize * 30); 
 			walls.push_back(wall); 
-			wall.setPosition(gridSize * 73, gridSize * 31); 
-			walls.push_back(wall); 
-			wall.setPosition(gridSize * 74, gridSize * 31); 
-			walls.push_back(wall); 
+			
 			wall.setPosition(gridSize * 50, gridSize * 25); 
 			walls.push_back(wall); 
 			wall.setPosition(gridSize * 51, gridSize * 24); 
@@ -2475,8 +2497,7 @@ PLAY:
 			walls.push_back(wall); 
 			wall.setPosition(gridSize * 62, gridSize * 29); 
 			walls.push_back(wall); 
-			wall.setPosition(gridSize * 71, gridSize * 31); 
-			walls.push_back(wall); 
+			
 			wall.setPosition(gridSize * 34, gridSize * 18); 
 			walls.push_back(wall); 
 			wall.setPosition(gridSize * 54, gridSize * 14); 
@@ -2490,8 +2511,7 @@ PLAY:
  
 		Text time_show("", font); 
 		Text playername_show("", font); 
-		 
- 
+
 		time_show.setCharacterSize(50); 
 		time_show.setFillColor(Color::Black); 
 		time_show.setOutlineColor(Color::White); 
@@ -2502,11 +2522,6 @@ PLAY:
 		TimePlus_show.setFont(font); 
 		TimePlus_show.setCharacterSize(34); 
 		TimePlus_show.setFillColor(Color::Black); 
- 
-		 
-		 
- 
- 
  
 		if (player_choose == 1) { 
  
@@ -2528,8 +2543,7 @@ PLAY:
 			if (!pTexture.loadFromFile("img/character/playersheet_4.png")) 
 				std::cout << "Error could not load player image" << std::endl; 
 		} 
- 
-		if (player_choose_pet == 1) { 
+ 		if (player_choose_pet == 1) { 
  
 			if (!petTexture.loadFromFile("img/animal/dog.png")) 
 				std::cout << "Error could not load player image" << std::endl; 
@@ -2540,16 +2554,13 @@ PLAY:
 				std::cout << "Error could not load player image" << std::endl; 
 		} 
 		 
-		 
- 
 		player.setTexture(pTexture); 
 		player.setScale(3.f, 3.f); 
- 
-		pet.setTexture(petTexture); 
+ 		pet.setTexture(petTexture); 
 		pet.setScale(3.f, 3.f); 
 
+		int StartCheck = 0;
 
- 
 		int cat_check = 0; 
 		int fish_check = 0; 
  
@@ -2558,70 +2569,59 @@ PLAY:
 		int vase_check = 0; 
 		int book_check = 0; 
 		int clock_check = 0; 
- 
-		int keyleft_check = 0; 
+ 		int keyleft_check = 0; 
 		int keyright_check = 0; 
- 
-		int glass_aunt = 0; 
- 
- 
-		int home3check = 0; 
+ 		int glass_aunt = 0; 
+ 		int home3check = 0; 
 		int home5check = 0; 
 		int home6check = 0; 
- 
-		int roomleft = 0; 
+ 		int roomleft = 0; 
 		int roomight = 0; 
- 
-		int randXFish[7] = { 2462.f,3027.f,2753.f,3943.f, 2465.f, 1052.f,783.f };  
-		int randYFish[7] = { 400.f,435.f,1323.f,433.f, 1343.f, 2838.f,2722.f };  
- 
-		int randXPet[2] = { 3767.f,3256.f};  
-		int randYPet[2] = { 1609.f,1609.f};  
- 
-		int randXGlass[3] = { 1188.f,1376.f,1346.f}; 
-		int randYGlass[3] = { 1759.f,1989.f,1759.f }; 
- 
-		int randXCake[3] = { 2495.f,2562.f,2298.f }; 
-		int randYCake[3] = { 781.f,915.f,663.f };  
- 
-		int randXVase[4] = { 5826.f,5571.f,5247.f,5371.f };  
-		int randYVase[4] = { 1299.f,1101.f,1167.f ,1165.f };  
- 
-		int randXBook[5] = { 3347.f,3107.f,3590.f, 1391.f , 1098.f }; 
-		int randYBook[5] = { 516.f,1167.f,1345.f,3298.f , 1763.f }; 
- 
-		int randXClock[3] = { 1008.f,5842.f,3729.f };
-		int randYClock[3] = { 2169.f,1582.f ,778.f };
- 
-		int randXKey1[3] = { 2926,3176.f,3235.f }; 
-		int randYKey1[3] = { 1660.f,1596.f ,1908.f }; 
- 
-		int randXKey2[3] = { 3060.f,3142.f,3427.f };
-		int randYKey2[3] = { 1597.f,1857.f,1706.f };
- 
-		int randClock[4] = { 0,1,2,3 }; 
-		int randTime[4] = { 30,60,90,120 }; 
 
+ 		int randXFish[7] = { 2462.f,3027.f,2753.f,3943.f, 2465.f, 1052.f,783.f };  
+		int randYFish[7] = { 400.f,435.f,1323.f,433.f, 1343.f, 2838.f,2722.f };  
+
+ 		int randXPet[2] = { 3767.f,3256.f};  
+		int randYPet[2] = { 1609.f,1609.f};  
+
+ 		int randXGlass[3] = { 1188.f,1376.f,1346.f}; 
+
+		int randYGlass[3] = { 1759.f,1989.f,1759.f }; 
+ 		int randXCake[3] = { 2495.f,2562.f,2298.f }; 
+		int randYCake[3] = { 781.f,915.f,663.f };  
+
+ 		int randXVase[4] = { 5826.f,5571.f,5247.f,5371.f };  
+		int randYVase[4] = { 1299.f,1101.f,1167.f ,1165.f };  
+
+ 		int randXBook[5] = { 3347.f,3107.f,3590.f, 1391.f , 1098.f }; 
+		int randYBook[5] = { 516.f,1167.f,1345.f,3298.f , 1763.f }; 
+
+ 		int randXClock[3] = { 1008.f,5842.f,3729.f };
+		int randYClock[3] = { 2169.f,1582.f ,778.f };
+
+ 		int randXKey1[3] = { 2926,3176.f,3235.f }; 
+		int randYKey1[3] = { 1660.f,1596.f ,1908.f }; 
+ 		int randXKey2[3] = { 3060.f,3142.f,3427.f };
+		int randYKey2[3] = { 1597.f,1857.f,1706.f };
+
+ 		int randClock[4] = { 0,1,2,3 }; 
+		int randTime[4] = { 30,60,90,120 }; 
 
 		// MPC rand //
 
 		int randXMan[3] = { 3608.f,2102.f,1642.f };
 		int randYMan[3] = { 2175.f,1932.f,2375.f };
-
 		int randXMale[4] = { 2046.f,1980.f,4608.f,1402.f };
-		int randYMale[4] = { 2574.f,1680.f,2012.f,2134.f };
-
+		int randYMale[4] = { 2574.f,1680.f,1972.f,2134.f };
 		int randXAunt[2] = { 2163.f,3700.f };
 		int randYAunt[2] = { 1224.f, 963.f };
-		 
 		int chooseClock = 0; 
 		int timeScoreSet = 0; 
- 
-		
  
 		TimeSS.str(""); 
  
 		int i = 10, a = 10, b = 10, c = 10, d = 10, e = 10, f = 10, g = 10, h = 10, j = 10, k = 10, l =10, m= 10, n=10;
+
 		while (i != 2 && i != 1 && i != 0 && i != 3 && i != 4 && i != 5 && i != 6)i = rand();
 		while (a != 1 && a != 0)a = rand();
 		while (b != 2 && b != 1 && b != 0)b = rand();
@@ -2638,14 +2638,9 @@ PLAY:
 		while (n != 1 && n != 0)n = rand();
 		 
 		chooseClock = randClock[j]; 
-
-
-
 		minute = 0;
 		s = 0;
 
-	
- 
 		if (chooseClock == 0) { 
 			if (!clockTexture.loadFromFile("img/tileset/clock1.png")) 
 				std::cout << "Error could not load clock" << std::endl; 
@@ -2664,7 +2659,6 @@ PLAY:
 		} 
 		clockPlus.setTexture(clockTexture); 
  
-
 		fish.setPosition(-10000.f, -10000.f);
 		cake.setPosition(-10000.f, -10000.f);
 		glass.setPosition(-10000.f, -10000.f);
@@ -2708,12 +2702,8 @@ PLAY:
 		PlayButton.setPosition(-100000, -100000);
 		QuitButton.setPosition(-100000, -100000);
 		MenuButton.setPosition(-100000, -100000);
-		
-
 		bubbleSprite.setPosition(1134.f, 2926.f);
 		messageSprite.setPosition(-100000, -100000);
-		
-
 		Boy.setPosition(Vector2f(randXMan[l], randYMan[l]));
 		male.setPosition(Vector2f(randXMale[m], randYMale [m] ));
 		Aunt.setPosition(Vector2f(randXAunt[n], randYAunt[n]));
@@ -2732,12 +2722,14 @@ PLAY:
  
 			dt = dt_clock.restart().asSeconds(); 
 			clock.restart(); 
-			
-		
+			StartCheck = 1;
 
 			sf::Event aevent; 
 			while (window.pollEvent(aevent)) { 
  
+				if (aevent.type == Event::Closed) {
+					window.close();
+				}
 				if (aevent.type == Event::KeyPressed) { 
 					if (aevent.key.code == Keyboard::Escape) { 
 						if (ExitButtonCheck == 0) { 
@@ -3081,8 +3073,42 @@ PLAY:
 								wall.setPosition(gridSize * 19, gridSize * 46);
 								walls.push_back(wall);
 
-								
-								
+								wallsOutsideShape.setPosition(gridSizeOutside * 116, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 113, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 110, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 107, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 104, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 101, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 119, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 122, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 125, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 132, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 135, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 138, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 141, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 143, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 146, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 149, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 150, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 28, gridSizeOutside * 101);
+								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 25, gridSizeOutside * 101);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 31, gridSizeOutside * 101);
@@ -3184,17 +3210,17 @@ PLAY:
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 66);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 69, gridSizeOutside * 74);
+								wallsOutsideShape.setPosition(gridSizeOutside * 70, gridSizeOutside * 74);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 54, gridSizeOutside * 73);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 88);
 								wallsOutside.push_back(wallsOutsideShape);
@@ -3240,7 +3266,8 @@ PLAY:
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 85);
 								wallsOutside.push_back(wallsOutsideShape);
-
+								wallsOutsideShape.setPosition(gridSizeOutside * 63, gridSizeOutside * 74);
+								wallsOutside.push_back(wallsOutsideShape);
 
 								wall.setPosition(gridSize * 31, gridSize * 28);
 								walls.push_back(wall);
@@ -3448,26 +3475,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 76, gridSize * 33);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 70, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 68, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 66, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 62, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 60, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 58, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 56, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 54, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 52, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 50, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 44, gridSize * 31);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 49, gridSize * 30);
@@ -3616,10 +3624,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 72, gridSize * 30);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 73, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 74, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 50, gridSize * 25);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 51, gridSize * 24);
@@ -3648,14 +3653,14 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 62, gridSize * 29);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 71, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 34, gridSize * 18);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 54, gridSize * 14);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 31, gridSize * 40);
 								walls.push_back(wall);
+
 							} 
 						} 
 						else if (player.getGlobalBounds().intersects(Home2.getGlobalBounds())) { 
@@ -3851,6 +3856,40 @@ PLAY:
 								wall.setPosition(gridSize * 19, gridSize * 46);
 								walls.push_back(wall);
 
+								wallsOutsideShape.setPosition(gridSizeOutside * 116, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 113, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 110, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 107, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 104, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 101, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 119, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 122, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 125, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 132, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 135, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 138, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 141, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 143, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 146, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 149, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 150, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 28, gridSizeOutside * 101);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 25, gridSizeOutside * 101);
@@ -3954,17 +3993,17 @@ PLAY:
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 66);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 69, gridSizeOutside * 74);
+								wallsOutsideShape.setPosition(gridSizeOutside * 70, gridSizeOutside * 74);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 54, gridSizeOutside * 73);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 88);
 								wallsOutside.push_back(wallsOutsideShape);
@@ -4009,6 +4048,8 @@ PLAY:
 								wallsOutsideShape.setPosition(gridSizeOutside * 74, gridSizeOutside * 85);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 85);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 63, gridSizeOutside * 74);
 								wallsOutside.push_back(wallsOutsideShape);
 
 
@@ -4218,26 +4259,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 76, gridSize * 33);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 70, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 68, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 66, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 62, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 60, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 58, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 56, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 54, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 52, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 50, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 44, gridSize * 31);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 49, gridSize * 30);
@@ -4386,10 +4408,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 72, gridSize * 30);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 73, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 74, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 50, gridSize * 25);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 51, gridSize * 24);
@@ -4418,14 +4437,14 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 62, gridSize * 29);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 71, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 34, gridSize * 18);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 54, gridSize * 14);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 31, gridSize * 40);
 								walls.push_back(wall);
+
 							} 
 						} 
 						else if (player.getGlobalBounds().intersects(Home3.getGlobalBounds())) { 
@@ -4598,6 +4617,40 @@ PLAY:
 								wall.setPosition(gridSize * 19, gridSize * 46);
 								walls.push_back(wall);
 
+								wallsOutsideShape.setPosition(gridSizeOutside * 116, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 113, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 110, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 107, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 104, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 101, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 119, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 122, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 125, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 132, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 135, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 138, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 141, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 143, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 146, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 149, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 150, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 28, gridSizeOutside * 101);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 25, gridSizeOutside * 101);
@@ -4701,17 +4754,17 @@ PLAY:
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 66);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 69, gridSizeOutside * 74);
+								wallsOutsideShape.setPosition(gridSizeOutside * 70, gridSizeOutside * 74);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 54, gridSizeOutside * 73);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 88);
 								wallsOutside.push_back(wallsOutsideShape);
@@ -4757,7 +4810,8 @@ PLAY:
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 85);
 								wallsOutside.push_back(wallsOutsideShape);
-
+								wallsOutsideShape.setPosition(gridSizeOutside * 63, gridSizeOutside * 74);
+								wallsOutside.push_back(wallsOutsideShape);
 
 								wall.setPosition(gridSize * 31, gridSize * 28);
 								walls.push_back(wall);
@@ -4965,26 +5019,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 76, gridSize * 33);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 70, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 68, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 66, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 62, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 60, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 58, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 56, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 54, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 52, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 50, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 44, gridSize * 31);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 49, gridSize * 30);
@@ -5133,10 +5168,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 72, gridSize * 30);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 73, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 74, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 50, gridSize * 25);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 51, gridSize * 24);
@@ -5165,14 +5197,14 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 62, gridSize * 29);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 71, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 34, gridSize * 18);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 54, gridSize * 14);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 31, gridSize * 40);
 								walls.push_back(wall);
+
 							} 
 						} 
 						else { 
@@ -5520,9 +5552,6 @@ PLAY:
 							row = 0; 
 							walls.clear();
 							wallsOutside.clear();
-							walls.clear();
-							wallsOutside.clear();
-
 							wall.setPosition(gridSize * 9, gridSize * 40);
 							walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 41); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 42); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 43); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 44); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 45); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 46); walls.push_back(wall);
 							wall.setPosition(gridSize * 9, gridSize * 47);
@@ -5596,6 +5625,40 @@ PLAY:
 							wall.setPosition(gridSize * 19, gridSize * 46);
 							walls.push_back(wall);
 
+							wallsOutsideShape.setPosition(gridSizeOutside * 116, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 113, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 110, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 107, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 104, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 101, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 119, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 122, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 125, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 132, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 135, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 138, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 141, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 143, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 146, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 149, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
+							wallsOutsideShape.setPosition(gridSizeOutside * 150, gridSizeOutside * 62);
+							wallsOutside.push_back(wallsOutsideShape);
 							wallsOutsideShape.setPosition(gridSizeOutside * 28, gridSizeOutside * 101);
 							wallsOutside.push_back(wallsOutsideShape);
 							wallsOutsideShape.setPosition(gridSizeOutside * 25, gridSizeOutside * 101);
@@ -5699,17 +5762,17 @@ PLAY:
 							wallsOutside.push_back(wallsOutsideShape);
 							wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 66);
 							wallsOutside.push_back(wallsOutsideShape);
-							wallsOutsideShape.setPosition(gridSizeOutside * 69, gridSizeOutside * 74);
+							wallsOutsideShape.setPosition(gridSizeOutside * 70, gridSizeOutside * 74);
 							wallsOutside.push_back(wallsOutsideShape);
 							wallsOutsideShape.setPosition(gridSizeOutside * 54, gridSizeOutside * 73);
 							wallsOutside.push_back(wallsOutsideShape);
-							wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 73);
+							wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 72);
 							wallsOutside.push_back(wallsOutsideShape);
-							wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 73);
+							wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 72);
 							wallsOutside.push_back(wallsOutsideShape);
-							wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 73);
+							wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 72);
 							wallsOutside.push_back(wallsOutsideShape);
-							wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 73);
+							wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 72);
 							wallsOutside.push_back(wallsOutsideShape);
 							wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 88);
 							wallsOutside.push_back(wallsOutsideShape);
@@ -5755,7 +5818,8 @@ PLAY:
 							wallsOutside.push_back(wallsOutsideShape);
 							wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 85);
 							wallsOutside.push_back(wallsOutsideShape);
-
+							wallsOutsideShape.setPosition(gridSizeOutside * 63, gridSizeOutside * 74);
+							wallsOutside.push_back(wallsOutsideShape);
 
 							wall.setPosition(gridSize * 31, gridSize * 28);
 							walls.push_back(wall);
@@ -5963,26 +6027,7 @@ PLAY:
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 76, gridSize * 33);
 							walls.push_back(wall);
-							wall.setPosition(gridSize * 70, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 68, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 66, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 62, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 60, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 58, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 56, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 54, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 52, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 50, gridSize * 31);
-							walls.push_back(wall);
+
 							wall.setPosition(gridSize * 44, gridSize * 31);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 49, gridSize * 30);
@@ -6131,10 +6176,7 @@ PLAY:
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 72, gridSize * 30);
 							walls.push_back(wall);
-							wall.setPosition(gridSize * 73, gridSize * 31);
-							walls.push_back(wall);
-							wall.setPosition(gridSize * 74, gridSize * 31);
-							walls.push_back(wall);
+
 							wall.setPosition(gridSize * 50, gridSize * 25);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 51, gridSize * 24);
@@ -6163,14 +6205,14 @@ PLAY:
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 62, gridSize * 29);
 							walls.push_back(wall);
-							wall.setPosition(gridSize * 71, gridSize * 31);
-							walls.push_back(wall);
+
 							wall.setPosition(gridSize * 34, gridSize * 18);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 54, gridSize * 14);
 							walls.push_back(wall);
 							wall.setPosition(gridSize * 31, gridSize * 40);
 							walls.push_back(wall);
+
 						} 
 						} 
 						else if (player.getGlobalBounds().intersects(Home5.getGlobalBounds())) { 
@@ -6383,10 +6425,6 @@ PLAY:
 								door2Wall.clear(); 
 								walls.clear(); 
 								wallsOutside.clear();
-
-								walls.clear();
-								wallsOutside.clear();
-
 								wall.setPosition(gridSize * 9, gridSize * 40);
 								walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 41); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 42); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 43); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 44); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 45); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 46); walls.push_back(wall);
 								wall.setPosition(gridSize * 9, gridSize * 47);
@@ -6460,6 +6498,40 @@ PLAY:
 								wall.setPosition(gridSize * 19, gridSize * 46);
 								walls.push_back(wall);
 
+								wallsOutsideShape.setPosition(gridSizeOutside * 116, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 113, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 110, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 107, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 104, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 101, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 119, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 122, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 125, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 132, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 135, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 138, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 141, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 143, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 146, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 149, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 150, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 28, gridSizeOutside * 101);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 25, gridSizeOutside * 101);
@@ -6563,17 +6635,17 @@ PLAY:
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 66);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 69, gridSizeOutside * 74);
+								wallsOutsideShape.setPosition(gridSizeOutside * 70, gridSizeOutside * 74);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 54, gridSizeOutside * 73);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 88);
 								wallsOutside.push_back(wallsOutsideShape);
@@ -6619,7 +6691,8 @@ PLAY:
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 85);
 								wallsOutside.push_back(wallsOutsideShape);
-
+								wallsOutsideShape.setPosition(gridSizeOutside * 63, gridSizeOutside * 74);
+								wallsOutside.push_back(wallsOutsideShape);
 
 								wall.setPosition(gridSize * 31, gridSize * 28);
 								walls.push_back(wall);
@@ -6827,26 +6900,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 76, gridSize * 33);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 70, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 68, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 66, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 62, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 60, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 58, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 56, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 54, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 52, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 50, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 44, gridSize * 31);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 49, gridSize * 30);
@@ -6995,10 +7049,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 72, gridSize * 30);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 73, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 74, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 50, gridSize * 25);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 51, gridSize * 24);
@@ -7027,14 +7078,14 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 62, gridSize * 29);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 71, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 34, gridSize * 18);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 54, gridSize * 14);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 31, gridSize * 40);
 								walls.push_back(wall);
+
 							} 
 						} 
 						else { 
@@ -7232,7 +7283,6 @@ PLAY:
 								row = 0; 
 								walls.clear(); 
 								wallsOutside.clear();
-
 								wall.setPosition(gridSize * 9, gridSize * 40);
 								walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 41); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 42); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 43); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 44); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 45); walls.push_back(wall); wall.setPosition(gridSize * 9, gridSize * 46); walls.push_back(wall);
 								wall.setPosition(gridSize * 9, gridSize * 47);
@@ -7306,6 +7356,40 @@ PLAY:
 								wall.setPosition(gridSize * 19, gridSize * 46);
 								walls.push_back(wall);
 
+								wallsOutsideShape.setPosition(gridSizeOutside * 116, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 113, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 110, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 107, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 104, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 101, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 119, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 122, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 125, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 132, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 135, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 138, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 141, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 143, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 146, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 149, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
+								wallsOutsideShape.setPosition(gridSizeOutside * 150, gridSizeOutside * 62);
+								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 28, gridSizeOutside * 101);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 25, gridSizeOutside * 101);
@@ -7409,17 +7493,17 @@ PLAY:
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 66);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 69, gridSizeOutside * 74);
+								wallsOutsideShape.setPosition(gridSizeOutside * 70, gridSizeOutside * 74);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 54, gridSizeOutside * 73);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 56, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 60, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
-								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 73);
+								wallsOutsideShape.setPosition(gridSizeOutside * 62, gridSizeOutside * 72);
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 58, gridSizeOutside * 88);
 								wallsOutside.push_back(wallsOutsideShape);
@@ -7465,7 +7549,8 @@ PLAY:
 								wallsOutside.push_back(wallsOutsideShape);
 								wallsOutsideShape.setPosition(gridSizeOutside * 75, gridSizeOutside * 85);
 								wallsOutside.push_back(wallsOutsideShape);
-
+								wallsOutsideShape.setPosition(gridSizeOutside * 63, gridSizeOutside * 74);
+								wallsOutside.push_back(wallsOutsideShape);
 
 								wall.setPosition(gridSize * 31, gridSize * 28);
 								walls.push_back(wall);
@@ -7673,26 +7758,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 76, gridSize * 33);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 70, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 68, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 66, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 62, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 60, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 58, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 56, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 54, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 52, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 50, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 44, gridSize * 31);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 49, gridSize * 30);
@@ -7841,10 +7907,7 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 72, gridSize * 30);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 73, gridSize * 31);
-								walls.push_back(wall);
-								wall.setPosition(gridSize * 74, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 50, gridSize * 25);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 51, gridSize * 24);
@@ -7873,14 +7936,14 @@ PLAY:
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 62, gridSize * 29);
 								walls.push_back(wall);
-								wall.setPosition(gridSize * 71, gridSize * 31);
-								walls.push_back(wall);
+
 								wall.setPosition(gridSize * 34, gridSize * 18);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 54, gridSize * 14);
 								walls.push_back(wall);
 								wall.setPosition(gridSize * 31, gridSize * 40);
 								walls.push_back(wall);
+
 							} 
 						} 
 						 else { 
@@ -8898,10 +8961,6 @@ PLAY:
 			}
 
 
-			
-
-			
- 
 			if (TimePlus == 0) { 
 				if (minute == 9 && s == 50) {
 					soundEffect.setBuffer(hurrySound);
@@ -9498,7 +9557,6 @@ PLAY:
  
 				if (MenuButton.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 
-
 					view.reset(sf::FloatRect(0, 0, screenDimensions.x, screenDimensions.y));
 					sf::Vector2f position(screenDimensions.x / 2, screenDimensions.y / 2);
 					view.setCenter(position);
@@ -9506,11 +9564,8 @@ PLAY:
 					ExitButtonCheck = 0;
 					musicMENU.play();
 					musicPLAY.stop();
-					
-
 					goto MENU; 
 				} 
- 
  
 				if (PlayButton.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 				{ 
@@ -9523,11 +9578,6 @@ PLAY:
 				} 
 			} 
 		 
- 
- 
- 
-			
- 
 			if (player.getPosition().x + 25 > screenDimensions.x / 2) 
 				position.x = player.getPosition().x + 25; 
 			else 
@@ -9537,7 +9587,6 @@ PLAY:
 				position.y = player.getPosition().y + 25; 
 			else 
 				position.y = screenDimensions.y / 2; 
- 
  
 			if (position.x == player.getPosition().x + 25) { 
  
@@ -9579,8 +9628,6 @@ PLAY:
 				manShape.push_back(manVector);
 				Boy.setTextureRect(sf::IntRect(32 * frameMC, 32 * 2, 32, 32));
 			}
-			
-
 			if (m == 0 && house_check == 0) {
 				boyShape.clear();
 				boyVector.setPosition(gridSize * 32, gridSize * 40);
@@ -9614,18 +9661,12 @@ PLAY:
 				auntShape.push_back(auntVector);
 			}
 
- 
 			if (frameMCCounter == 50) { 
 				frameMC = (frameMC + 1) % 3; 
 				frameMCCounter = 0; 
 			} 
 			frameMCCounter++; 
 
-
-			
-
-
- 
 			window.clear(); 
 			player.move(velocity); 
 			view.setCenter(position); 
@@ -9682,7 +9723,6 @@ PLAY:
 			window.draw(KeyCheck6); 
 			window.draw(messageCheck);
  
- 
 			for (auto& i : catMC) 
 			{ 
 				window.draw(i); 
@@ -9715,7 +9755,6 @@ PLAY:
 			{
 				window.draw(i);
 			}
- 
 			window.draw(Grandma); 
 			window.draw(Dog_mc); 
 			window.draw(cat_mc); 
@@ -9724,7 +9763,6 @@ PLAY:
 			window.draw(Boy); 
 			window.draw(Girl); 
 			window.draw(pet); 
- 
 			window.draw(fish); 
 			window.draw(cake); 
 			window.draw(glass); 
@@ -9748,7 +9786,6 @@ PLAY:
 			window.draw(map); 
 			window.draw(bubbleSprite);
 			window.draw(messageSprite);
-			
 			window.draw(ScoreSprite); 
 			window.draw(BlackSprite); 
 			window.draw(PauseButton); 
@@ -9757,10 +9794,11 @@ PLAY:
 			window.draw(MenuButton); 
 			window.display(); 
  
-		} 
-		
+		} 	
  
+
 	GAMEOVER: 
+
 		gamecheck = 1;
 		musicGO.play();
 		musicGO.setLoop(true);
@@ -9816,39 +9854,42 @@ PLAY:
 			{ 
 				Hover_exitGOSprite.setPosition(810.f, 505.f); 
 			} 
+
 			if (gameoverMENU.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 			{ 
 				Hover_menuSprite.setPosition(286.f, 505.f); 
 			} 
+
 			if (!gameoverMENU.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 			{ 
 				Hover_menuSprite.setPosition(10000.f, 10000.f); 
 			} 
+
 			if (!gameoverQUIT.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 			{ 
 				Hover_exitGOSprite.setPosition(10000.f, 10000.f); 
 			} 
+
 			if (gameoverSCORE.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
 			{
 				Hover_scoreGOSprite.setPosition(548.f, 505.f);
 			}
+
 			if (!gameoverSCORE.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))))
 			{
 				Hover_scoreGOSprite.setPosition(10000.f, 10000.f);
 			}
-			
- 
- 
+
 			//Update bg 
 			gameover.setTextureRect(sf::IntRect(600 * frameGO, 300 * 0, 600, 300)); 
- 
- 
+
 			if (frameGOCounter == 10) { 
 				frameGO = (frameGO + 1) % 23; 
 				frameGOCounter = 0; 
 			} 
 			frameGOCounter++; 
- 
+
+
 			window.clear(); 
 			window.draw(bgGO); 
 			window.draw(gameover); 
@@ -9862,20 +9903,19 @@ PLAY:
  
 		} 
  
- 
+
 	WIN: 
+
 		gamecheck = 1;
 		musicWIN.play();
 		musicWIN.setLoop(true);
 		while (window.isOpen()) { 
- 
 			Event aevent; 
 			while (window.pollEvent(aevent)) { 
 				if (aevent.type == Event::Closed) { 
 					window.close(); 
 				} 
 			} 
- 
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) 
 			{ 
 				if (winScoreButton.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window))) ||
@@ -9911,10 +9951,7 @@ PLAY:
 				{ 
 					window.close(); 
 				} 
- 
- 
 			} 
- 
 			if (winScoreButton.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) 
 			{ 
 				Hover_scoreWINSprite.setPosition(539.f, 505.f); 
@@ -9939,18 +9976,16 @@ PLAY:
 			{ 
 				Hover_exitWINSprite.setPosition(10000.f, 10000.f); 
 			} 
- 
 			//Update score bg 
 			win.setTextureRect(sf::IntRect(1280 * frameWIN, 720 * 0, 1280, 720)); 
- 
- 
+
 			if (frameWINCounter == 20) { 
 				frameWIN = (frameWIN + 1) % 5; 
 				frameWINCounter = 0; 
 			} 
 			frameWINCounter++; 
- 
- 
+
+
 			window.clear(); 
 			window.draw(win); 
 			window.draw(winScoreButton); 
@@ -9961,6 +9996,5 @@ PLAY:
 			window.draw(Hover_menuWINSprite); 
 			window.display(); 
 		} 
-
 	return 0; 
 } 

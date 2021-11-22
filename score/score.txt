@@ -1,14 +1,3 @@
-mookmew 9800
-bibi 9380
-mm 5870
-EIEI  9200
-fsa 13240
-m 0
-m 4540
-fsa 5560
-f 11360
-f 6120
-mm 6720
-mm 7220
-fsa 11080
-fsa 0
+mm 7200
+bubu 9820
+fs 6420
